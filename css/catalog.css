@@ -288,12 +288,14 @@ a {
   justify-content: center;
   cursor: pointer;
 }
-
+#rootunderblocksbalconyright {
+  margin-right: 32vw;
+}
 .title2 {
   margin-top: 2vw;
 }
 .blocks2 {
-  margin-right: 10.5vw;
+  margin-right: 32vw;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -302,16 +304,29 @@ a {
 .frame3 {
   margin-left: 13vw;
   margin-top: 2vw;
-  height: 80vw;
+  height: 47vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image: url(./images/frame.png);
-  background-size: 75vw 80vw;
+  background-size: 75vw 47vw;
   background-repeat: no-repeat;
 }
+#frame3 {
+  height: 45vw;
+  background-size: 75vw 45vw;
+}
+#frame7 {
+  height: 150vw;
+  background-size: 75vw 120vw;
+}
 /* Добавьте эти стили в ваш catalog.css файл */
-
+#blocksbalconytop {
+  margin-top: 5vw;
+}
+#rootunderblocksbalconyright {
+  margin-left: 21.5vw;
+}
 .title3 {
   display: flex;
   margin: 0%;
@@ -320,7 +335,9 @@ a {
   cursor: pointer;
   margin-top: 2vw;
 }
-
+#blocksbalcony {
+  margin-top: 5vw;
+}
 .sixth {
   display: none;
   width: 100vw;
@@ -510,6 +527,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 12vw;
   gap: 3vw; /* Увеличил промежуток между блоками */
 }
 
@@ -574,6 +592,43 @@ a {
 }
 .topframe3mobile {
   display: none;
+}
+.textweb {
+  font-size: 1.5vw;
+  color: #535353;
+  font-family: "M PLUS 1p";
+  font-weight: bold;
+  margin: 1vw 0;
+  width: 100%;
+}
+.end {
+  justify-content: space-between;
+  margin-top: 10vw;
+  display: flex;
+  width: 100%;
+  height: 12vw;
+  background-color: #336281;
+}
+.panorama2 {
+  white-space: nowrap;
+  font-size: 1.5vw;
+  color: #ffffff;
+  font-family: "M PLUS 1p";
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgb(34, 34, 34);
+  margin-top: 2.5vw;
+  margin-left: 17vw;
+}
+.number2 {
+  white-space: nowrap;
+  font-size: 1.3vw;
+  color: rgb(255, 255, 255);
+  font-family: "Roboto";
+  font-weight: 300;
+  margin-top: 2.9vw;
+  text-align: end;
+  margin-right: 15vw;
+  line-height: 2.5vw;
 }
 @media screen and (max-width: 500px) {
   body {
@@ -674,9 +729,6 @@ a {
     width: 35vw;
     height: 60vw;
   }
-  #blockleft {
-    display: none;
-  }
   #underblockleft {
     display: none;
   }
@@ -756,7 +808,7 @@ a {
     background-size: 85vw 92vw;
     margin-left: 8vw;
   }
-  
+
   /* Адаптация для четвертого блока (Reachmont) */
   .fourth .frame2 {
     height: 92vw;
@@ -764,105 +816,123 @@ a {
     margin-left: 8vw;
     margin-top: 10vw;
   }
-  
+
   /* Адаптация для пятого блока (Балконы) */
   .frame3 {
     height: 180vw;
     background-size: 85vw 180vw;
     margin-left: 8vw;
   }
-  
+
   /* Адаптация для шестого блока (Детские замки) */
   .frame4 {
-    height: 120vw;
-    background-size: 85vw 120vw;
+    height: 80vw;
+    background-size: 85vw 80vw;
     margin-left: 8vw;
   }
-  
+
   /* Адаптация для седьмого блока (Ручки) */
   .frame5 {
-    height: 120vw;
-    background-size: 85vw 120vw;
+    height: 80vw;
+    background-size: 85vw 80vw;
     margin-left: 8vw;
   }
-  
+
   /* Адаптация для восьмого блока (Подоконники) */
   .frame6 {
-    height: 120vw;
-    background-size: 85vw 120vw;
+    height: 80vw;
+    background-size: 85vw 80vw;
     margin-left: 8vw;
   }
-  
+  #frame7 {
+    display: flex;
+    height: 160vw;
+    background-size: 85vw 140vw;
+  }
   /* Общие стили для блоков в мобильной версии (кроме москитных сеток) */
-  .block1, .blockthird, .block4, .block5 {
+  .block1,
+  .blockthird,
+  .block4,
+  .block5 {
     width: 35vw !important;
     height: 60vw !important;
     margin-right: 2vw !important;
     margin-bottom: 2vw;
   }
-  
+
   .imgb1 {
     width: 30vw !important;
     height: 35vw !important;
   }
-  
+
   .textb1 {
     font-size: 2vw !important;
   }
-  
-  .underblock, .underblock2, .underblock3, .underblock4, .underblock5 {
+
+  .underblock,
+  .underblock2,
+  .underblock3,
+  .underblock4,
+  .underblock5 {
     width: 35vw !important;
     height: 7vw !important;
     margin-right: 2vw !important;
   }
-  
+
   .textunderblock {
     font-size: 3vw !important;
   }
-  
+
   /* Расположение блоков в 2 колонки */
-  .blocks, .blocks2, .blocks3, .blocks4, .blocks5 {
+  .blocks,
+  .blocks2,
+  .blocks3,
+  .blocks4,
+  .blocks5 {
     flex-wrap: wrap;
     justify-content: flex-start !important;
     margin-left: 15vw !important;
     margin-right: 5vw !important;
     width: 90vw !important;
   }
-  
-  .rootUnderblocks, .rootUnderblocks5 {
+
+  .rootUnderblocks,
+  .rootUnderblocks5 {
     flex-wrap: wrap;
     justify-content: flex-start !important;
     margin-left: 15vw !important;
     margin-right: 5vw !important;
     width: 90vw !important;
   }
-  
+
   /* Специфичные стили для некоторых блоков */
   .blockthird {
     margin-right: 2vw !important;
   }
-  
+
   .block4 {
     margin-right: 2vw !important;
   }
-  
+
   .underblock4 {
     margin-right: 2vw !important;
   }
-  
+
   .blocks5 {
     margin-right: 5vw !important;
   }
-  
+
   .rootUnderblocks5 {
     margin-right: 5vw !important;
   }
-  
+
   /* Скрытие лишних элементов в мобильной версии */
-  .block2, #blockleft, #underblockleft, #topframe3 {
+  .block2,
+  #blockleft,
+  #underblockleft,
+  #topframe3 {
     display: none !important;
   }
-  
   .topframe3mobile {
     display: block !important;
     width: 45vw;
@@ -870,11 +940,11 @@ a {
     right: 10vw;
     bottom: 70vw;
   }
-  
+
   #underblockmobile {
     display: block !important;
   }
-  
+
   #blocks2 {
     display: flex !important;
   }
@@ -885,22 +955,22 @@ a {
     width: 75vw;
     margin-left: 13vw;
   }
-  
+
   .ninth .block7 {
     width: 100% !important;
     height: auto !important;
     padding: 1.5vw !important;
   }
-  
+
   .ninth .imgb2 {
     width: 48% !important;
     height: 20vw !important;
   }
-  
+
   .ninth .textb2 {
     font-size: 1.5vw !important;
   }
-  
+
   .ninth .underblock7 {
     width: 100% !important;
     height: 4vw !important;
@@ -911,5 +981,35 @@ a {
   .reachmont {
     width: 25vw;
     margin-top: 0;
+  }
+  #blockleft {
+    display: none;
+  }
+  #frame3 {
+    height: 158vw;
+    background-size: 85vw 158vw;
+  }
+  .blocks6 {
+    margin-right: 8vw;
+  }
+  .textweb {
+    font-size: 3vw;
+    color: #535353;
+    font-family: "M PLUS 1p";
+    font-weight: bold;
+    margin: 1vw 0;
+    width: 100%;
+  }
+  .end {
+    height: 30vw;
+    width: 100vw;
+  }
+  .panorama2 {
+    display: none;
+  }
+  .number2 {
+    font-size: 2.5vw;
+    margin-top: 10vw;
+    margin-left: 58vw;
   }
 }
