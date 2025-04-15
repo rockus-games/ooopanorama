@@ -368,13 +368,10 @@ a {
   .imgwindow {
     display: none;
   }
-  .window {
-    padding-right: 4%;
-  }
   .imgwindowmobile {
     padding-top: 20vw;
     display: inherit;
-    width: 94vw;
+    width: 99vw;
     height: 100vw;
     /* margin-right: 8px; */
   }

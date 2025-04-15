@@ -113,7 +113,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(./images/frame.png);
+  background-image: url(../images/frame.png);
   background-size: 75vw 85vw;
   background-repeat: no-repeat;
 }
@@ -208,7 +208,7 @@ a {
   width: 21vw;
   height: 4vw;
   background-color: #336281;
-  margin-right: 48vw;
+  margin-right: 58.5vw;
   margin-top: 0.5vw;
 }
 .topframe4 {
@@ -242,7 +242,7 @@ a {
   width: 21vw;
   height: 4vw;
   background-color: #336281;
-  margin-right: 48vw;
+  margin-right: 58.5vw;
   margin-top: 0.5vw;
 }
 .frame2 {
@@ -251,7 +251,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(./images/frame.png);
+  background-image: url(../images/frame.png);
   background-size: 75vw 50vw;
   background-repeat: no-repeat;
 }
@@ -308,7 +308,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(./images/frame.png);
+  background-image: url(../images/frame.png);
   background-size: 75vw 47vw;
   background-repeat: no-repeat;
 }
@@ -352,7 +352,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(./images/frame.png);
+  background-image: url(../images/frame.png);
   background-size: 75vw 47vw;
   background-repeat: no-repeat;
 }
@@ -411,7 +411,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(./images/frame.png);
+  background-image: url(../images/frame.png);
   background-size: 75vw 47vw;
   background-repeat: no-repeat;
 }
@@ -488,7 +488,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(./images/frame.png);
+  background-image: url(../images/frame.png);
   background-size: 75vw 47vw;
   background-repeat: no-repeat;
 }
@@ -515,7 +515,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(./images/frame.png);
+  background-image: url(../images/frame.png);
   background-size: 75vw 120vw;
   background-repeat: no-repeat;
   width: 75vw;
@@ -630,6 +630,12 @@ a {
   margin-right: 15vw;
   line-height: 2.5vw;
 }
+.underblockmobile {
+  display: none;
+}
+#mob {
+  display: none;
+}
 @media screen and (max-width: 500px) {
   body {
     align-content: center;
@@ -671,14 +677,6 @@ a {
     color: #ffffff;
     cursor: pointer;
     font-family: "Roboto";
-  }
-  .frame {
-    height: 168vw;
-    background-size: 85vw 168vw;
-    margin-left: 8vw;
-  }
-  .third {
-    margin-top: 10vw;
   }
   .catalog {
     display: none;
@@ -722,284 +720,6 @@ a {
     margin-top: 25vw;
     font-size: 7vw;
   }
-  .arrowdown {
-    display: none;
-  }
-  .block1 {
-    width: 35vw;
-    height: 60vw;
-  }
-  #underblockleft {
-    display: none;
-  }
-  #topframe3 {
-    display: none;
-  }
-  .topframe3mobile {
-    display: block;
-    width: 45vw;
-    position: relative;
-    right: 10vw;
-    bottom: 70vw;
-  }
-  .topframe1 {
-    width: 45vw;
-    position: relative;
-    right: 47vw;
-    bottom: 7vw;
-  }
-  .topframe2 {
-    width: 45vw;
-    position: relative;
-    right: 10vw;
-    bottom: 23vw;
-  }
-  #blocks2 {
-    margin-top: 7vw;
-    display: flex;
-  }
-  .block2 {
-    display: none;
-  }
-  .topframe4 {
-    width: 45vw;
-    position: relative;
-    right: 47vw;
-    bottom: 86vw;
-  }
-  .underblock2 {
-    margin-right: 2vw;
-    width: 35vw;
-    height: 7vw;
-    margin-top: 1.5vw;
-  }
-  .rootUnderblocks {
-    margin-left: 5vw;
-  }
-  .underblock {
-    width: 35vw;
-    height: 7vw;
-    margin-top: 1.5vw;
-  }
-  #underblockmobile {
-    display: block;
-  }
-  .blocks {
-    margin-left: 5vw;
-    margin-top: 3vw;
-  }
-  .pvhokna {
-    width: 25vw;
-    margin-left: 5vw;
-  }
-  .imgb1 {
-    width: 30vw;
-    height: 35vw;
-  }
-  .textb1 {
-    font-size: 2vw;
-    margin-top: 0vw;
-  }
-  .textunderblock {
-    font-size: 3vw;
-  }
-  .frame2 {
-    height: 92vw;
-    background-size: 85vw 92vw;
-    margin-left: 8vw;
-  }
-
-  /* Адаптация для четвертого блока (Reachmont) */
-  .fourth .frame2 {
-    height: 92vw;
-    background-size: 85vw 92vw;
-    margin-left: 8vw;
-    margin-top: 10vw;
-  }
-
-  /* Адаптация для пятого блока (Балконы) */
-  .frame3 {
-    height: 180vw;
-    background-size: 85vw 180vw;
-    margin-left: 8vw;
-  }
-
-  /* Адаптация для шестого блока (Детские замки) */
-  .frame4 {
-    height: 80vw;
-    background-size: 85vw 80vw;
-    margin-left: 8vw;
-  }
-
-  /* Адаптация для седьмого блока (Ручки) */
-  .frame5 {
-    height: 80vw;
-    background-size: 85vw 80vw;
-    margin-left: 8vw;
-  }
-
-  /* Адаптация для восьмого блока (Подоконники) */
-  .frame6 {
-    height: 80vw;
-    background-size: 85vw 80vw;
-    margin-left: 8vw;
-  }
-  #frame7 {
-    display: flex;
-    height: 160vw;
-    background-size: 85vw 140vw;
-  }
-  /* Общие стили для блоков в мобильной версии (кроме москитных сеток) */
-  .block1,
-  .blockthird,
-  .block4,
-  .block5 {
-    width: 35vw !important;
-    height: 60vw !important;
-    margin-right: 2vw !important;
-    margin-bottom: 2vw;
-  }
-
-  .imgb1 {
-    width: 30vw !important;
-    height: 35vw !important;
-  }
-
-  .textb1 {
-    font-size: 2vw !important;
-  }
-
-  .underblock,
-  .underblock2,
-  .underblock3,
-  .underblock4,
-  .underblock5 {
-    width: 35vw !important;
-    height: 7vw !important;
-    margin-right: 2vw !important;
-  }
-
-  .textunderblock {
-    font-size: 3vw !important;
-  }
-
-  /* Расположение блоков в 2 колонки */
-  .blocks,
-  .blocks2,
-  .blocks3,
-  .blocks4,
-  .blocks5 {
-    flex-wrap: wrap;
-    justify-content: flex-start !important;
-    margin-left: 15vw !important;
-    margin-right: 5vw !important;
-    width: 90vw !important;
-  }
-
-  .rootUnderblocks,
-  .rootUnderblocks5 {
-    flex-wrap: wrap;
-    justify-content: flex-start !important;
-    margin-left: 15vw !important;
-    margin-right: 5vw !important;
-    width: 90vw !important;
-  }
-
-  /* Специфичные стили для некоторых блоков */
-  .blockthird {
-    margin-right: 2vw !important;
-  }
-
-  .block4 {
-    margin-right: 2vw !important;
-  }
-
-  .underblock4 {
-    margin-right: 2vw !important;
-  }
-
-  .blocks5 {
-    margin-right: 5vw !important;
-  }
-
-  .rootUnderblocks5 {
-    margin-right: 5vw !important;
-  }
-
-  /* Скрытие лишних элементов в мобильной версии */
-  .block2,
-  #blockleft,
-  #underblockleft,
-  #topframe3 {
-    display: none !important;
-  }
-  .topframe3mobile {
-    display: block !important;
-    width: 45vw;
-    position: relative;
-    right: 10vw;
-    bottom: 70vw;
-  }
-
-  #underblockmobile {
-    display: block !important;
-  }
-
-  #blocks2 {
-    display: flex !important;
-  }
-
-  /* Стили для девятого блока (Москитные сетки) остаются как есть */
-  .ninth .frame7 {
-    background-size: 75vw 120vw;
-    width: 75vw;
-    margin-left: 13vw;
-  }
-
-  .ninth .block7 {
-    width: 100% !important;
-    height: auto !important;
-    padding: 1.5vw !important;
-  }
-
-  .ninth .imgb2 {
-    width: 48% !important;
-    height: 20vw !important;
-  }
-
-  .ninth .textb2 {
-    font-size: 1.5vw !important;
-  }
-
-  .ninth .underblock7 {
-    width: 100% !important;
-    height: 4vw !important;
-  }
-  .montblanc {
-    width: 25vw;
-  }
-  .reachmont {
-    width: 25vw;
-    margin-top: 0;
-  }
-  #blockleft {
-    display: none;
-  }
-  #frame3 {
-    height: 158vw;
-    background-size: 85vw 158vw;
-  }
-  .blocks6 {
-    margin-right: 8vw;
-  }
-  .textweb {
-    font-size: 3vw;
-    color: #535353;
-    font-family: "M PLUS 1p";
-    font-weight: bold;
-    margin: 1vw 0;
-    width: 100%;
-  }
   .end {
     height: 30vw;
     width: 100vw;
@@ -1011,5 +731,198 @@ a {
     font-size: 2.5vw;
     margin-top: 10vw;
     margin-left: 58vw;
+  }
+  .block1,
+  .block2,
+  .blockthird,
+  .block4,
+  .block5,
+  .block7 {
+    width: 73vw !important;
+    height: auto !important;
+    margin-right: 0 !important;
+    margin-bottom: 3vw;
+    padding: 4vw;
+  }
+
+  .blocks,
+  .blocks2,
+  .blocks3,
+  .blocks4,
+  .blocks5,
+  .blocks6 {
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-right: 0 !important;
+    margin-top: 5vw !important;
+  }
+
+  .underblock,
+  .underblock2,
+  .underblock3,
+  .underblock4,
+  .underblock5 {
+    width: 81vw !important;
+    height: 15vw;
+    margin-right: 0 !important;
+    margin-bottom: 5vw;
+  }
+
+  /* Изображения в блоках */
+  .imgb1 {
+    width: 70vw !important;
+    height: auto !important;
+    max-height: 50vh;
+    margin-top: 3vw !important;
+  }
+
+  .textb1 {
+    font-size: 4vw !important;
+    margin-top: 3vw !important;
+  }
+
+  .textunderblock {
+    font-size: 5vw !important;
+  }
+
+  /* Фреймы */
+  .frame,
+  .frame2,
+  .frame3,
+  .frame4,
+  .frame5,
+  .frame6 {
+    margin-left: 5vw;
+    width: 90vw;
+    height: auto;
+    background-size: 90vw auto;
+    padding-bottom: 5vw;
+    background-image: url(../images/frame3.png);
+  }
+  .frame {
+    height: 610vw;
+    background-size: 90vw 610vw;
+  }
+  .frame2 {
+    height: 160vw;
+    background-size: 90vw 160vw;
+    background-image: url(../images/frame.png);
+  }
+  #frame3 {
+    height: 425vw;
+    background-size: 90vw 427vw !important;
+  }
+  #frame7 {
+    height: 350vw;
+    background-size: 90vw 350vw !important;
+  }
+  .frame6 {
+    height: 275vw;
+    background-size: 90vw 273vw;
+  }
+  .frame4 {
+    height: 145vw;
+    background-size: 90vw 145vw;
+    background-image: url(../images/frame.png);
+  }
+  .frame5 {
+    height: 253vw;
+    background-size: 90vw 253vw;
+    background-image: url(../images/frame3.png);
+  }
+  /* Заголовки и изображения вверху фреймов */
+  .pvhokna,
+  .montblanc,
+  .reachmont,
+  .provedal {
+    width: 30vw !important;
+    margin-right: 0 !important;
+    margin-top: 0vw !important;
+    position: static !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Верхние рамки */
+  .topframe1,
+  .topframe2,
+  .topframe3,
+  .topframe4 {
+    display: none !important;
+  }
+
+  /* Специфичные настройки для различных блоков */
+  #blocksbalcony,
+  #blocksbalconytop {
+    margin-top: 5vw !important;
+  }
+
+  #rootunderblocksbalconyright {
+    margin-left: 0 !important;
+  }
+
+  /* Блоки москитных сеток (оставляем как есть) */
+  .blocks6 {
+    width: 90% !important;
+    margin-right: 0 !important;
+  }
+
+  .block7 {
+    height: auto !important;
+    padding: 4vw !important;
+  }
+
+  .imgb2 {
+    width: 100% !important;
+    height: 30vw !important;
+    margin-bottom: 2vw;
+  }
+
+  .images-row {
+    flex-direction: column;
+    gap: 2vw !important;
+  }
+
+  .textweb {
+    font-size: 4vw !important;
+  }
+
+  .underblock7 {
+    height: 10vw !important;
+    width: 73vw;
+  }
+
+  /* Скрываем десктопные подблоки */
+  .underblockmobile {
+    display: block !important;
+    width: 80vw !important;
+    margin-top: 2vw;
+    margin-bottom: 5vw;
+  }
+
+  .underblock1 {
+    display: none !important;
+  }
+  .rootUnderblocks {
+    display: none;
+  }
+  #mob {
+    display: block;
+  }
+  .rootUnderblocks5 {
+    display: none;
+  }
+  .texttitle1 {
+    margin-top: 7vw;
+  }
+  #pvcWindowLink {
+    margin-top: 20vw;
+  }
+  .arrowdown {
+    width: 10vw;
+  }
+  #arrowIcon2 {
+    margin-bottom: 12vw;
   }
 }
