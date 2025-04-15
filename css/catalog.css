@@ -1,110 +1,110 @@
 body {
-  margin: 0%;
-  overflow-x: hidden;
+    margin: 0%;
+    overflow-x: hidden;
 }
 .header {
-  z-index: 999;
-  position: fixed;
-  justify-content: space-evenly;
-  display: flex;
-  width: 100%;
-  height: 4.2vw;
-  background-color: #336281;
+    z-index: 999;
+    position: fixed;
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%;
+    height: 4.2vw;
+    background-color: #336281;
 }
 .panorama {
-  white-space: nowrap;
-  font-size: 1.5vw;
-  color: #ffffff;
-  font-family: "M PLUS 1p";
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgb(34, 34, 34);
-  margin-top: 1.1vw;
-  margin-left: 7vw;
+    white-space: nowrap;
+    font-size: 1.5vw;
+    color: #ffffff;
+    font-family: "M PLUS 1p";
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgb(34, 34, 34);
+    margin-top: 1.1vw;
+    margin-left: 7vw;
 }
 .custom-select {
-  display: none;
+    display: none;
 }
 .catalog {
-  font-size: 0.9vw;
-  color: rgb(255, 255, 255);
-  font-family: "M PLUS 1p";
-  font-weight: bold;
-  margin-top: 1.5vw;
-  margin-right: 5vw;
+    font-size: 0.9vw;
+    color: rgb(255, 255, 255);
+    font-family: "M PLUS 1p";
+    font-weight: bold;
+    margin-top: 1.5vw;
+    margin-right: 5vw;
 }
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 .services {
-  font-size: 0.9vw;
-  color: rgb(255, 255, 255);
-  font-family: "M PLUS 1p";
-  font-weight: bold;
-  margin-top: 1.5vw;
-  margin-right: 5vw;
+    font-size: 0.9vw;
+    color: rgb(255, 255, 255);
+    font-family: "M PLUS 1p";
+    font-weight: bold;
+    margin-top: 1.5vw;
+    margin-right: 5vw;
 }
 .call {
-  display: flex;
+    display: flex;
 }
 .whts {
-  margin-right: 1vw;
-  width: 2.2vw;
+    margin-right: 1vw;
+    width: 2.2vw;
 }
 .number {
-  font-size: 1.3vw;
-  color: rgb(255, 255, 255);
-  font-family: "Montserrat";
-  font-weight: bold;
-  margin-top: 1.4vw;
+    font-size: 1.3vw;
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat";
+    font-weight: bold;
+    margin-top: 1.4vw;
 }
 .tg {
-  margin-left: 1vw;
-  width: 2.2vw;
-  margin-right: 5vw;
+    margin-left: 1vw;
+    width: 2.2vw;
+    margin-right: 5vw;
 }
 .callmobile {
-  display: none;
+    display: none;
 }
 .whtsmobile {
-  display: none;
+    display: none;
 }
 .numbermobile {
-  display: none;
+    display: none;
 }
 .tgmobile {
-  display: none;
+    display: none;
 }
 .second,
 .third,
 .fourth,
 .fifth {
-  display: none;
-  width: 100vw;
-  margin: 0%;
-  overflow: hidden;
+    display: none;
+    width: 100vw;
+    margin: 0%;
+    overflow: hidden;
 }
 .title1,
 .title2 {
-  display: flex;
-  margin: 0%;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
+    display: flex;
+    margin: 0%;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
 }
 .title2 {
-  margin-top: 2vw;
+    margin-top: 2vw;
 }
 .texttitle1 {
-  margin-top: 6vw;
-  font-size: 3vw;
-  color: #336281;
-  font-family: "M PLUS 1p";
-  margin-left: 2vw;
-  user-select: none;
+    margin-top: 6vw;
+    font-size: 3vw;
+    color: #336281;
+    font-family: "M PLUS 1p";
+    margin-left: 2vw;
+    user-select: none;
 }
 .arrowdown {
-  width: 3vw;
-  margin-top: 2.5vw;
+    width: 3vw;
+    margin-top: 2.5vw;
 }
 .frame {
   margin-left: 13vw;
@@ -118,91 +118,91 @@ a {
   background-repeat: no-repeat;
 }
 .blocks {
-  margin-right: 10.5vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+    margin-right: 10.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 .pvhokna {
-  margin-top: 2vw;
-  margin-right: 16vw;
-  width: 12vw;
-  position: relative;
-  bottom: 3vw;
+    margin-top: 2vw;
+    margin-right: 16vw;
+    width: 12vw;
+    position: relative;
+    bottom: 3vw;
 }
 .block1 {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  width: 21vw;
-  height: 32vw;
-  background-color: #eeeeee;
-  margin-right: 2vw;
-  text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 21vw;
+    height: 32vw;
+    background-color: #eeeeee;
+    margin-right: 2vw;
+    text-align: center;
 }
 .imgb1 {
-  width: 18vw;
-  height: 20vw;
-  margin-top: 1.5vw;
-  align-self: center;
+    width: 18vw;
+    height: 20vw;
+    margin-top: 1.5vw;
+    align-self: center;
 }
 .zero {
-  width: 0;
-  height: 0;
+    width: 0;
+    height: 0;
 }
 .topframe1 {
-  width: 23vw;
-  position: relative;
-  bottom: 4.5vw;
-  right: 40vw;
+    width: 23vw;
+    position: relative;
+    bottom: 4.5vw;
+    right: 40vw;
 }
 .topframe2 {
-  width: 23vw;
-  position: relative;
-  bottom: 12.9vw;
-  right: 17vw;
+    width: 23vw;
+    position: relative;
+    bottom: 12.9vw;
+    right: 17vw;
 }
 .topframe3 {
-  width: 23vw;
-  position: relative;
-  bottom: 21.3vw;
-  left: 6vw;
+    width: 23vw;
+    position: relative;
+    bottom: 21.3vw;
+    left: 6vw;
 }
 .textb1 {
-  font-size: 1.2vw;
-  color: #535353;
-  font-family: "M PLUS 1p";
-  font-weight: bold;
+    font-size: 1.2vw;
+    color: #535353;
+    font-family: "M PLUS 1p";
+    font-weight: bold;
 }
 .underblock {
-  width: 21vw;
-  height: 4vw;
-  background-color: #336281;
-  margin-right: 2vw;
-  margin-top: 0.5vw;
+    width: 21vw;
+    height: 4vw;
+    background-color: #336281;
+    margin-right: 2vw;
+    margin-top: 0.5vw;
 }
 .textunderblock {
-  font-size: 1.5vw;
-  font-family: "M PLUS 1p";
-  font-weight: bold;
-  color: #ffffff;
-  text-align: center;
+    font-size: 1.5vw;
+    font-family: "M PLUS 1p";
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
 }
 .rootUnderblocks {
-  margin-right: 10.5vw;
-  display: flex;
-  flex-direction: row;
+    margin-right: 10.5vw;
+    display: flex;
+    flex-direction: row;
 }
 .block2 {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  width: 21vw;
-  height: 32vw;
-  background-color: #eeeeee;
-  margin-right: 58.5vw;
-  text-align: center;
-  margin-top: 3vw;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 21vw;
+    height: 32vw;
+    background-color: #eeeeee;
+    margin-right: 58.5vw;
+    text-align: center;
+    margin-top: 3vw;
 }
 .underblock2 {
   width: 21vw;
@@ -212,31 +212,31 @@ a {
   margin-top: 0.5vw;
 }
 .topframe4 {
-  width: 23vw;
-  position: relative;
-  bottom: 1.5vw;
-  right: 40vw;
+    width: 23vw;
+    position: relative;
+    bottom: 1.5vw;
+    right: 40vw;
 }
 .dv {
-  width: 0%;
-  height: 0%;
+    width: 0%;
+    height: 0%;
 }
 .montblanc {
-  margin-right: 7vw;
-  width: 15vw;
-  position: relative;
-  bottom: 3vw;
-  margin-top: 2vw;
+    margin-right: 7vw;
+    width: 15vw;
+    position: relative;
+    bottom: 3vw;
+    margin-top: 2vw;
 }
 .blockthird {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  width: 21vw;
-  height: 32vw;
-  background-color: #eeeeee;
-  margin-right: 48vw;
-  text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 21vw;
+    height: 32vw;
+    background-color: #eeeeee;
+    margin-right: 48vw;
+    text-align: center;
 }
 .underblock3 {
   width: 21vw;
@@ -256,50 +256,50 @@ a {
   background-repeat: no-repeat;
 }
 .reachmont {
-  margin-top: 5vw;
-  margin-right: 8vw;
-  width: 13vw;
-  position: relative;
-  bottom: 3vw;
+    margin-top: 5vw;
+    margin-right: 8vw;
+    width: 13vw;
+    position: relative;
+    bottom: 3vw;
 }
 .provedal {
-  margin-top: 2vw;
-  margin-right: 14vw;
-  width: 17vw;
-  position: relative;
-  bottom: 3vw;
+    margin-top: 2vw;
+    margin-right: 14vw;
+    width: 17vw;
+    position: relative;
+    bottom: 3vw;
 }
 
 .third,
 .fourth,
 .fifth {
-  display: none;
-  width: 100vw;
-  margin: 0%;
-  overflow: hidden;
-  margin-top: 8vw;
+    display: none;
+    width: 100vw;
+    margin: 0%;
+    overflow: hidden;
+    margin-top: 8vw;
 }
 
 .title1,
 .title2 {
-  display: flex;
-  margin: 0%;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
+    display: flex;
+    margin: 0%;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
 }
 #rootunderblocksbalconyright {
-  margin-right: 32vw;
+    margin-right: 32vw;
 }
 .title2 {
-  margin-top: 2vw;
+    margin-top: 2vw;
 }
 .blocks2 {
-  margin-right: 32vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 4vw;
+    margin-right: 32vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 4vw;
 }
 .frame3 {
   margin-left: 13vw;
@@ -313,36 +313,36 @@ a {
   background-repeat: no-repeat;
 }
 #frame3 {
-  height: 45vw;
-  background-size: 75vw 45vw;
+    height: 45vw;
+    background-size: 75vw 45vw;
 }
 #frame7 {
-  height: 150vw;
-  background-size: 75vw 120vw;
+    height: 150vw;
+    background-size: 75vw 120vw;
 }
 /* Добавьте эти стили в ваш catalog.css файл */
 #blocksbalconytop {
-  margin-top: 5vw;
+    margin-top: 5vw;
 }
 #rootunderblocksbalconyright {
-  margin-left: 21.5vw;
+    margin-left: 21.5vw;
 }
 .title3 {
-  display: flex;
-  margin: 0%;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
-  margin-top: 2vw;
+    display: flex;
+    margin: 0%;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 2vw;
 }
 #blocksbalcony {
-  margin-top: 5vw;
+    margin-top: 5vw;
 }
 .sixth {
-  display: none;
-  width: 100vw;
-  margin: 0%;
-  overflow: hidden;
+    display: none;
+    width: 100vw;
+    margin: 0%;
+    overflow: hidden;
 }
 
 .frame4 {
@@ -358,49 +358,49 @@ a {
 }
 
 .blocks3 {
-  margin-right: 10.5vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 4vw;
+    margin-right: 10.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 4vw;
 }
 
 .block4 {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  width: 21vw;
-  height: 32vw;
-  background-color: #eeeeee;
-  text-align: center;
-  margin-right: 48vw;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 21vw;
+    height: 32vw;
+    background-color: #eeeeee;
+    text-align: center;
+    margin-right: 48vw;
 }
 
 .underblock4 {
-  width: 21vw;
-  height: 4vw;
-  background-color: #336281;
-  margin-top: 0.5vw;
-  text-align: center;
-  margin-right: 48vw;
+    width: 21vw;
+    height: 4vw;
+    background-color: #336281;
+    margin-top: 0.5vw;
+    text-align: center;
+    margin-right: 48vw;
 }
 /* Новые стили для sixth и seventh блоков */
 .title3,
 .title4 {
-  display: flex;
-  margin: 0%;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
-  margin-top: 2vw;
+    display: flex;
+    margin: 0%;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 2vw;
 }
 
 .sixth,
 .seventh {
-  display: none;
-  width: 100vw;
-  margin: 0%;
-  overflow: hidden;
+    display: none;
+    width: 100vw;
+    margin: 0%;
+    overflow: hidden;
 }
 
 .frame4,
@@ -417,68 +417,68 @@ a {
 }
 
 .blocks3 {
-  margin-right: 10.5vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 4vw;
+    margin-right: 10.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 4vw;
 }
 
 .blocks4 {
-  margin-right: 10.5vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 4vw;
+    margin-right: 10.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 4vw;
 }
 
 .block5 {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  width: 21vw;
-  height: 32vw;
-  background-color: #eeeeee;
-  text-align: center;
-  margin-right: 2vw;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 21vw;
+    height: 32vw;
+    background-color: #eeeeee;
+    text-align: center;
+    margin-right: 2vw;
 }
 
 .underblock5 {
-  width: 21vw;
-  height: 4vw;
-  background-color: #336281;
-  margin-top: 0.5vw;
-  text-align: center;
-  margin-right: 2vw;
+    width: 21vw;
+    height: 4vw;
+    background-color: #336281;
+    margin-top: 0.5vw;
+    text-align: center;
+    margin-right: 2vw;
 }
 .blocks5 {
-  margin-right: 32vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 4vw;
+    margin-right: 32vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 4vw;
 }
 .rootUnderblocks5 {
-  margin-right: 32vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+    margin-right: 32vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 /* Стили для eighth блока */
 .title5 {
-  display: flex;
-  margin: 0%;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
-  margin-top: 2vw;
+    display: flex;
+    margin: 0%;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 2vw;
 }
 
 .eighth {
-  display: none;
-  width: 100vw;
-  margin: 0%;
-  overflow: hidden;
+    display: none;
+    width: 100vw;
+    margin: 0%;
+    overflow: hidden;
 }
 
 .frame6 {
@@ -494,19 +494,19 @@ a {
 }
 /* Стили для ninth блока */
 .title6 {
-  display: flex;
-  margin: 0;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
-  margin-top: 2vw;
+    display: flex;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 2vw;
 }
 
 .ninth {
-  display: none;
-  width: 100vw;
-  margin: 0;
-  overflow: hidden;
+    display: none;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
 }
 
 .frame7 {
@@ -522,47 +522,47 @@ a {
 }
 
 .blocks6 {
-  margin-top: 5vw;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 12vw;
-  gap: 3vw; /* Увеличил промежуток между блоками */
+    margin-top: 5vw;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 12vw;
+    gap: 3vw; /* Увеличил промежуток между блоками */
 }
 
 .block-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .block7 {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #eeeeee;
-  text-align: center;
-  padding: 1.5vw; /* Увеличил padding */
-  box-sizing: border-box;
-  height: 30vw; /* Увеличил минимальную высоту */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 1.5vw; /* Увеличил padding */
+    box-sizing: border-box;
+    height: 30vw; /* Увеличил минимальную высоту */
 }
 
 .images-row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  gap: 1.5vw;
-  margin-bottom: 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1.5vw;
+    margin-bottom: 1.5vw;
 }
 
 .imgb2 {
-  width: 48%; /* Ширина картинок */
-  height: 20vw; /* Фиксированная высота картинок */
-  object-fit: cover; /* Чтобы изображения заполняли пространство */
-  border-radius: 0.5vw;
+    width: 48%; /* Ширина картинок */
+    height: 20vw; /* Фиксированная высота картинок */
+    object-fit: cover; /* Чтобы изображения заполняли пространство */
+    border-radius: 0.5vw;
 }
 
 .textb2 {
