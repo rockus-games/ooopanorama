@@ -2,6 +2,7 @@ body {
     margin: 0%;
     overflow-x: hidden;
     font-family: "Montserrat";
+
 }
 
 a {
@@ -22,9 +23,18 @@ a {
     display: flex;
     align-items: center;
 }
+.linkwhts {
+  margin: 0;
+  align-self: center;
+}
+.whts {
+  margin-right: 1vw;
+  width: 2.2vw;
+}
 
 .number {
     font-size: 24px;
+
     color: rgb(255, 255, 255);
     font-weight: bold;
 }
