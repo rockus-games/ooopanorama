@@ -2,11 +2,15 @@ body {
     margin: 0%;
     overflow-x: hidden;
     font-family: "Montserrat";
-
 }
 
 a {
     text-decoration: none;
+}
+
+.block {
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 .header {
@@ -15,23 +19,12 @@ a {
     display: flex;
     height: 100px;
     background-color: #336281;
-    padding-left: 15%;
-    padding-right: 15%;
 }
 
 .call {
     display: flex;
     align-items: center;
 }
-.linkwhts {
-  margin: 0;
-  align-self: center;
-}
-.whts {
-  margin-right: 1vw;
-  width: 2.2vw;
-}
-
 .number {
     font-size: 24px;
 
@@ -55,4 +48,66 @@ a {
 
 .linkTg > .callImg {
     width: 36px;
+}
+
+.carousel,
+.videoCarousel {
+    display: flex;
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+.carouselBody,
+.videoCarouselBody {
+    display: flex;
+    overflow: scroll;
+    gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.videoCarouselBody {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.carouselBody > *,
+.videoCarouselBody > * {
+    scroll-snap-align: center;
+}
+
+.carouselButton {
+    border-radius: 50%;
+    background-color: #336281;
+    color: white;
+    flex: 0 0 auto;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    padding: 15px;
+    display: flex;
+}
+
+.carouselButton > img {
+    height: 70%;
+    display: block;
+    margin: auto;
+}
+
+.previous {
+    transform: scaleX(-1);
+}
+
+.selected {
+    transform: scale(1.5);
+    background-color: green !important;
+}
+
+.first {
+    transform-origin: center left;
+}
+
+.last {
+    transform-origin: center right;
 }

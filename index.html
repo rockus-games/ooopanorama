@@ -12,7 +12,6 @@
         <link
             rel="stylesheet"
             href="./css/index.css" />
-
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet" />
@@ -27,7 +26,7 @@
             rel="stylesheet" />
     </head>
     <body>
-        <div class="header">
+        <div class="header block">
             <h1 class="panorama">«ООО ПАНОРАМА»</h1>
             <div class="call">
                 <h1 class="number">+7-985-418-19-73</h1>
@@ -52,218 +51,296 @@
         <div class="banner">
             <img
                 class="bannerImg"
-                src="./images/dap.png"
+                src="./images/imgwindow.png"
                 alt="" />
         </div>
-        <div class="freeservices">
-            <div class="textfreeservices">
-                <h1>БЕСПЛАТНЫЕ УСЛУГИ</h1>
+        <div class="menu block">
+            <div class="menuLine">
+                <div class="menuItem"><a href="#">ОКНА</a></div>
+                <div class="vl"></div>
+                <div class="menuItem"><a href="#">БАЛКОНЫ</a></div>
+                <div class="vl"></div>
+                <div class="menuItem"><a href="#">КОТТЕДЖИ</a></div>
+                <div class="vl"></div>
+                <div class="menuItem">
+                    <a href="#">
+                        КОМПЛЕКТУЮЩИЕ ДЛЯ
+                        <br />
+                        ОКОН
+                    </a>
+                </div>
+            </div>
+            <hr />
+            <div class="menuLine">
+                <div class="menuItem"><a href="#">ОТЗЫВЫ</a></div>
+                <div class="vl"></div>
+                <div class="menuItem"><a href="#">КОНТАКТЫ</a></div>
             </div>
         </div>
-        <div class="blocksfreeservices">
-            <div class="block1">
-                <img
-                    class="imgb1"
-                    src="./images/zamer 1.svg"
-                    alt="" />
-                <h1 class="textb1">
-                    ВЫЗОВ
-                    <br />
-                    ЗАМЕРЩИКА
-                </h1>
+        <div class="brands block">
+            <h1 class="titleText">МАРКИ С КОТОРЫМИ МЫ РАБОТАЕМ</h1>
+            <img
+                class="imgbrands"
+                src="./images/marks.svg"
+                alt="" />
+        </div>
+        <div class="discounts block">
+            <h1 class="titleText">СКИДКИ И АКЦИИ</h1>
+            <img
+                src="./images/discounts.png"
+                alt="" />
+            <div class="blockcallsurveyor">
+                <a
+                    class="mailcallsurveyor"
+                    href="mailto:okno7373@mail.ru">
+                    <p class="emailOrTel">
+                        ВЫЗОВ ЗАМЕРЩИКА
+                        <br />
+                        okno7373@mail.ru
+                    </p>
+                </a>
+                <div class="second">
+                    <a
+                        class="telephone"
+                        href="tel:+79854181973">
+                        <div class="third">
+                            <img
+                                class="imgtelephone"
+                                src="./images/phonecallmobile.png"
+                                alt="" />
+                            <p class="emailOrTel">
+                                ВЫЗОВ ЗАМЕРЩИКА
+                                <br />
+                                +7-985-418-19-73
+                            </p>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="block2">
-                <img
-                    class="imgb2"
-                    src="./images/usl1.png"
-                    alt="" />
-                <h1 class="textb2">
-                    ГАРАНТИЯ
-                    <br />
-                    НА МОНТАЖ
-                </h1>
-            </div>
-            <div class="block3">
-                <img
-                    class="imgb3"
-                    src="./images/usl2.svg"
-                    alt="" />
-                <h1 class="textb3">
-                    ГАРАНТИЙНОЕ
-                    <br />
-                    ОБСЛУЖИВАНИЕ
-                </h1>
-            </div>
+            <div></div>
+        </div>
+        <div class="shortAboutUs block">
+            <div class="shortAboutUsText">
+                <h1 class="tableShort">КОРОТКО О НАС</h1>
+                <h2 class="textShort">
+                    Мы — команда профессионалов, специализирующаяся на
+                    производстве практичных и надежных окон по ценам
+                    производителя.
 
+                    <br />
+                    <br />
+                    Мы предлагаем широкий спектр услуг, включая вызов замерщика
+                    в удобное для вас время, гарантию на монтаж и гарантийное
+                    обслуживание абсолютно бесплатно. Также мы предоставляем
+                    возможность заключения договора на дому для вашего комфорта.
+                    Доверьтесь нам, и мы сделаем ваш дом более уютным и
+                    функциональным!
+                </h2>
+            </div>
+            <div style="flex: 4"></div>
         </div>
-      </div>
-      <div>
-        <select class="custom-select" onchange="handleSelect(this)">
-          <option value="index.html">Главная</option>
-          <option value="catalog.html">Каталог</option>
-          <option value="services.html">Услуги</option>
-        </select>
-      </div>
-      <div class="call">
-        <a class="linkwhts" href="https://wa.me/79854181973">
-          <img class="whts" src="./images/whts.svg" alt="" />
-        </a>
-        <h1 class="number">+7-985-418-19-73</h1>
-        <a class="linkTg" href="https://t.me/PanoramaVdom">
-          <img class="tg" src="./images/tg.svg" alt="" />
-        </a>
-      </div>
-    </div>
-    <div class="window">
-      <img class="imgwindow" src="./images/imgwindow.png" alt="" />
-      <img class="imgwindowmobile" src="./images/oknaamobile.png" alt="" />
-    </div>
-    <div class="menu">
-      <div class="menuline1">
-        <a href="#">
-          <h1 class="h11menu1">ОКНА</h1>
-        </a>
-        <a href="#">
-          <h1>БАЛКОНЫ</h1>
-        </a>
-        <a href="#">
-          <h1>КОТТЕДЖИ</h1>
-        </a>
-        <a href="#">
-          <h1 class="h12menu1">
-            КОМПЛЕКТУЮЩИЕ ДЛЯ <br />
-            ОКОН
-          </h1>
-        </a>
-      </div>
-      <div class="menuline2">
-        <a href="#">
-          <h1 class="h11menu2">ОТЗЫВЫ</h1>
-        </a>
-        <a href="#">
-          <h1 class="h12menu2">КОНТАКТЫ</h1>
-        </a>
-      </div>
-    </div>
-    <div class="brandsweworkwith">
-      <h1 class="textbrand">МАРКИ С КОТОРЫМИ МЫ РАБОТАЕМ</h1>
-      <div class="blockimgbrands">
-        <img class="imgbrands" src="./images/marks.svg" alt="" />
-        <img class="imgbrandsmobile" src="./images/marksmobile.png" alt="" />
-      </div>
-    </div>
-    <div class="discounts">
-      <div>
-        <h1>СКИДКИ И АКЦИИ</h1>
-      </div>
-      <div class="imgdiscounts">
-        <img src="./images/discounts.png" alt="" />
-      </div>
-      <div class="blockcallsurveyor">
-        <a class="mailcallsurveyor" href="mailto:okno7373@mail.ru">
-          <p class="emailOrTel">
-            ВЫЗОВ ЗАМЕРЩИКА
-            <br />
-            okno7373@mail.ru
-          </p>
-        </a>
-        <div class="second">
-          <a class="telephone" href="tel:+79854181973">
-            <div class="third">
-              <img
-                class="imgtelephone"
-                src="./images/phonecallmobile.png"
-                alt=""
-              />
-              <p class="emailOrTel">
-                ВЫЗОВ ЗАМЕРЩИКА
+        <div class="weHaveTrust block">
+            <h1 class="titleText">НАМ ДОВЕРЯЮТ</h1>
+
+            <div class="rootTrustBlocks">
+                <div class="trustBlock">
+                    <img
+                        class="trustImg"
+                        src="/images/trust/1.png"
+                        alt="" />
+                </div>
+                <div class="trustBlock">
+                    <img
+                        class="trustImg"
+                        src="/images/trust/2.png"
+                        alt="" />
+                </div>
+                <div class="trustBlock">
+                    <img
+                        class="trustImg"
+                        src="/images/trust/3.png"
+                        alt="" />
+                </div>
+                <div class="trustBlock">
+                    <img
+                        class="trustImg"
+                        src="/images/trust/4.png"
+                        alt="" />
+                </div>
+                <div class="trustBlock">
+                    <img
+                        class="trustImg"
+                        src="/images/trust/5.png"
+                        alt="" />
+                </div>
+                <div class="trustBlock">
+                    <img
+                        class="trustImg"
+                        src="/images/trust/6.png"
+                        alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="priceExample block">
+            <h1 class="titleText">ПРИМЕРЫ ЦЕН</h1>
+            <div class="carousel">
+                <div class="carouselBody">
+                    <div class="test">Тут будут примеры цен</div>
+                    <div class="test">Тут будут примеры цен</div>
+                    <div class="test">Тут будут примеры цен</div>
+                    <div class="test">Тут будут примеры цен</div>
+                    <div class="test">Тут будут примеры цен</div>
+                    <div class="test">Тут будут примеры цен</div>
+                    <div class="test">Тут будут примеры цен</div>
+                    <div class="test">Тут будут примеры цен</div>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <h1 class="titleText">БЕСПЛАТНЫЕ УСЛУГИ</h1>
+            <div class="blocksFreeServices">
+                <div class="freeServicesBlock">
+                    <img
+                        src="./images/zamer 1.svg"
+                        alt="" />
+                    <h1>
+                        ВЫЗОВ
+                        <br />
+                        ЗАМЕРЩИКА
+                    </h1>
+                </div>
+                <div class="freeServicesBlock">
+                    <img
+                        src="./images/usl1.png"
+                        alt="" />
+                    <h1>
+                        ГАРАНТИЯ
+                        <br />
+                        НА МОНТАЖ
+                    </h1>
+                </div>
+                <div class="freeServicesBlock">
+                    <img
+                        src="./images/usl2.svg"
+                        alt="" />
+                    <h1>
+                        ГАРАНТИЙНОЕ
+                        <br />
+                        ОБСЛУЖИВАНИЕ
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <h1 class="titleText">ОСТАЛИСЬ ВОПРОСЫ</h1>
+            <div class="ask">
+                <h1 class="askText">
+                    Укажите свои контакные данные, и наш профессионал свяжется с
+                    вам в течении 5 минут в рабочие часы.
+                </h1>
+                <div class="askUserData">
+                    <input
+                        class="askUserField"
+                        type="text"
+                        placeholder="Ваше имя" />
+                    <input
+                        class="askUserField"
+                        type="text"
+                        placeholder="Ваш телефон" />
+                </div>
+                <div class="askSend">
+                    <button class="askSendButton">Отправить</button>
+                    <div class="askSendTerms">
+                        <input
+                            type="checkbox"
+                            class="askSendCheckBox" />
+                        Оставляя заявку, вы соглашаетесь на обработку
+                        персональных данных
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="priceExample block">
+            <h1 class="titleText">ПРИМЕРЫ РАБОТ</h1>
+            <div class="carousel">
+                <div class="carouselBody">
+                    <div class="test">Тут будут примеры работ</div>
+                    <div class="test">Тут будут примеры работ</div>
+                    <div class="test">Тут будут примеры работ</div>
+                    <div class="test">Тут будут примеры работ</div>
+                    <div class="test">Тут будут примеры работ</div>
+                    <div class="test">Тут будут примеры работ</div>
+                    <div class="test">Тут будут примеры работ</div>
+                    <div class="test">Тут будут примеры работ</div>
+                </div>
+            </div>
+        </div>
+        <div class="simpleSteps block">
+            <h1 class="titleText">
+                4 ПРОСТЫХ ШАГА
                 <br />
+                ДО УСТАНОВКИ ОКНА
+            </h1>
+            <img
+                id="stepsImg"
+                src="./images/4steps.png"
+                alt="" />
+        </div>
+        <div class="reviewBlock">
+            <h1 class="titleText">ОТЗЫВЫ</h1>
+            <div class="videoCarousel">
+                <div class="videoCarouselBody">
+                    <div class="testV">Тут будут отзывы</div>
+                    <div class="testV">Тут будут отзывы</div>
+                    <div class="testV">Тут будут отзывы</div>
+                    <div class="testV">Тут будут отзывы</div>
+                    <div class="testV">Тут будут отзывы</div>
+                    <div class="testV">Тут будут отзывы</div>
+                    <div class="testV">Тут будут отзывы</div>
+                    <div class="testV">Тут будут отзывы</div>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <h1 class="titleText">ЗАКАЗАТЬ РАСЧЁТ</h1>
+            <div class="orderCount">
+                <textarea
+                    class="orderCountText"
+                    name="orderCountText"
+                    id=""
+                    placeholder="Введите текст"></textarea>
+                <div class="orderSend">
+                    <input
+                        type="text"
+                        class="orderNumber"
+                        placeholder="Ваш телефон" />
+                    <button class="orderSendButton">Отправить</button>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <h1 class="titleText">НАША ГЕОЛОКАЦИЯ</h1>
+            <div class="geo">Тут будет геолокация</div>
+        </div>
+        <div class="end">
+            <h1 class="panorama2">«ООО ПАНОРАМА»</h1>
+            <h2 class="number2">
                 +7-985-418-19-73
-              </p>
-            </div>
-          </a>
+                <br />
+                Варшавское шоссе, д.125 стр.1
+            </h2>
         </div>
-      </div>
-      <div></div>
-    </div>
-    <div class="shortaboutus">
-      <div><h1 class="tableshort">КОРОТКО О НАС</h1></div>
-      <div>
-        <h2 class="textshort">
-          Мы — команда профессионалов, специализирующаяся на производстве
-          практичных и надежных окон по ценам производителя.
-
-          <br />
-          <br />
-          Мы предлагаем широкий спектр услуг, включая вызов замерщика в удобное
-          для вас время, гарантию на монтаж и гарантийное обслуживание абсолютно
-          бесплатно. Также мы предоставляем возможность заключения договора на
-          дому для вашего комфорта. Доверьтесь нам, и мы сделаем ваш дом более
-          уютным и функциональным!
-        </h2>
-      </div>
-      <div>
-        <img class="imgshort" src="./images/krat.svg" alt="" />
-        <img class="imgshortmobile" src="images/kratmobile.png" alt="" />
-      </div>
-    </div>
-    <div class="wehavetrust">
-        <div>
-            <h1>НАМ ДОВЕРЯЮТ</h1>
-        </div>
-        <div class="roottrustblocks">
-            <div class="trustcontainer">
-                <div class="trustblock"></div>
-                <div class="trustblock"></div>
-                <div class="trustblock"></div>
-                <div class="trustblock"></div>
-                <div class="trustblock"></div>
-                <div class="trustblock"></div>
-            </div>
-        </div>
-    </div>
-    <div class="freeservices">
-      <div class="textfreeservices">
-        <h1>БЕСПЛАТНЫЕ УСЛУГИ</h1>
-      </div>
-    </div>
-    <div class="blocksfreeservices">
-      <div class="block1">
-        <img class="imgb1" src="./images/zamer 1.svg" alt="" />
-        <h1 class="textb1">
-          ВЫЗОВ
-          <br />
-          ЗАМЕРЩИКА
-        </h1>
-      </div>
-      <div class="block2">
-        <img class="imgb2" src="./images/usl1.png" alt="" />
-        <h1 class="textb2">
-          ГАРАНТИЯ
-          <br />
-          НА МОНТАЖ
-        </h1>
-      </div>
-      <div class="block3">
-        <img class="imgb3" src="./images/usl2.svg" alt="" />
-        <h1 class="textb3">
-          ГАРАНТИЙНОЕ
-          <br />
-          ОБСЛУЖИВАНИЕ
-        </h1>
-      </div>
-    </div>
-    <div class="end">
-      <h1 class="panorama2">«ООО ПАНОРАМА»</h1>
-      <h2 class="number2">
-        +7-985-418-19-73
-        <br />
-        Варшавское шоссе, д.125 стр.1
-      </h2>
-    </div>
-    <script src="./js/select.js"></script>
-    <script type="text/javascript">
-      document.querySelector(".custom-select").value = "index.html";
-    </script>
-  </body>
+        <script src="./js/select.js"></script>
+        <script type="text/javascript">
+            document.querySelector(".custom-select").value = "index.html";
+        </script>
+        <script src="/js/carousel.js"></script>
+        <script src="/js/video_carousel.js"></script>
+        <script>
+            addEventListener("resize", (event) => {
+                setSize();
+                videoSetSize();
+            });
+        </script>
+    </body>
 </html>
