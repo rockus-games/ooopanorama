@@ -8,7 +8,9 @@ function setSize() {
         for (var i = 0; i < cards.length; i++) {
             var parentWidth = carousel.getBoundingClientRect().width;
 
-            cards[i].style.width = `${(parentWidth - 40) / 3}px`;
+            cards[i].style.width = isMobile()
+                ? "100%"
+                : `${(parentWidth - 40) / 3}px`;
         }
     });
 }

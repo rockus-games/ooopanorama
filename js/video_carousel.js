@@ -6,7 +6,9 @@ function videoSetSize() {
         for (var i = 0; i < cards.length; i++) {
             var parentWidth = carousel.getBoundingClientRect().width;
 
-            cards[i].style.width = `${(parentWidth - 40) / 3}px`;
+            cards[i].style.width = isMobile()
+                ? "100%"
+                : `${(parentWidth - 40) / 3}px`;
         }
         cards[0].classList.add("first");
         cards[cards.length - 1].classList.add("last");

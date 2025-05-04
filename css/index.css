@@ -8,8 +8,7 @@
 }
 
 .bannerImg {
-    width: 100vw;
-    display: flex;
+    width: 100%;
 }
 .rootTrustBlocks {
     background-color: #eee;
@@ -47,6 +46,10 @@
     flex-direction: column;
     flex: 2;
     justify-content: center;
+}
+
+#shortAboutUsSpacer {
+    flex: 4;
 }
 
 .tableShort {
@@ -234,18 +237,16 @@
     height: 60px;
 }
 
-.blockcallsurveyor {
-    flex-direction: column;
-    justify-content: center;
-    display: flex;
-    width: 18vw;
-    height: 7vw;
+.callMeasure {
     background-color: #336281;
     border-radius: 15px;
-    margin-left: 40vw;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
 }
 
-.blocksFreeServices {
+.freeServices {
     display: flex;
     justify-content: space-between;
 }
@@ -256,13 +257,14 @@
     display: flex;
     width: 32%;
     background-color: #57a2bd;
-    border-radius: 0.6vw;
+    border-radius: 10px;
 }
 
 .freeServicesBlock > img {
-    margin-top: 3%;
-    margin-left: 0.7vw;
-    width: 93%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
 }
 
 .freeServicesBlock > h1 {
@@ -273,62 +275,43 @@
     font-size: 24px;
 }
 
-.callsurveyortext {
+.callMeasureText {
+    display: flex;
     text-align: center;
     color: #ffffff;
-    font-size: 1.6vw;
+    font-size: 24px;
     font-family: "M PLUS 1p";
     margin-top: 1.3vw;
     margin: 0%;
 }
-.mailcallsurveyor {
-    color: #ffffff;
-    font-size: 1.5vw;
-    font-family: "Roboto";
-    font-weight: 400;
-    margin-top: 0.5vw;
-    text-decoration: underline;
-    margin-left: 2.5vw;
-}
-.telephone {
-    display: none;
-}
-.imgtelephone {
-    display: none;
-}
-.end {
-    justify-content: space-between;
-    margin-top: 10vw;
-    display: flex;
+
+.callMeasureText > img {
     width: 100%;
-    height: 12vw;
+    flex: 1;
+}
+
+.callMeasureText > p {
+    flex: 5;
+}
+
+#callMeasureTel {
+    display: none;
+}
+
+.end {
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: #336281;
+    color: white;
 }
-.panorama2 {
-    white-space: nowrap;
-    font-size: 1.5vw;
-    color: #ffffff;
-    font-family: "M PLUS 1p";
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgb(34, 34, 34);
-    margin-top: 2.5vw;
-    margin-left: 17vw;
+
+.endRow {
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
 }
-.number2 {
-    white-space: nowrap;
-    font-size: 1.3vw;
-    color: rgb(255, 255, 255);
-    font-family: "Roboto";
-    font-weight: 300;
-    margin-top: 2.9vw;
-    text-align: end;
-    margin-right: 15vw;
-    line-height: 2.5vw;
-}
-.mailcallsurveyor {
-    text-decoration: none;
-    margin: 0%;
-}
+
 .emailOrTel {
     margin: 0%;
     align-self: center;
@@ -338,9 +321,177 @@
 
 .geo {
     background-color: #eee;
-    aspect-ratio: 3;
+    aspect-ratio: 2;
 }
+
+#bannerMob {
+    display: none;
+}
+
+.endRight {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: end;
+}
+
+.endRight > h2 {
+    font-weight: 400;
+    font-family: "Montserrat";
+    margin: 10px;
+}
+
+.endRight > .number {
+    margin: 0;
+    font-weight: 600 !important;
+    font-size: 34px;
+}
+
+#disclaimer {
+    width: 80%;
+}
+
+.brandsImg {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.brandsImg > img {
+    width: 100%;
+}
+
 @media screen and (max-width: 500px) {
+    .menu {
+        display: none;
+    }
+
+    #banner {
+        display: none;
+    }
+
+    #bannerMob {
+        display: flex;
+    }
+
+    .titleText {
+        font-size: 28px;
+    }
+
+    .brandsImg {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #callMeasureMail {
+        display: none;
+    }
+
+    #callMeasureTel {
+        display: flex;
+    }
+
+    .callMeasureText {
+        font-size: 16px;
+    }
+
+    .callMeasure {
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    #shortAboutUsSpacer {
+        display: none;
+    }
+    .shortAboutUs {
+        position: relative;
+        background-image: none;
+    }
+    .shortAboutUs:before {
+        opacity: 0.5;
+        background-image: url("/images/krat.svg");
+        background-size: cover;
+        background-position: 75% 50%;
+        content: " ";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .shortAboutUsText {
+        margin-left: 20px;
+        opacity: 1;
+        position: relative;
+    }
+
+    .rootTrustBlocks {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .carouselButton {
+        display: none;
+    }
+
+    .testV {
+        width: 80%;
+    }
+
+    .freeServices {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .freeServicesBlock {
+        width: 100%;
+    }
+
+    .askUserData {
+        flex-direction: column;
+    }
+
+    .askUserField {
+        width: 100%;
+    }
+
+    .askSend,
+    .orderSend {
+        flex-direction: column-reverse;
+    }
+
+    .askSend > *,
+    .orderSend > * {
+        width: 100%;
+    }
+
+    .orderNumber {
+        width: 94%;
+    }
+
+    .end {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .endRow {
+        flex-direction: column;
+    }
+
+    .endRow > .headerLogo {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #disclaimer {
+        width: 100%;
+    }
+}
+/*@media screen and (max-width: 500px) {
     body {
         align-content: center;
         justify-content: center;
@@ -386,13 +537,6 @@
         width: 6vw;
         margin-right: 1vw;
     }
-    .linkwhtsmobile {
-        align-self: center;
-        margin: 0%;
-    }
-    .linkTgMobile {
-        align-self: center;
-    }
     .numbermobile {
         display: block;
         font-size: 3.3vw;
@@ -417,9 +561,8 @@
         display: inherit;
         width: 99vw;
         height: 100vw;
-        /* margin-right: 8px; */
     }
-    .blocksFreeServices {
+    .freeServices {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -464,18 +607,6 @@
     }
     .textb3 {
         font-size: 6vw;
-    }
-    .imgbrands {
-        display: none;
-    }
-    .imgbrandsmobile {
-        display: block;
-        width: 80vw;
-        align-self: center;
-    }
-    .blockimgbrands {
-        display: flex;
-        justify-content: center;
     }
     .imgshort {
         display: none;
@@ -577,3 +708,4 @@
         font-family: "Roboto";
     }
 }
+*/
