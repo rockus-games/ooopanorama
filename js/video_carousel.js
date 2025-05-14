@@ -24,7 +24,7 @@ document.querySelectorAll(".videoCarousel").forEach((carousel) => {
 
     var left = document.createElement("div");
     left.classList.add("carouselButton", "previous");
-    left.innerHTML = `<img src="/images/next.svg" />`;
+    left.innerHTML = `<img src="images/next.svg" />`;
     left.onclick = () => {
         cards[selected].classList.remove("selected");
         if (selected != cards.length - 1) {
@@ -40,7 +40,7 @@ document.querySelectorAll(".videoCarousel").forEach((carousel) => {
 
     var right = document.createElement("div");
     right.classList.add("carouselButton");
-    right.innerHTML = `<img src="/images/next.svg" />`;
+    right.innerHTML = `<img src="images/next.svg" />`;
     right.onclick = () => {
         if (selected != 0) {
             body.scrollTo({

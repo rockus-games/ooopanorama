@@ -21,7 +21,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 
     var left = document.createElement("div");
     left.classList.add("carouselButton", "previous");
-    left.innerHTML = `<img src="/images/next.svg" />`;
+    left.innerHTML = `<img src="images/next.svg" />`;
     left.onclick = () => {
         body.scrollTo({
             top: 0,
@@ -32,7 +32,7 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
 
     var right = document.createElement("div");
     right.classList.add("carouselButton");
-    right.innerHTML = `<img src="/images/next.svg" />`;
+    right.innerHTML = `<img src="images/next.svg" />`;
     right.onclick = () => {
         body.scrollTo({
             top: 0,
