@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>Панель администратора</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="./css/admin.css" />
+    </head>
+    <body>
+        <div id="leftMenu">
+            <div id="leftLogoContainer">
+                <img
+                    id="leftLogo"
+                    src="./images/logo.png" />
+            </div>
+            <h1 class="leftTitle">Страницы</h1>
+            <button
+                class="leftMenuButton"
+                onclick="changePage('main')">
+                Главная
+            </button>
+            <button
+                class="leftMenuButton"
+                onclick="changePage('windows')">
+                Окна
+            </button>
+        </div>
+        <div id="main"></div>
+        <script src="./js/admin/change_page.js"></script>
+    </body>
+</html>

@@ -9,6 +9,7 @@
 
 .bannerImg {
     width: 100%;
+    vertical-align: middle;
 }
 .rootTrustBlocks {
     background-color: #eee;
