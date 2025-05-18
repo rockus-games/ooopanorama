@@ -1,0 +1,22 @@
+{
+  "name": "ooopanorama",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rockus-games/ooopanorama.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rockus-games/ooopanorama/issues"
+  },
+  "homepage": "https://github.com/rockus-games/ooopanorama#readme",
+  "description": "",
+  "dependencies": {
+    "@types/jquery": "^3.5.32"
+  }
+}

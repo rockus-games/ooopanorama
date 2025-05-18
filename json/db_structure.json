@@ -1,0 +1,35 @@
+{
+    "main_prices": {
+        "name": {
+            "type": "text",
+            "label": "Название"
+        },
+        "text_1": {
+            "type": "text",
+            "label": "Текст 1"
+        },
+        "text_2": {
+            "type": "text",
+            "label": "Текст 2"
+        },
+        "text_3": {
+            "type": "text",
+            "label": "Текст 3"
+        },
+        "old_price": {
+            "type": "int",
+            "label": "Старая цена"
+        },
+        "new_price": {
+            "type": "int",
+            "label": "Новая цена"
+        },
+        "image": {
+            "type": "text",
+            "label": "Изображение"
+        }
+    },
+    "test": {
+        "1": "2"
+    }
+}

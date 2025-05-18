@@ -1,0 +1,22 @@
+.main_prices,
+.main_works {
+    aspect-ratio: 0.6;
+    min-width: 300px;
+    background-color: #eee;
+    flex-shrink: 0;
+    transition: ease-in-out 0.3s;
+}
+
+.main_reviews {
+    aspect-ratio: 2;
+    min-height: 250px;
+    background-color: #eee;
+    flex-shrink: 0;
+    transition: ease-in-out 0.3s;
+}
+
+@media screen and (max-width: 500px) {
+    .main_reviews {
+        width: 80%;
+    }
+}

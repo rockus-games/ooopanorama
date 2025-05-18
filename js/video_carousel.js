@@ -61,9 +61,3 @@ document.querySelectorAll(".videoCarousel").forEach((carousel) => {
 });
 
 videoSetSize();
-
-document.querySelectorAll(".test").forEach((element) => {
-    element.onclick = () => {
-        console.log(element.getBoundingClientRect().left);
-    };
-});

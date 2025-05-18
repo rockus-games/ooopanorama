@@ -13,6 +13,9 @@
         <link
             rel="stylesheet"
             href="./css/admin.css" />
+        <link
+            rel="stylesheet"
+            href="./css/style.css" />
     </head>
     <body>
         <div id="leftMenu">
@@ -33,7 +36,25 @@
                 Окна
             </button>
         </div>
-        <div id="main"></div>
+        <div id="main">
+            <h1>Главная</h1>
+            <div class="blocks">
+                <button onclick="prepareAddNew('main_prices')">
+                    Примеры цен
+                </button>
+                <button onclick="prepareAddNew('test')">Примеры работ</button>
+                <button>Отзывы</button>
+            </div>
+            <h1 id="mainAddText">Добавить</h1>
+            <div class="dataBlock">
+                <div class="addBlock">Выберите пункт для добавления</div>
+                <div class="previewBlock">Тут будет превью</div>
+            </div>
+        </div>
+        <script src="./js/admin/add_new.js"></script>
         <script src="./js/admin/change_page.js"></script>
+        <script src="./js/admin/login.js"></script>
+        <script src="./js/admin/load_image.js"></script>
+        <script src="./js/admin/get_structure.js"></script>
     </body>
 </html>
