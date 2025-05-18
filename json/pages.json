@@ -1,0 +1,53 @@
+{
+    "main": {
+        "name": "Главная",
+        "buttons": [
+            {
+                "name": "main_prices",
+                "label": "Примеры цен"
+            },
+            {
+                "name": "main_works",
+                "label": "Примеры работ"
+            },
+            {
+                "name": "main_reviews",
+                "label": "Отзывы"
+            }
+        ]
+    },
+    "balcony": {
+        "name": "Балконы",
+        "buttons": [
+            {
+                "name": "balcony_prices",
+                "label": "Примеры цен"
+            },
+            {
+                "name": "balcony_works",
+                "label": "Примеры работ"
+            },
+            {
+                "name": "balcony_reviews",
+                "label": "Отзывы"
+            }
+        ]
+    },
+    "cottage": {
+        "name": "Коттеджи",
+        "buttons": [
+            {
+                "name": "cottage_prices",
+                "label": "Примеры цен"
+            },
+            {
+                "name": "cottage_works",
+                "label": "Примеры работ"
+            },
+            {
+                "name": "cottage_reviews",
+                "label": "Отзывы"
+            }
+        ]
+    }
+}

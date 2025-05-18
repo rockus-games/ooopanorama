@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>Панель администратора</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="./css/admin.css" />
+        <link
+            rel="stylesheet"
+            href="./css/style.css" />
+        <link
+            rel="stylesheet"
+            href="./css/main/carousel.css" />
+    </head>
+    <body>
+        <div id="leftMenu">
+            <div id="leftLogoContainer">
+                <img
+                    id="leftLogo"
+                    src="./images/logo.png" />
+            </div>
+            <h1 class="leftTitle">Страницы</h1>
+            <button
+                class="leftMenuButton"
+                onclick="changePage('main')">
+                Главная
+            </button>
+            <button
+                class="leftMenuButton"
+                onclick="changePage('balcony')">
+                Балконы
+            </button>
+            <button
+                class="leftMenuButton"
+                onclick="changePage('cottage')">
+                Коттеджи
+            </button>
+        </div>
+        <div id="main">
+            <h1 id="pageTitle">Выберите страницу</h1>
+            <div class="blocks"></div>
+            <h1 id="mainAddText">Добавить</h1>
+            <div class="dataBlock">
+                <div id="addBlock">Выберите пункт для добавления</div>
+                <div id="previewBlock"></div>
+            </div>
+            <h1 id="mainAddText">Созданные</h1>
+            <div id="showBlock">Выберите пункт для отображения</div>
+        </div>
+        <script src="./js/admin/add_new.js"></script>
+        <script src="./js/admin/load_created.js"></script>
+        <script src="./js/admin/login.js"></script>
+        <script src="./js/admin/load_image.js"></script>
+        <script src="./js/admin/get_structure.js"></script>
+        <script src="./js/admin/change_page.js"></script>
+    </body>
+</html>

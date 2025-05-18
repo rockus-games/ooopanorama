@@ -1,0 +1,144 @@
+body {
+    display: flex;
+    align-items: stretch;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Montserrat";
+}
+
+button {
+    font-family: inherit;
+}
+#leftMenu {
+    background-color: #2f3340;
+    max-width: 500px;
+    width: 30vw;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#leftLogo {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#leftLogoContainer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #4b7b9e;
+}
+
+button {
+    text-align: left;
+    border: none;
+    background-color: #4a536e;
+    font-size: 24px;
+    padding: 30px 100px;
+    color: white;
+    border-radius: 100px;
+    transition: ease-in-out 0.2s;
+}
+
+button:hover {
+    background-color: #697599;
+}
+
+button:active {
+    background-color: #4a536e;
+}
+
+.leftMenuButton {
+    margin-left: 30px;
+    width: 70%;
+    padding: 15px 30px;
+}
+.leftTitle {
+    font-size: 28px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#main {
+    padding: 20px 60px;
+    flex-grow: 0;
+    width: 70vw;
+}
+
+.blocks {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#mainAddText {
+    margin-top: 60px;
+}
+
+.dataBlock {
+    display: flex;
+    gap: 30px;
+}
+
+#addBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+#addBlock > input,
+#addBlock > textarea {
+    font-family: "Montserrat";
+    border-radius: 10px;
+    font-size: 20px;
+    border: #2f33407e 1px solid;
+    padding: 10px;
+}
+
+.buttonForFile {
+    background-color: transparent;
+    color: grey;
+    font-size: 20px;
+    padding: 10px;
+    border: #2f33407e 1px solid;
+    border-radius: 10px;
+}
+
+.buttonForFile:hover {
+    background-color: #b4bcd1;
+}
+
+.buttonForFile:active {
+    background-color: transparent;
+}
+
+#showBlock {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    overflow-x: scroll;
+}
+
+.createdElement {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hoverMenu {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #2f33407e;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: ease-in-out 0.3s;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

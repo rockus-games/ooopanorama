@@ -1,0 +1,117 @@
+.doubleButton {
+    display: flex;
+    justify-content: center;
+}
+
+.doubleButton > * {
+    font-size: 24px;
+}
+
+.balconyDoubleButton {
+    border: none;
+    background-color: #eee;
+    padding: 20px 150px;
+    transition: ease-in-out 0.3s;
+}
+
+.balconyColdBtn {
+    border-radius: 0 100px 100px 0;
+}
+
+.balconyWarmBtn {
+    border-radius: 100px 0 0 100px;
+}
+
+.balconyDoubleButton:hover,
+.selectedBalconyBtn {
+    background-color: #4b7b9e;
+}
+.balconyImg {
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    background-image: url("/images/balcony/balconyWarm.png");
+    background-size: 100% 100%;
+    aspect-ratio: 3;
+}
+.balconyImg > img {
+    width: 60%;
+}
+
+.balconyWarmCold {
+    text-align: center;
+    font-size: 24px;
+}
+
+.balconyColdPrice {
+    display: none;
+}
+
+.orderCall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.orderCallInput {
+    width: 40%;
+    border: #4b7c9e7b 1px solid;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    font-family: "Montserrat";
+}
+
+.orderCallButton {
+    border: none;
+    background-color: #336281;
+    color: white;
+    font-size: 28px;
+    border-radius: 15px;
+    padding: 10px;
+    width: 42%;
+    height: 80px;
+}
+
+.orderCall > p {
+    color: #336281be;
+}
+
+.balconyDesignImg {
+    width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .balconyImg {
+        background-image: url("/images/balcony/balconyWarmMob.png");
+        aspect-ratio: 0.616;
+    }
+
+    .balconyImg > img {
+        width: 100%;
+    }
+
+    .orderCallInput {
+        width: 90%;
+    }
+
+    .orderCallButton {
+        width: 95%;
+    }
+
+    .doubleButton {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .balconyColdBtn {
+        border-radius: 0 0 100px 100px;
+    }
+
+    .balconyWarmBtn {
+        border-radius: 100px 100px 0 0;
+    }
+}
