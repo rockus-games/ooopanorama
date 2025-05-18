@@ -16,8 +16,21 @@
             }
         ]
     },
-    "windows": {
-        "name": "Окна",
-        "buttons": []
+    "balcony": {
+        "name": "Балконы",
+        "buttons": [
+            {
+                "name": "balcony_prices",
+                "label": "Примеры цен"
+            },
+            {
+                "name": "balcony_works",
+                "label": "Примеры работ"
+            },
+            {
+                "name": "balcony_reviews",
+                "label": "Отзывы"
+            }
+        ]
     }
 }

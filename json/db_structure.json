@@ -52,5 +52,59 @@
             "type": "file",
             "label": "Видео"
         }
+    },
+    "balcony_prices": {
+        "name": {
+            "type": "text",
+            "label": "Название"
+        },
+        "text_1": {
+            "type": "text",
+            "label": "Текст 1"
+        },
+        "text_2": {
+            "type": "text",
+            "label": "Текст 2"
+        },
+        "text_3": {
+            "type": "text",
+            "label": "Текст 3"
+        },
+        "old_price": {
+            "type": "text",
+            "label": "Старая цена"
+        },
+        "new_price": {
+            "type": "text",
+            "label": "Новая цена"
+        },
+        "image": {
+            "type": "file",
+            "label": "Изображение"
+        }
+    },
+    "balcony_works": {
+        "name": {
+            "type": "text",
+            "label": "Название"
+        },
+        "info_1": {
+            "type": "text",
+            "label": "Текст 1"
+        },
+        "info_2": {
+            "type": "text",
+            "label": "Текст 2"
+        },
+        "image": {
+            "type": "file",
+            "label": "Изображение"
+        }
+    },
+    "balcony_reviews": {
+        "video": {
+            "type": "file",
+            "label": "Видео"
+        }
     }
 }

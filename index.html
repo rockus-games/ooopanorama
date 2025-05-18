@@ -30,6 +30,33 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
+        <div
+            id="mobileNavMenu"
+            class="mobileNavMenuClosed">
+            <div id="mobNavBtnSpacer">
+                <button
+                    id="mobileNavButton"
+                    onclick="toggleSideMenu()">
+                    <img
+                        src="./images/menu.svg"
+                        alt="" />
+                </button>
+            </div>
+            <div class="menuItem"><a href="#">ОКНА</a></div>
+            <div class="menuItem"><a href="balcony.html">БАЛКОНЫ</a></div>
+            <div class="menuItem"><a href="cottage.html">КОТТЕДЖИ</a></div>
+            <!-- <div class="menuItem">
+                <a href="#">
+                    КОМПЛЕКТУЮЩИЕ ДЛЯ
+                    <br />
+                    ОКОН
+                </a>
+            </div> -->
+            <div class="menuItem">
+                <a href="#reviewBlock">ОТЗЫВЫ</a>
+            </div>
+            <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
+        </div>
         <div class="headerMob">
             <div class="header block">
                 <img
@@ -57,7 +84,9 @@
                     </a>
                 </div>
             </div>
-            <button id="mobileNavButton">
+            <button
+                id="mobileNavButton"
+                onclick="toggleSideMenu()">
                 <img
                     src="./images/menu.svg"
                     alt="" />
@@ -79,23 +108,23 @@
             <div class="menuLine">
                 <div class="menuItem"><a href="#">ОКНА</a></div>
                 <div class="vl"></div>
-                <div class="menuItem"><a href="#">БАЛКОНЫ</a></div>
+                <div class="menuItem"><a href="balcony.html">БАЛКОНЫ</a></div>
                 <div class="vl"></div>
-                <div class="menuItem"><a href="#">КОТТЕДЖИ</a></div>
-                <div class="vl"></div>
+                <div class="menuItem"><a href="cottage.html">КОТТЕДЖИ</a></div>
+                <!-- <div class="vl"></div>
                 <div class="menuItem">
                     <a href="#">
                         КОМПЛЕКТУЮЩИЕ ДЛЯ
                         <br />
                         ОКОН
                     </a>
-                </div>
-            </div>
-            <div class="menuLine">
-                <div class="menuItem"><a href="#">ОТЗЫВЫ</a></div>
+                </div> -->
                 <div class="vl"></div>
-                <div class="menuItem"><a href="#">КОНТАКТЫ</a></div>
+                <div class="menuItem"><a href="#reviewBlock">ОТЗЫВЫ</a></div>
+                <div class="vl"></div>
+                <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
             </div>
+            <div class="menuLine"></div>
         </div>
         <div class="brands block">
             <h1 class="titleText">МАРКИ С КОТОРЫМИ МЫ РАБОТАЕМ</h1>
@@ -305,7 +334,10 @@
                 src="./images/4steps.png"
                 alt="" />
         </div>
-        <div class="reviewBlock">
+        <div
+            class="reviewBlock"
+            id="reviewBlock"
+            name="reviewBlock">
             <h1 class="titleText">ОТЗЫВЫ</h1>
             <div class="videoCarousel">
                 <div
@@ -334,7 +366,10 @@
         </div>
         <div class="block">
             <h1 class="titleText">НАША ГЕОЛОКАЦИЯ</h1>
-            <div class="geo">
+            <div
+                class="geo"
+                id="geo"
+                name="geo">
                 <iframe
                     src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e9ca1c19348ef2d224db3b99564eaf4f3e34ff4cb43f2e738a64539018c9a8c&amp;source=constructor"
                     width="1039"

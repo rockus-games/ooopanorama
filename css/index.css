@@ -348,7 +348,37 @@
     width: 100%;
 }
 
+#mobileNavMenu {
+    display: none;
+    background-color: #336281;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transition: ease-in-out 0.4s;
+}
+
+#mobNavBtnSpacer {
+    display: flex;
+    justify-content: end;
+}
+
 @media screen and (max-width: 500px) {
+    #mobileNavMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #mobileNavMenu > .menuItem {
+        margin: 10px 0px;
+    }
+    .mobileNavMenuOpened {
+        left: 0;
+    }
+
+    .mobileNavMenuClosed {
+        left: 100vw;
+    }
+
     .menu {
         display: none;
     }
