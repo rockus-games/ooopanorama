@@ -1,7 +1,9 @@
 .main_prices,
 .main_works,
 .balcony_prices,
-.balcony_works {
+.balcony_works,
+.cottage_prices,
+.cottage_works {
     min-width: 300px;
     min-height: 500px;
     max-height: 1000px;
@@ -20,7 +22,9 @@
 .main_prices > h1,
 .main_works > h1,
 .balcony_prices > h1,
-.balcony_works > h1 {
+.balcony_works > h1,
+.cottage_prices > h1,
+.cottage_works > h1 {
     font-weight: 400;
     margin: 0;
     font-size: 20px;
@@ -52,7 +56,8 @@
 }
 
 .main_reviews,
-.balcony_reviews {
+.balcony_reviews,
+.cottage_reviews {
     height: 400px;
     background-color: #eee;
     flex-shrink: 0;
@@ -61,7 +66,8 @@
 
 @media screen and (max-width: 500px) {
     .main_reviews,
-    .balcony_reviews {
+    .balcony_reviews,
+    .cottage_reviews {
         width: 80%;
     }
 }

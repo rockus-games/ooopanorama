@@ -1,0 +1,49 @@
+.cottageWindows {
+    width: 100%;
+}
+
+.woodColors {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.woodColorsCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: #eee 5px solid;
+    border-radius: 20px;
+    color: #eee;
+    text-shadow: 1px 1px 1px black;
+}
+
+.veerImg {
+    width: 200%;
+    height: 100%;
+}
+
+.cardVenge {
+    background-image: url("/images/cottage/venge.jpg");
+}
+.cardAntracit {
+    background-image: url("/images/cottage/antracit.jpg");
+}
+.cardBereza {
+    background-image: url("/images/cottage/bereza.jpg");
+}
+
+@media screen and (max-width: 500px) {
+    .woodColors {
+        flex-direction: column;
+    }
+
+    .woodColorsCard {
+        aspect-ratio: 2;
+    }
+
+    .veerImg {
+        width: 100%;
+    }
+}

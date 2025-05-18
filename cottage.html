@@ -14,6 +14,9 @@
             href="./css/index.css" />
         <link
             rel="stylesheet"
+            href="./css/cottage.css" />
+        <link
+            rel="stylesheet"
             href="./css/main/carousel.css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -96,12 +99,12 @@
             <img
                 class="bannerImg"
                 id="banner"
-                src="./images/banner.png"
+                src="./images/cottage/bannerCottage.png"
                 alt="" />
             <img
                 class="bannerImg"
                 id="bannerMob"
-                src="./images/bannerMob.png"
+                src="./images/cottage/bannerCottageMob.png"
                 alt="" />
         </div>
         <div class="menu block">
@@ -177,66 +180,39 @@
                 </p>
             </a>
         </div>
-        <div class="shortAboutUs block">
-            <div class="shortAboutUsText">
-                <h1 class="tableShort">КОРОТКО О НАС</h1>
-                <h2 class="textShort">
-                    Мы — команда профессионалов, специализирующаяся на
-                    производстве практичных и надежных окон по ценам
-                    производителя.
-
-                    <br />
-                    <br />
-                    Мы предлагаем широкий спектр услуг, включая вызов замерщика
-                    в удобное для вас время, гарантию на монтаж и гарантийное
-                    обслуживание абсолютно бесплатно. Также мы предоставляем
-                    возможность заключения договора на дому для вашего комфорта.
-                    Доверьтесь нам, и мы сделаем ваш дом более уютным и
-                    функциональным!
-                </h2>
-            </div>
-            <div id="shortAboutUsSpacer"></div>
+        <div class="block">
+            <h1 class="titleText">УСТАНОВКА ОКОН В ЗАГОРОДНЫХ ДОМАХ</h1>
+            <img
+                class="cottageWindows"
+                src="/images/cottage/cottageWindows.png"
+                alt="" />
         </div>
-        <div class="weHaveTrust block">
-            <h1 class="titleText">НАМ ДОВЕРЯЮТ</h1>
-
-            <div class="rootTrustBlocks">
-                <div class="trustBlock">
-                    <img
-                        class="trustImg"
-                        src="./images/trust/1.png"
-                        alt="" />
+        <div class="block">
+            <h1 class="titleText">
+                ПОПУЛЯРНЫЕ ЦВЕТА ЛАМИНАЦИИ ПО ДОСТУПНОЙ ЦЕНЕ
+            </h1>
+            <div class="woodColors">
+                <div class="woodColorsCard cardAntracit">
+                    <h1>Антрацит</h1>
+                    Тёмный
                 </div>
-                <div class="trustBlock">
-                    <img
-                        class="trustImg"
-                        src="./images/trust/2.png"
-                        alt="" />
+                <div class="woodColorsCard cardBereza">
+                    <h1>Берёза</h1>
+                    Светлый
                 </div>
-                <div class="trustBlock">
-                    <img
-                        class="trustImg"
-                        src="./images/trust/3.png"
-                        alt="" />
+                <div class="woodColorsCard cardVenge">
+                    <h1>Венге</h1>
+                    Тёмный
                 </div>
-                <div class="trustBlock">
-                    <img
-                        class="trustImg"
-                        src="./images/trust/4.png"
-                        alt="" />
-                </div>
-                <div class="trustBlock">
-                    <img
-                        class="trustImg"
-                        src="./images/trust/5.png"
-                        alt="" />
-                </div>
-                <div class="trustBlock">
-                    <img
-                        class="trustImg"
-                        src="./images/trust/6.png"
-                        alt="" />
-                </div>
+                <img
+                    class="veerImg"
+                    src="/images/cottage/veer.png"
+                    alt="" />
+                <p>
+                    Более 40 цветов в палитре. Возможность подобрать цвет окон
+                    под любой интерьер и фасад дома. Эксклюзивные цветовые
+                    решения.
+                </p>
             </div>
         </div>
         <div class="priceExample block">
@@ -244,8 +220,8 @@
             <div class="carousel">
                 <div
                     class="carouselBody"
-                    id="carouselMainPrices">
-                    <div class="main_prices">Тут будут примеры цен</div>
+                    id="carouselCottagePrices">
+                    <div class="cottage_prices">Тут будут примеры цен</div>
                 </div>
             </div>
         </div>
@@ -318,8 +294,8 @@
             <div class="carousel">
                 <div
                     class="carouselBody"
-                    id="carouselMainWorks">
-                    <div class="main_works">Тут будут примеры работ</div>
+                    id="carouselCottageWorks">
+                    <div class="cottage_works">Тут будут примеры работ</div>
                 </div>
             </div>
         </div>
@@ -342,8 +318,8 @@
             <div class="videoCarousel">
                 <div
                     class="videoCarouselBody"
-                    id="carouselMainReviews">
-                    <div class="main_reviews">Тут будут отзывы</div>
+                    id="carouselCottageReviews">
+                    <div class="cottage_reviews">Тут будут отзывы</div>
                 </div>
             </div>
         </div>
@@ -408,9 +384,9 @@
         <script src="./js/admin/get_structure.js"></script>
         <script src="./js/load_content.js"></script>
         <script>
-            loadElements("#carouselMainPrices", "main_prices");
-            loadElements("#carouselMainWorks", "main_works");
-            loadElements("#carouselMainReviews", "main_reviews");
+            loadElements("#carouselCottagePrices", "cottage_prices");
+            loadElements("#carouselCottageWorks", "cottage_works");
+            loadElements("#carouselCottageReviews", "cottage_reviews");
         </script>
         <script src="./js/is_mobile.js"></script>
         <script>

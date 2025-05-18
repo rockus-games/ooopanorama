@@ -32,5 +32,22 @@
                 "label": "Отзывы"
             }
         ]
+    },
+    "cottage": {
+        "name": "Коттеджи",
+        "buttons": [
+            {
+                "name": "cottage_prices",
+                "label": "Примеры цен"
+            },
+            {
+                "name": "cottage_works",
+                "label": "Примеры работ"
+            },
+            {
+                "name": "cottage_reviews",
+                "label": "Отзывы"
+            }
+        ]
     }
 }
