@@ -10,7 +10,7 @@ function sendEmail(name, email, phone, msg) {
         },
         success: (data) => {
             console.log(data);
-            // location.reload();
+            location.reload();
         },
     });
 }
