@@ -27,6 +27,7 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="headerMob">
@@ -212,14 +213,9 @@
         <div class="priceExample block">
             <h1 class="titleText">ПРИМЕРЫ ЦЕН</h1>
             <div class="carousel">
-                <div class="carouselBody">
-                    <div class="main_prices">Тут будут примеры цен</div>
-                    <div class="main_prices">Тут будут примеры цен</div>
-                    <div class="main_prices">Тут будут примеры цен</div>
-                    <div class="main_prices">Тут будут примеры цен</div>
-                    <div class="main_prices">Тут будут примеры цен</div>
-                    <div class="main_prices">Тут будут примеры цен</div>
-                    <div class="main_prices">Тут будут примеры цен</div>
+                <div
+                    class="carouselBody"
+                    id="carouselMainPrices">
                     <div class="main_prices">Тут будут примеры цен</div>
                 </div>
             </div>
@@ -291,14 +287,9 @@
         <div class="priceExample block">
             <h1 class="titleText">ПРИМЕРЫ РАБОТ</h1>
             <div class="carousel">
-                <div class="carouselBody">
-                    <div class="main_works">Тут будут примеры работ</div>
-                    <div class="main_works">Тут будут примеры работ</div>
-                    <div class="main_works">Тут будут примеры работ</div>
-                    <div class="main_works">Тут будут примеры работ</div>
-                    <div class="main_works">Тут будут примеры работ</div>
-                    <div class="main_works">Тут будут примеры работ</div>
-                    <div class="main_works">Тут будут примеры работ</div>
+                <div
+                    class="carouselBody"
+                    id="carouselMainWorks">
                     <div class="main_works">Тут будут примеры работ</div>
                 </div>
             </div>
@@ -317,14 +308,9 @@
         <div class="reviewBlock">
             <h1 class="titleText">ОТЗЫВЫ</h1>
             <div class="videoCarousel">
-                <div class="videoCarouselBody">
-                    <div class="main_reviews">Тут будут отзывы</div>
-                    <div class="main_reviews">Тут будут отзывы</div>
-                    <div class="main_reviews">Тут будут отзывы</div>
-                    <div class="main_reviews">Тут будут отзывы</div>
-                    <div class="main_reviews">Тут будут отзывы</div>
-                    <div class="main_reviews">Тут будут отзывы</div>
-                    <div class="main_reviews">Тут будут отзывы</div>
+                <div
+                    class="videoCarouselBody"
+                    id="carouselMainReviews">
                     <div class="main_reviews">Тут будут отзывы</div>
                 </div>
             </div>
@@ -348,7 +334,13 @@
         </div>
         <div class="block">
             <h1 class="titleText">НАША ГЕОЛОКАЦИЯ</h1>
-            <div class="geo">Тут будет геолокация</div>
+            <div class="geo">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e9ca1c19348ef2d224db3b99564eaf4f3e34ff4cb43f2e738a64539018c9a8c&amp;source=constructor"
+                    width="1039"
+                    height="618"
+                    frameborder="0"></iframe>
+            </div>
         </div>
         <div class="block end">
             <div class="endRow">
@@ -375,9 +367,17 @@
                 предварительного уведомления.
             </div>
         </div>
-        <script src="./js/is_mobile.js"></script>
+
         <script src="./js/carousel.js"></script>
         <script src="./js/video_carousel.js"></script>
+        <script src="./js/admin/get_structure.js"></script>
+        <script src="./js/load_content.js"></script>
+        <script>
+            loadElements("#carouselMainPrices", "main_prices");
+            loadElements("#carouselMainWorks", "main_works");
+            loadElements("#carouselMainReviews", "main_reviews");
+        </script>
+        <script src="./js/is_mobile.js"></script>
         <script>
             addEventListener("resize", (event) => {
                 setSize();

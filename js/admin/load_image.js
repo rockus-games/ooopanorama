@@ -1,14 +1,12 @@
-function loadImage(id) {
-    var imgPicker = document.querySelector(id);
+async function loadImage(element) {
+    var file = element.files[0];
 
-    var file = imgPicker.files[0];
-
-    console.log(file.name);
+    console.log(file);
 
     var data = new FormData();
     data.append("file", file);
 
-    $.ajax({
+    var img = await $.ajax({
         url: "/php/load_image.php",
         method: "POST",
         data: data,
@@ -18,4 +16,6 @@ function loadImage(id) {
             uploadedFile;
         },
     });
+
+    return img;
 }

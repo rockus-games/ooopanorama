@@ -1,0 +1,23 @@
+{
+    "main": {
+        "name": "Главная",
+        "buttons": [
+            {
+                "name": "main_prices",
+                "label": "Примеры цен"
+            },
+            {
+                "name": "main_works",
+                "label": "Примеры работ"
+            },
+            {
+                "name": "main_reviews",
+                "label": "Отзывы"
+            }
+        ]
+    },
+    "windows": {
+        "name": "Окна",
+        "buttons": []
+    }
+}

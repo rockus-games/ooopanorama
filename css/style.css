@@ -62,6 +62,7 @@ a {
     display: flex;
     align-items: center;
     scroll-behavior: smooth;
+    height: 600px;
 }
 
 .carouselBody,
@@ -72,6 +73,8 @@ a {
     margin-left: 20px;
     margin-right: 20px;
     scroll-snap-type: x mandatory;
+    width: 100%;
+    /* justify-content: center; */
 }
 
 .videoCarouselBody {
@@ -107,7 +110,7 @@ a {
 }
 
 .selected {
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 .first {

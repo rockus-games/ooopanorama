@@ -1,15 +1,54 @@
 .main_prices,
 .main_works {
-    aspect-ratio: 0.6;
     min-width: 300px;
+    min-height: 500px;
+    max-height: 1000px;
     background-color: #eee;
     flex-shrink: 0;
     transition: ease-in-out 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 10px;
+
+    justify-content: space-between;
+}
+
+.main_prices > h1,
+.main_works > h1 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 20px;
+    white-space: pre-wrap;
+}
+
+#oldPriceText {
+    white-space: inherit;
+}
+
+#oldPriceSpan {
+    position: relative;
+}
+
+#oldPriceSpan > div {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    background-image: url("/images/cross.png");
+    background-size: 100% 100%;
+    left: 0;
+    top: 0;
+}
+
+#newPrice {
+    background-color: #336281;
+    text-align: center;
+    color: white;
 }
 
 .main_reviews {
-    aspect-ratio: 2;
-    min-height: 250px;
+    height: 400px;
     background-color: #eee;
     flex-shrink: 0;
     transition: ease-in-out 0.3s;
@@ -19,4 +58,10 @@
     .main_reviews {
         width: 80%;
     }
+}
+
+.image {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
 }

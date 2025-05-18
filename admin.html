@@ -16,6 +16,9 @@
         <link
             rel="stylesheet"
             href="./css/style.css" />
+        <link
+            rel="stylesheet"
+            href="./css/main/carousel.css" />
     </head>
     <body>
         <div id="leftMenu">
@@ -37,24 +40,21 @@
             </button>
         </div>
         <div id="main">
-            <h1>Главная</h1>
-            <div class="blocks">
-                <button onclick="prepareAddNew('main_prices')">
-                    Примеры цен
-                </button>
-                <button onclick="prepareAddNew('test')">Примеры работ</button>
-                <button>Отзывы</button>
-            </div>
+            <h1 id="pageTitle">Выберите страницу</h1>
+            <div class="blocks"></div>
             <h1 id="mainAddText">Добавить</h1>
             <div class="dataBlock">
-                <div class="addBlock">Выберите пункт для добавления</div>
-                <div class="previewBlock">Тут будет превью</div>
+                <div id="addBlock">Выберите пункт для добавления</div>
+                <div id="previewBlock"></div>
             </div>
+            <h1 id="mainAddText">Созданные</h1>
+            <div id="showBlock">Выберите пункт для отображения</div>
         </div>
         <script src="./js/admin/add_new.js"></script>
-        <script src="./js/admin/change_page.js"></script>
+        <script src="./js/admin/load_created.js"></script>
         <script src="./js/admin/login.js"></script>
         <script src="./js/admin/load_image.js"></script>
         <script src="./js/admin/get_structure.js"></script>
+        <script src="./js/admin/change_page.js"></script>
     </body>
 </html>

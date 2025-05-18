@@ -1,7 +1,7 @@
 body {
     display: flex;
     align-items: stretch;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     font-family: "Montserrat";
 }
@@ -11,8 +11,8 @@ button {
 }
 #leftMenu {
     background-color: #2f3340;
-    height: 100%;
-    width: 500px;
+    max-width: 500px;
+    width: 30vw;
     gap: 30px;
     display: flex;
     flex-direction: column;
@@ -64,6 +64,8 @@ button:active {
 
 #main {
     padding: 20px 60px;
+    flex-grow: 0;
+    width: 70vw;
 }
 
 .blocks {
@@ -78,20 +80,65 @@ button:active {
 
 .dataBlock {
     display: flex;
-    justify-content: space-between;
     gap: 30px;
 }
 
-.addBlock {
+#addBlock {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     gap: 10px;
+    width: 50%;
 }
 
-.addBlock > input {
+#addBlock > input,
+#addBlock > textarea {
+    font-family: "Montserrat";
     border-radius: 10px;
     font-size: 20px;
     border: #2f33407e 1px solid;
     padding: 10px;
+}
+
+.buttonForFile {
+    background-color: transparent;
+    color: grey;
+    font-size: 20px;
+    padding: 10px;
+    border: #2f33407e 1px solid;
+    border-radius: 10px;
+}
+
+.buttonForFile:hover {
+    background-color: #b4bcd1;
+}
+
+.buttonForFile:active {
+    background-color: transparent;
+}
+
+#showBlock {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    overflow-x: scroll;
+}
+
+.createdElement {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hoverMenu {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #2f33407e;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: ease-in-out 0.3s;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
