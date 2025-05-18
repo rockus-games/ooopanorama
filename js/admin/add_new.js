@@ -42,6 +42,8 @@ async function prepareAddNew(table) {
                     data: data,
                     table: table,
                     id: addBlock.dataset.id,
+                    login: sessionStorage.getItem("login"),
+                    password: sessionStorage.getItem("password"),
                 },
                 (a) => {
                     console.log(a);
@@ -57,6 +59,8 @@ async function prepareAddNew(table) {
                 keys: keys,
                 data: data,
                 table: table,
+                login: sessionStorage.getItem("login"),
+                password: sessionStorage.getItem("password"),
             },
             (a) => {
                 console.log(a);

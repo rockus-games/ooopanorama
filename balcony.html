@@ -224,12 +224,18 @@
             <input
                 type="text"
                 placeholder="Введите имя"
-                class="orderCallInput" />
+                class="orderCallInput"
+                id="orderCallName" />
             <input
                 type="text"
                 placeholder="Введите номер"
-                class="orderCallInput" />
-            <button class="orderCallButton">Заказать</button>
+                class="orderCallInput"
+                id="orderCallPhone" />
+            <button
+                class="orderCallButton"
+                onclick="orderCallSend()">
+                Заказать
+            </button>
             <p>
                 Отправляя заявку, вы соглашаетесь на обработку персональных
                 данных
@@ -298,14 +304,20 @@
                     <input
                         class="askUserField"
                         type="text"
+                        id="askUserFieldName"
                         placeholder="Ваше имя" />
                     <input
                         class="askUserField"
                         type="text"
+                        id="askUserFieldPhone"
                         placeholder="Ваш телефон" />
                 </div>
                 <div class="askSend">
-                    <button class="askSendButton">Отправить</button>
+                    <button
+                        class="askSendButton"
+                        onclick="askSendButton()">
+                        Отправить
+                    </button>
                     <div class="askSendTerms">
                         <input
                             type="checkbox"
@@ -356,14 +368,19 @@
                 <textarea
                     class="orderCountText"
                     name="orderCountText"
-                    id=""
+                    id="orderCountText"
                     placeholder="Введите текст"></textarea>
                 <div class="orderSend">
                     <input
                         type="text"
                         class="orderNumber"
+                        id="orderCountNumber"
                         placeholder="Ваш телефон" />
-                    <button class="orderSendButton">Отправить</button>
+                    <button
+                        class="orderSendButton"
+                        onclick="orderCountSend()">
+                        Отправить
+                    </button>
                 </div>
             </div>
         </div>
@@ -423,5 +440,7 @@
                 videoSetSize();
             });
         </script>
+        <script src="./js/videoPlay.js"></script>
+        <script src="./js/send_email.js"></script>
     </body>
 </html>

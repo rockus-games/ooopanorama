@@ -66,6 +66,7 @@ button:active {
     padding: 20px 60px;
     flex-grow: 0;
     width: 70vw;
+    display: none;
 }
 
 .blocks {
@@ -90,8 +91,8 @@ button:active {
     width: 50%;
 }
 
-#addBlock > input,
-#addBlock > textarea {
+input,
+textarea {
     font-family: "Montserrat";
     border-radius: 10px;
     font-size: 20px;
@@ -141,4 +142,11 @@ button:active {
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+#loginDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px;
 }

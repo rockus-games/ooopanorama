@@ -1,4 +1,6 @@
 <?php
+    include 'login.php';
+
     $table = $_POST["table"];
     $id = $_POST["id"];
 

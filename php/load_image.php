@@ -1,4 +1,6 @@
 <?php
+    include 'login.php';
+
     $bytes = file_get_contents($_FILES['file']['tmp_name']);
     $name = $_FILES['file']['name'];
 

@@ -5,6 +5,8 @@ async function loadImage(element) {
 
     var data = new FormData();
     data.append("file", file);
+    data.append("login", sessionStorage.getItem("login"));
+    data.append("password", sessionStorage.getItem("password"));
 
     var img = await $.ajax({
         url: "/php/load_image.php",

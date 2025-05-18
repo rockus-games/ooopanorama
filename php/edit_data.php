@@ -1,4 +1,6 @@
 <?php
+    include 'login.php';
+    
     $keys = $_POST["keys"];
     $data = $_POST["data"];
     $table = $_POST["table"];
