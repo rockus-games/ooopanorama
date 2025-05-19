@@ -345,13 +345,13 @@
 }
 
 .brandsImg > img {
-    width: 100%;
+    width: 25%;
 }
 
 #mobileNavMenu {
     display: none;
     background-color: #336281;
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     transition: ease-in-out 0.4s;
@@ -362,7 +362,21 @@
     justify-content: end;
 }
 
+.geo > iframe {
+    width: 100%;
+    height: 100%;
+}
+
 @media screen and (max-width: 500px) {
+    .geo {
+        background-color: #eee;
+        aspect-ratio: 0.5;
+    }
+
+    .geo > iframe {
+        width: 100%;
+    }
+
     #mobileNavMenu {
         display: flex;
         flex-direction: column;
@@ -401,12 +415,20 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    .brandsImg > img {
+        width: 100%;
+    }
+
     #callMeasureMail {
         display: none;
     }
 
     #callMeasureTel {
         display: flex;
+    }
+
+    #callMeasureTel > img {
+        width: 25%;
     }
 
     .callMeasureText {
