@@ -30,13 +30,37 @@ function loadElements(table) {
                             return;
                         }
 
+                        if (!Object.keys(dbStruct).includes(field)) {
+                            return;
+                        }
+
                         if (dbStruct[field].type == "file") {
                             element
                                 .querySelector(`#${field}`)
                                 .setAttribute("src", e[field]);
+                        } else if (dbStruct[field].type == "array_of_images") {
+                            var a = JSON.parse(e[field]);
+                            console.log(a);
+
+                            for (var i = 0; i < a.length; i++) {
+                                var img = document.createElement("img");
+                                img.src = a[i];
+                                element
+                                    .querySelector(`#${field}`)
+                                    .appendChild(img);
+                            }
+                            element.querySelector(
+                                "#imageButton"
+                            ).style.display = "initial";
                         } else {
                             element.querySelector(`#${field}`).innerHTML =
                                 e[field];
+
+                            if (element.querySelector("#videoButton") != null) {
+                                element.querySelector(
+                                    "#videoButton"
+                                ).style.display = "initial";
+                            }
                         }
                     });
 
@@ -82,6 +106,8 @@ function loadElements(table) {
                             data: {
                                 table: table,
                                 id: element.dataset.id,
+                                login: sessionStorage.getItem("login"),
+                                password: sessionStorage.getItem("password"),
                             },
                             success: (data) => {
                                 location.reload();

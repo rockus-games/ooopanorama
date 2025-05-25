@@ -30,27 +30,35 @@
         }
     },
     "main_works": {
-        "name": {
-            "type": "text",
-            "label": "Название"
-        },
-        "info_1": {
-            "type": "text",
-            "label": "Текст 1"
-        },
-        "info_2": {
-            "type": "text",
-            "label": "Текст 2"
-        },
         "image": {
             "type": "file",
             "label": "Изображение"
         }
     },
     "main_reviews": {
+        "name": {
+            "type": "text",
+            "label": "Имя"
+        },
+        "city": {
+            "type": "text",
+            "label": "Город"
+        },
+        "review": {
+            "type": "text",
+            "label": "Отзыв"
+        },
+        "avatar": {
+            "type": "file",
+            "label": "Человек"
+        },
         "video": {
             "type": "file",
             "label": "Видео"
+        },
+        "photos": {
+            "type": "array_of_images",
+            "label": "Изображения"
         }
     },
     "balcony_prices": {
@@ -84,27 +92,35 @@
         }
     },
     "balcony_works": {
-        "name": {
-            "type": "text",
-            "label": "Название"
-        },
-        "info_1": {
-            "type": "text",
-            "label": "Текст 1"
-        },
-        "info_2": {
-            "type": "text",
-            "label": "Текст 2"
-        },
         "image": {
             "type": "file",
             "label": "Изображение"
         }
     },
     "balcony_reviews": {
+        "name": {
+            "type": "text",
+            "label": "Имя"
+        },
+        "city": {
+            "type": "text",
+            "label": "Город"
+        },
+        "review": {
+            "type": "text",
+            "label": "Отзыв"
+        },
+        "avatar": {
+            "type": "file",
+            "label": "Человек"
+        },
         "video": {
             "type": "file",
             "label": "Видео"
+        },
+        "photos": {
+            "type": "array_of_images",
+            "label": "Изображения"
         }
     },
     "cottage_prices": {
@@ -138,27 +154,35 @@
         }
     },
     "cottage_works": {
-        "name": {
-            "type": "text",
-            "label": "Название"
-        },
-        "info_1": {
-            "type": "text",
-            "label": "Текст 1"
-        },
-        "info_2": {
-            "type": "text",
-            "label": "Текст 2"
-        },
         "image": {
             "type": "file",
             "label": "Изображение"
         }
     },
     "cottage_reviews": {
+        "name": {
+            "type": "text",
+            "label": "Имя"
+        },
+        "city": {
+            "type": "text",
+            "label": "Город"
+        },
+        "review": {
+            "type": "text",
+            "label": "Отзыв"
+        },
+        "avatar": {
+            "type": "file",
+            "label": "Человек"
+        },
         "video": {
             "type": "file",
             "label": "Видео"
+        },
+        "photos": {
+            "type": "array_of_images",
+            "label": "Изображения"
         }
     }
 }

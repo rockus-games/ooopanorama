@@ -1,9 +1,10 @@
 <?php
     function login() {
+        include 'consts.php';
         $login = $_POST["login"];
         $password = $_POST["password"];
 
-        $conn = new mysqli("localhost:3306", "cb07184_panorama", "9BWv5j430", "cb07184_panorama");
+        $conn = new mysqli($address, "cb07184_panorama", "9BWv5j430", "cb07184_panorama");
 
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
@@ -23,6 +24,10 @@
         
         $conn->close();
         return false;
+    }
+
+    if(login() == false) {
+        die("Wrong user");
     }
     
 ?>

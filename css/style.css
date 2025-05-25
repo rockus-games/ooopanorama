@@ -4,6 +4,11 @@ body {
     font-family: "Montserrat";
 }
 
+html,
+body {
+    height: 100%;
+}
+
 a {
     text-decoration: none;
 }
@@ -109,10 +114,6 @@ a {
     transform: scaleX(-1);
 }
 
-.selected {
-    transform: scale(1.1);
-}
-
 .first {
     transform-origin: center left;
 }
@@ -170,9 +171,5 @@ a {
 
     #linkTg > img {
         width: 28px;
-    }
-
-    .selected {
-        transform: none;
     }
 }
