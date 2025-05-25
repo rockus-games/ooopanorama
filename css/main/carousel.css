@@ -19,6 +19,13 @@
     justify-content: space-between;
 }
 
+.main_works,
+.balcony_works,
+.cottage_works {
+    min-height: 400px;
+    padding: 10px;
+}
+
 .main_prices > h1,
 .main_works > h1,
 .balcony_prices > h1,
