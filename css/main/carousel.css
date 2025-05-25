@@ -22,8 +22,8 @@
 .main_works,
 .balcony_works,
 .cottage_works {
-    min-height: 400px;
-    padding: 10px;
+    min-height: 400px !important;
+    padding: 10px !important;
 }
 
 .main_prices > h1,
