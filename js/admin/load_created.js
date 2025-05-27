@@ -39,6 +39,9 @@ function loadElements(table) {
                                 .querySelector(`#${field}`)
                                 .setAttribute("src", e[field]);
                         } else if (dbStruct[field].type == "array_of_images") {
+                            if (e[field] == "") {
+                                return;
+                            }
                             var a = JSON.parse(e[field]);
                             console.log(a);
 
