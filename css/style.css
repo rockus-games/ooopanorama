@@ -67,7 +67,7 @@ a {
     display: flex;
     align-items: center;
     scroll-behavior: smooth;
-    height: 600px;
+    min-height: 600px;
 }
 
 .carouselBody,

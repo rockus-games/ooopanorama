@@ -144,10 +144,17 @@ function pickManyFile(btn) {
         for (var i = 0; i < a.length; i++) {
             var img = document.createElement("img");
             img.src = a[i];
+            if (i == 0) {
+                img.classList = "image viewing";
+            } else {
+                img.classList = "image hidden";
+            }
             parent.appendChild(img);
         }
 
-        element.querySelector("#imageButton").style.display = "initial";
+        if (element.querySelector("#imageButton") != null) {
+            element.querySelector("#imageButton").style.display = "initial";
+        }
     };
 
     input.click();

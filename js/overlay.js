@@ -17,3 +17,43 @@ function showOverlayVideos(element) {
         overlay.style.display = "flex";
     }
 }
+
+function nextImage(parent) {
+    let images = parent
+        .querySelector(".imageContainer")
+        .querySelectorAll(".image");
+
+    let index = -1;
+
+    for (var i = 0; i < images.length; i++) {
+        if (images[i].classList.contains("viewing")) {
+            index = i;
+            break;
+        }
+    }
+
+    if (index + 1 < images.length) {
+        images[index].classList = "image hidden";
+        images[index + 1].classList = "image viewing";
+    }
+}
+
+function prevImage(parent) {
+    let images = parent
+        .querySelector(".imageContainer")
+        .querySelectorAll(".image");
+
+    let index = -1;
+
+    for (var i = 0; i < images.length; i++) {
+        if (images[i].classList.contains("viewing")) {
+            index = i;
+            break;
+        }
+    }
+
+    if (index - 1 >= 0) {
+        images[index].classList = "image hidden";
+        images[index - 1].classList = "image viewing";
+    }
+}

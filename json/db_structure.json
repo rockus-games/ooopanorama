@@ -24,8 +24,8 @@
             "type": "text",
             "label": "Новая цена"
         },
-        "image": {
-            "type": "file",
+        "images": {
+            "type": "array_of_images",
             "label": "Изображение"
         }
     },
@@ -36,130 +36,6 @@
         }
     },
     "main_reviews": {
-        "name": {
-            "type": "text",
-            "label": "Имя"
-        },
-        "city": {
-            "type": "text",
-            "label": "Город"
-        },
-        "review": {
-            "type": "text",
-            "label": "Отзыв"
-        },
-        "avatar": {
-            "type": "file",
-            "label": "Человек"
-        },
-        "video": {
-            "type": "file",
-            "label": "Видео"
-        },
-        "photos": {
-            "type": "array_of_images",
-            "label": "Изображения"
-        }
-    },
-    "balcony_prices": {
-        "name": {
-            "type": "text",
-            "label": "Название"
-        },
-        "text_1": {
-            "type": "text",
-            "label": "Текст 1"
-        },
-        "text_2": {
-            "type": "text",
-            "label": "Текст 2"
-        },
-        "text_3": {
-            "type": "text",
-            "label": "Текст 3"
-        },
-        "old_price": {
-            "type": "text",
-            "label": "Старая цена"
-        },
-        "new_price": {
-            "type": "text",
-            "label": "Новая цена"
-        },
-        "image": {
-            "type": "file",
-            "label": "Изображение"
-        }
-    },
-    "balcony_works": {
-        "image": {
-            "type": "file",
-            "label": "Изображение"
-        }
-    },
-    "balcony_reviews": {
-        "name": {
-            "type": "text",
-            "label": "Имя"
-        },
-        "city": {
-            "type": "text",
-            "label": "Город"
-        },
-        "review": {
-            "type": "text",
-            "label": "Отзыв"
-        },
-        "avatar": {
-            "type": "file",
-            "label": "Человек"
-        },
-        "video": {
-            "type": "file",
-            "label": "Видео"
-        },
-        "photos": {
-            "type": "array_of_images",
-            "label": "Изображения"
-        }
-    },
-    "cottage_prices": {
-        "name": {
-            "type": "text",
-            "label": "Название"
-        },
-        "text_1": {
-            "type": "text",
-            "label": "Текст 1"
-        },
-        "text_2": {
-            "type": "text",
-            "label": "Текст 2"
-        },
-        "text_3": {
-            "type": "text",
-            "label": "Текст 3"
-        },
-        "old_price": {
-            "type": "text",
-            "label": "Старая цена"
-        },
-        "new_price": {
-            "type": "text",
-            "label": "Новая цена"
-        },
-        "image": {
-            "type": "file",
-            "label": "Изображение"
-        }
-    },
-    "cottage_works": {
-        "image": {
-            "type": "file",
-            "label": "Изображение"
-        }
-    },
-    "cottage_reviews": {
         "name": {
             "type": "text",
             "label": "Имя"

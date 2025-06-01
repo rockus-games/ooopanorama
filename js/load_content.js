@@ -35,32 +35,51 @@ function loadElements(block, table) {
                         var a = showBlock.querySelector(`#${field}`);
 
                         if (dbStruct[field].type == "file") {
+                            if (e[field] == "") {
+                                return;
+                            }
                             a.setAttribute("src", e[field]);
-                            if (
-                                showBlock.querySelector("#videoButton") != null
-                            ) {
-                                showBlock.querySelector(
-                                    "#videoButton"
-                                ).style.display = "initial";
-                                showBlock.querySelector(
-                                    "#videoButton"
-                                ).id = `${table}_${id}_videoButton`;
+                            if (field == "video") {
+                                if (
+                                    showBlock.querySelector("#videoButton") !=
+                                    null
+                                ) {
+                                    showBlock.querySelector(
+                                        "#videoButton"
+                                    ).style.display = "initial";
+                                    showBlock.querySelector(
+                                        "#videoButton"
+                                    ).id = `${table}_${id}_videoButton`;
+                                }
                             }
                         } else if (dbStruct[field].type == "array_of_images") {
+                            if (e[field] == "") {
+                                return;
+                            }
                             var b = JSON.parse(e[field]);
 
                             for (var i = 0; i < b.length; i++) {
                                 var img = document.createElement("img");
                                 img.src = b[i];
+                                if (i == 0) {
+                                    img.classList = "image viewing";
+                                } else {
+                                    img.classList = "image hidden";
+                                }
+
                                 a.appendChild(img);
                             }
 
-                            showBlock.querySelector(
-                                "#imageButton"
-                            ).style.display = "initial";
-                            showBlock.querySelector(
-                                "#imageButton"
-                            ).id = `${table}_${id}_imageButton`;
+                            if (
+                                showBlock.querySelector("#imageButton") != null
+                            ) {
+                                showBlock.querySelector(
+                                    "#imageButton"
+                                ).style.display = "initial";
+                                showBlock.querySelector(
+                                    "#imageButton"
+                                ).id = `${table}_${id}_imageButton`;
+                            }
                         } else {
                             a.innerHTML = e[field];
                         }
