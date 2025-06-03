@@ -51,9 +51,11 @@ function loadElements(block, table) {
 
                         if (dbStruct[field].type == "file") {
                             if (e[field] == "") {
+                                a.id = `${table}_${id}_${field}`;
                                 return;
                             }
                             a.setAttribute("src", e[field]);
+                            console.log(`${field} ${id} - ${a.src}`);
 
                             if (field == "video") {
                                 if (
@@ -68,6 +70,7 @@ function loadElements(block, table) {
                             }
                         } else if (dbStruct[field].type == "array_of_images") {
                             if (e[field] == "") {
+                                a.id = `${table}_${id}_${field}`;
                                 return;
                             }
                             var b = JSON.parse(e[field]);
@@ -98,6 +101,7 @@ function loadElements(block, table) {
                         }
 
                         a.id = `${table}_${id}_${field}`;
+                        console.log(a);
                     });
                 });
             });
