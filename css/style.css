@@ -7,6 +7,7 @@ body {
 html,
 body {
     height: 100%;
+    overflow: scroll;
 }
 
 a {
@@ -18,19 +19,43 @@ a {
     padding-right: 15%;
 }
 
+.headerRight {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    justify-content: start;
+}
+
+.headerAddress {
+    margin: 0;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.headerMail {
+    margin-top: 10px;
+}
+
 .header {
     justify-content: space-between;
     align-items: center;
     display: flex;
-    height: 100px;
+    height: 200px;
 }
 
 .headerMob {
     background-color: #336281;
+    position: sticky;
+    top: 0;
+    z-index: 200;
 }
 
 .headerLogo {
-    width: 20%;
+    width: 30%;
 }
 
 .call {
@@ -54,8 +79,11 @@ a {
 }
 
 .callImg {
-    margin-left: 15px;
     width: 40px;
+}
+
+.link {
+    margin-left: 15px;
 }
 
 #linkTg > img {
@@ -132,8 +160,8 @@ a {
 
 @media screen and (max-width: 500px) {
     .block {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 
     .header {
@@ -143,10 +171,42 @@ a {
         padding: 20px;
     }
 
+    .headerRight {
+        display: none;
+    }
+
+    .headerRightMob {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+    }
+
     .headerMob {
         display: flex;
         justify-content: space-between;
         align-items: start;
+    }
+
+    .link {
+        margin-left: 0px;
+    }
+
+    .headerAddress {
+        font-size: 18px;
+    }
+
+    .call {
+        flex-direction: column-reverse;
+    }
+
+    #linkCall {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .number {
+        font-size: 24px;
     }
 
     .headerLogo {
@@ -161,15 +221,11 @@ a {
         background-color: #336281;
     }
 
-    .number {
-        font-size: 16px;
-    }
-
     .link > img {
-        width: 30px;
+        width: 50px;
     }
 
     #linkTg > img {
-        width: 28px;
+        width: 48px;
     }
 }
