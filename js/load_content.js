@@ -18,7 +18,7 @@ function loadElements(block, table) {
 
             var id = -1;
 
-            data.forEach((e) => {
+            data.forEach((e, index) => {
                 $.get(`/elements/${table}.html`, (code) => {
                     showBlock.insertAdjacentHTML("beforeend", code);
 
@@ -50,38 +50,81 @@ function loadElements(block, table) {
                         var a = showBlock.querySelector(`#${field}`);
 
                         if (dbStruct[field].type == "file") {
+                            var hor =
+                                showBlock.querySelectorAll(
+                                    ".horizontalActions"
+                                )[index];
+
                             if (e[field] == "") {
                                 a.id = `${table}_${id}_${field}`;
+
+                                if (field == "video") {
+                                    if (a.parentNode.style.display == "") {
+                                        a.parentNode.style.display = "none";
+                                    }
+
+                                    if (a.style.display == "") {
+                                        a.style.display = "none";
+                                    }
+
+                                    if (
+                                        hor != null &&
+                                        hor.style.display == ""
+                                    ) {
+                                        hor.style.display = "none";
+                                    }
+                                }
+
                                 return;
                             }
-                            a.setAttribute("src", e[field]);
-                            console.log(`${field} ${id} - ${a.src}`);
-
-                            if (field == "video") {
-                                if (
-                                    showBlock.querySelector(
-                                        `#${table}_${id}_videoButton`
-                                    ) != null
-                                ) {
-                                    showBlock.querySelector(
-                                        `#${table}_${id}_videoButton`
-                                    ).style.display = "flex";
-                                }
+                            if (a.parentNode.classList.contains("content")) {
+                                a.parentNode.style.display = "flex";
                             }
+                            a.setAttribute("src", e[field]);
+
+                            if (hor != null) {
+                                hor.style.display = "flex";
+                            }
+
+                            // console.log(`${field} ${id} - ${a.src}`);
                         } else if (dbStruct[field].type == "array_of_images") {
+                            var hor =
+                                showBlock.querySelectorAll(
+                                    ".horizontalActions"
+                                )[index];
+
                             if (e[field] == "") {
                                 a.id = `${table}_${id}_${field}`;
+
+                                if (a.style.display == "") {
+                                    a.style.display = "none";
+                                }
+
+                                if (hor != null && hor.style.display == "") {
+                                    hor.style.display = "none";
+                                }
+
                                 return;
                             }
                             var b = JSON.parse(e[field]);
 
+                            a.style.display = "flex";
+                            if (hor != null) {
+                                hor.style.display = "flex";
+                            }
+
                             for (var i = 0; i < b.length; i++) {
                                 var img = document.createElement("img");
                                 img.src = b[i];
-                                if (i == 0) {
-                                    img.classList = "image viewing";
+
+                                if (block.includes("Reviews")) {
+                                    img.classList = "image";
                                 } else {
-                                    img.classList = "image hidden";
+                                    if (i == 0) {
+                                        img.classList = "image viewing";
+                                    } else {
+                                        img.classList = "image hidden";
+                                    }
                                 }
 
                                 a.appendChild(img);
@@ -101,7 +144,6 @@ function loadElements(block, table) {
                         }
 
                         a.id = `${table}_${id}_${field}`;
-                        console.log(a);
                     });
                 });
             });

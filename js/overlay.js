@@ -57,3 +57,19 @@ function prevImage(parent) {
         images[index - 1].classList = "image viewing";
     }
 }
+
+function nextImageSimple(parent) {
+    parent.scrollBy({
+        top: 0,
+        left: 500,
+        behavior: "smooth",
+    });
+}
+
+function prevImageSimple(parent) {
+    parent.scrollBy({
+        top: 0,
+        left: -500,
+        behavior: "smooth",
+    });
+}

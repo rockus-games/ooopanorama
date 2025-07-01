@@ -1,1 +1,4 @@
-
+.bannerImg {
+    background-image: url("../images/banners/about_banner_img.jpg");
+    background-position: 100% 25%;
+}

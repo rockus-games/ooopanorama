@@ -3,7 +3,7 @@ function toggleModal() {
     console.log(modal.style.display);
 
     if (modal.style.display == "none" || modal.style.display == "") {
-        modal.style.display = "initial";
+        modal.style.display = "flex";
     } else {
         modal.style.display = "none";
     }

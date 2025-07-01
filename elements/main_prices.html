@@ -1,16 +1,19 @@
 <div class="main_prices">
     <div class="imageWrapper">
-        <p onclick="prevImage(this.parentNode)"><</p>
+        <div
+            class="carouselButton previous"
+            onclick="prevImage(this.parentNode)">
+            <img src="images/next.svg" />
+        </div>
         <div
             class="image imageContainer"
             id="images"></div>
-        <p onclick="nextImage(this.parentNode)">></p>
+        <div
+            class="carouselButton"
+            onclick="nextImage(this.parentNode)">
+            <img src="images/next.svg" />
+        </div>
     </div>
-    <!-- <img
-        id="images"
-        class="image"
-        src="/images/placeholders/price.svg"
-        alt="" /> -->
     <h1 id="name">Название</h1>
     <h1 id="text_1">Цвет: белый</h1>
     <h1 id="text_2">(24) 4 - 16 - 4</h1>

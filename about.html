@@ -66,6 +66,17 @@
             </div>
             <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
             <div class="menuItem"><a href="#">О НАС</a></div>
+            <div class="callMeasure menuItem">
+                <a
+                    id="callMeasureMail"
+                    class="callMeasureText"
+                    onclick="toggleModal()">
+                    <img
+                        src="./images/phone.png"
+                        alt="" />
+                    <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
+                </a>
+            </div>
 
             <div class="headerRightMob">
                 <div
@@ -125,7 +136,7 @@
                     </div>
                 </a>
                 <div class="call headerMail">
-                    <p class="headerAddress">Будни: 10-18</p>
+                    <p class="headerAddress">Будни: 10-21</p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="32px"
@@ -146,7 +157,7 @@
                     alt="" />
                 <div class="headerRight">
                     <div class="call">
-                        <h1 class="number">+7-985-418-19-73</h1>
+                        <p class="headerAddress">+7-985-418-19-73</p>
                         <a
                             class="linkWhatsApp link"
                             href="https://wa.me/79854181973">
@@ -198,7 +209,7 @@
                         </div>
                     </a>
                     <div class="call">
-                        <p class="headerAddress">Будни: 10-18</p>
+                        <p class="headerAddress">Будни: 10-21</p>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             height="32px"
@@ -220,16 +231,40 @@
             </button>
         </div>
         <div class="banner">
-            <img
+            <div
                 class="bannerImg"
                 id="banner"
-                src="./images/about/bannerAbout.png"
-                alt="" />
-            <img
+                alt="">
+                <div class="bannerImgGrad">
+                    <h1 class="bannerText">
+                        ЦЕНА ОТ ПРОИЗВОДИТЕЛЯ!
+                        <br />
+                        СОБСТВЕННОЕ ПРОИЗВОДСТВО
+                        <br />
+                        ОКОН В ПОДОЛЬСКЕ
+                    </h1>
+                </div>
+            </div>
+            <div
                 class="bannerImg"
                 id="bannerMob"
-                src="./images/about/bannerAboutMob.png"
-                alt="" />
+                alt="">
+                <div class="bannerImgGrad">
+                    <h1 class="bannerText">
+                        ЦЕНА ОТ
+                        <br />
+                        ПРОИЗВОДИТЕЛЯ!
+                        <br />
+                        СОБСТВЕННОЕ
+                        <br />
+                        ПРОИЗВОДСТВО
+                        <br />
+                        ОКОН В
+                        <br />
+                        В ПОДОЛЬСКЕ
+                    </h1>
+                </div>
+            </div>
         </div>
         <div class="menu block">
             <div class="menuLine">
@@ -252,10 +287,22 @@
                 <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
                 <div class="vl"></div>
                 <div class="menuItem"><a href="#">О НАС</a></div>
+                <div class="vl"></div>
+                <div class="callMeasure menuItem">
+                    <a
+                        id="callMeasureMail"
+                        class="callMeasureText"
+                        onclick="toggleModal()">
+                        <img
+                            src="./images/phone.png"
+                            alt="" />
+                        <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
+                    </a>
+                </div>
             </div>
             <div class="menuLine"></div>
         </div>
-        <div class="callMeasure">
+        <!-- <div class="callMeasure">
             <a
                 id="callMeasureMail"
                 class="callMeasureText"
@@ -278,27 +325,8 @@
                     +7-985-418-19-73
                 </p>
             </a>
-        </div>
-        <div class="shortAboutUs block">
-            <div class="shortAboutUsText">
-                <h1 class="tableShort">КОРОТКО О НАС</h1>
-                <h2 class="textShort">
-                    Мы — команда профессионалов, специализирующаяся на
-                    производстве практичных и надежных окон по ценам
-                    производителя.
+        </div> -->
 
-                    <br />
-                    <br />
-                    Мы предлагаем широкий спектр услуг, включая вызов замерщика
-                    в удобное для вас время, гарантию на монтаж и гарантийное
-                    обслуживание абсолютно бесплатно. Также мы предоставляем
-                    возможность заключения договора на дому для вашего комфорта.
-                    Доверьтесь нам, и мы сделаем ваш дом более уютным и
-                    функциональным!
-                </h2>
-            </div>
-            <div id="shortAboutUsSpacer"></div>
-        </div>
         <div class="weHaveTrust block">
             <h1 class="titleText">НАМ ДОВЕРЯЮТ</h1>
 
@@ -341,7 +369,27 @@
                 </div>
             </div>
         </div>
-        <div class="block">
+        <div class="shortAboutUs block">
+            <div class="shortAboutUsText">
+                <h1 class="tableShort">КОРОТКО О НАС</h1>
+                <h2 class="textShort">
+                    Мы — команда профессионалов, специализирующаяся на
+                    производстве практичных и надежных окон по ценам
+                    производителя.
+
+                    <br />
+                    <br />
+                    Мы предлагаем широкий спектр услуг, включая вызов замерщика
+                    в удобное для вас время, гарантию на монтаж и гарантийное
+                    обслуживание абсолютно бесплатно. Также мы предоставляем
+                    возможность заключения договора на дому для вашего комфорта.
+                    Доверьтесь нам, и мы сделаем ваш дом более уютным и
+                    функциональным!
+                </h2>
+            </div>
+            <div id="shortAboutUsSpacer"></div>
+        </div>
+        <!-- <div class="block">
             <h1 class="titleText">ОСТАЛИСЬ ВОПРОСЫ</h1>
             <div class="ask">
                 <h1 class="askText">
@@ -375,7 +423,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="block">
             <h1 class="titleText">НАША ГЕОЛОКАЦИЯ</h1>
             <div
@@ -396,10 +444,10 @@
                     src="./images/logo.png"
                     alt="" />
                 <div class="endRight">
-                    <h2 class="number">+7-985-418-19-73</h2>
+                    <h2>+7-985-418-19-73</h2>
                     <h2>service@ooopanorama.ru</h2>
                     <h2>Варшавское шоссе, д.125 стр.1</h2>
-                    <h2>ПН-ПТ С 10 ДО 18</h2>
+                    <h2>ПН-ПТ С 10 ДО 21</h2>
                 </div>
             </div>
             <div id="disclaimer">
@@ -448,20 +496,46 @@
                 </div>
             </div>
         </div>
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                (k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a);
+            })(
+                window,
+                document,
+                "script",
+                "https://mc.yandex.ru/metrika/tag.js",
+                "ym"
+            );
 
-   ym(103090615, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/103090615" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+            ym(103090615, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true,
+            });
+        </script>
+        <noscript>
+            <div>
+                <img
+                    src="https://mc.yandex.ru/watch/103090615"
+                    style="position: absolute; left: -9999px"
+                    alt="" />
+            </div>
+        </noscript>
     </body>
 </html>

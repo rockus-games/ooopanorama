@@ -71,6 +71,17 @@
             </div>
             <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
             <div class="menuItem"><a href="about.html">О НАС</a></div>
+            <div class="callMeasure menuItem">
+                <a
+                    id="callMeasureMail"
+                    class="callMeasureText"
+                    onclick="toggleModal()">
+                    <img
+                        src="./images/phone.png"
+                        alt="" />
+                    <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
+                </a>
+            </div>
 
             <div class="headerRightMob">
                 <div
@@ -130,7 +141,7 @@
                     </div>
                 </a>
                 <div class="call headerMail">
-                    <p class="headerAddress">Будни: 10-18</p>
+                    <p class="headerAddress">Будни: 10-21</p>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         height="32px"
@@ -151,7 +162,7 @@
                     alt="" />
                 <div class="headerRight">
                     <div class="call">
-                        <h1 class="number">+7-985-418-19-73</h1>
+                        <p class="headerAddress">+7-985-418-19-73</p>
                         <a
                             class="linkWhatsApp link"
                             href="https://wa.me/79854181973">
@@ -203,7 +214,7 @@
                         </div>
                     </a>
                     <div class="call">
-                        <p class="headerAddress">Будни: 10-18</p>
+                        <p class="headerAddress">Будни: 10-21</p>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             height="32px"
@@ -225,16 +236,40 @@
             </button>
         </div>
         <div class="banner">
-            <img
+            <div
                 class="bannerImg"
                 id="banner"
-                src="./images/cottage/bannerCottage.png"
-                alt="" />
-            <img
+                alt="">
+                <div class="bannerImgGrad">
+                    <h1 class="bannerText">
+                        ТИШИНА, УЮТ И БЕЗОПАСНОСТЬ С
+                        <br />
+                        НАШИМИ ОКНАМИ ДЛЯ
+                        <br />
+                        ЗАГОРОДНОГО ДОМА
+                    </h1>
+                </div>
+            </div>
+            <div
                 class="bannerImg"
                 id="bannerMob"
-                src="./images/cottage/bannerCottageMob.png"
-                alt="" />
+                alt="">
+                <div class="bannerImgGrad">
+                    <h1 class="bannerText">
+                        ТИШИНА, УЮТ И
+                        <br />
+                        БЕЗОПАСНОСТЬ
+                        <br />
+                        С НАШИМИ
+                        <br />
+                        ОКНАМИ ДЛЯ
+                        <br />
+                        ЗАГОРОДНОГО
+                        <br />
+                        ДОМА
+                    </h1>
+                </div>
+            </div>
         </div>
         <div class="menu block">
             <div class="menuLine">
@@ -257,11 +292,23 @@
                 <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
                 <div class="vl"></div>
                 <div class="menuItem"><a href="about.html">О НАС</a></div>
+                <div class="vl"></div>
+                <div class="callMeasure menuItem">
+                    <a
+                        id="callMeasureMail"
+                        class="callMeasureText"
+                        onclick="toggleModal()">
+                        <img
+                            src="./images/phone.png"
+                            alt="" />
+                        <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
+                    </a>
+                </div>
             </div>
             <div class="menuLine"></div>
         </div>
 
-        <div class="callMeasure">
+        <!-- <div class="callMeasure">
             <a
                 id="callMeasureMail"
                 class="callMeasureText"
@@ -284,7 +331,7 @@
                     +7-985-418-19-73
                 </p>
             </a>
-        </div>
+        </div> -->
         <div class="block">
             <h1 class="titleText">УСТАНОВКА ОКОН В ЗАГОРОДНЫХ ДОМАХ</h1>
             <img
@@ -320,12 +367,7 @@
                 </p>
             </div>
         </div>
-        <div class="discounts block">
-            <h1 class="titleText">СКИДКИ И АКЦИИ</h1>
-            <img
-                src="./images/discounts.png"
-                alt="" />
-        </div>
+
         <div class="priceExample block">
             <h1 class="titleText">ПРИМЕРЫ ЦЕН</h1>
             <div class="carousel">
@@ -371,7 +413,13 @@
                 </div>
             </div>
         </div>
-        <div class="block">
+        <div class="discounts block">
+            <h1 class="titleText">СКИДКИ И АКЦИИ</h1>
+            <img
+                src="./images/discounts.png"
+                alt="" />
+        </div>
+        <!-- <div class="block">
             <h1 class="titleText">ОСТАЛИСЬ ВОПРОСЫ</h1>
             <div class="ask">
                 <h1 class="askText">
@@ -405,7 +453,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="priceExample block">
             <h1 class="titleText">ПРИМЕРЫ РАБОТ</h1>
             <div class="carousel">
@@ -425,6 +473,10 @@
             <img
                 id="stepsImg"
                 src="./images/4steps.png"
+                alt="" />
+            <img
+                id="stepsImgMob"
+                src="./images/4stepsMob.png"
                 alt="" />
         </div>
         <div
@@ -482,10 +534,10 @@
                     src="./images/logo.png"
                     alt="" />
                 <div class="endRight">
-                    <h2 class="number">+7-985-418-19-73</h2>
+                    <h2>+7-985-418-19-73</h2>
                     <h2>service@ooopanorama.ru</h2>
                     <h2>Варшавское шоссе, д.125 стр.1</h2>
-                    <h2>ПН-ПТ С 10 ДО 18</h2>
+                    <h2>ПН-ПТ С 10 ДО 21</h2>
                 </div>
             </div>
             <div id="disclaimer">
@@ -553,20 +605,46 @@
                 </div>
             </div>
         </div>
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                (k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a);
+            })(
+                window,
+                document,
+                "script",
+                "https://mc.yandex.ru/metrika/tag.js",
+                "ym"
+            );
 
-   ym(103090615, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/103090615" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+            ym(103090615, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true,
+            });
+        </script>
+        <noscript>
+            <div>
+                <img
+                    src="https://mc.yandex.ru/watch/103090615"
+                    style="position: absolute; left: -9999px"
+                    alt="" />
+            </div>
+        </noscript>
     </body>
 </html>

@@ -5,7 +5,7 @@
             src="/images/icons/person.png"
             alt=""
             srcset="" />
-        <div class="buttons">
+        <!-- <div class="buttons">
             <div
                 id="imageButton"
                 class="imageButton"
@@ -22,11 +22,33 @@
                     src="/images/icons/video.png"
                     alt="" />
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="box">
         <h1 id="name">Имя</h1>
         <h1 id="city">Город</h1>
+        <div
+            id="photos"
+            class="content">
+            <video
+                id="video"
+                src=""
+                height="400"
+                controls
+                class="video"></video>
+        </div>
+        <div class="horizontalActions">
+            <div
+                class="carouselButton previous"
+                onclick="prevImageSimple(this.parentNode.parentNode.children[2].children[0])">
+                <img src="images/next.svg" />
+            </div>
+            <div
+                class="carouselButton"
+                onclick="nextImageSimple(this.parentNode.parentNode.children[2].children[0])">
+                <img src="images/next.svg" />
+            </div>
+        </div>
         <p id="review">
             Мы как и все начали ремонт со смены окон. Остановили свой выбор на
             компании ООО Панорама, т.к. они давно на рынке и имеют собственное
@@ -34,12 +56,9 @@
             быстро и качественно! мы очень довольны!
         </p>
     </div>
-    <div
+    <!-- <div
         class="overlay overlayImages"
         onclick="showOverlayImages(this.parentNode)">
-        <div
-            id="photos"
-            class="overlay_photos"></div>
         <div id="closeButton">
             <img
                 src="/images/icons/close.png"
@@ -49,15 +68,10 @@
     <div
         class="overlay overlayVideos"
         onclick="showOverlayVideos(this.parentNode)">
-        <video
-            id="video"
-            src=""
-            height="400"
-            controls></video>
         <div id="closeButton">
             <img
                 src="/images/icons/close.png"
                 alt="" />
         </div>
-    </div>
+    </div> -->
 </div>

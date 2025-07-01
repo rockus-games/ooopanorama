@@ -8,6 +8,10 @@
     align-items: stretch;
 }
 
+.bannerImg {
+    background-image: url("../images/banners/cottage_banner_img.jpg");
+}
+
 .woodColorsCard {
     display: flex;
     flex-direction: column;

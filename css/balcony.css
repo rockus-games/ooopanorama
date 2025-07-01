@@ -7,6 +7,10 @@
     font-size: 24px;
 }
 
+.bannerImg {
+    background-image: url("../images/banners/balcony_banner_img.jpg");
+}
+
 .balconyDoubleButton {
     border: none;
     background-color: #eee;

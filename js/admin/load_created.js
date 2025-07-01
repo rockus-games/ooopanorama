@@ -187,6 +187,10 @@ function loadElements(table) {
                                         "#imageButton"
                                     ).style.display = "initial";
                                 }
+
+                                addBlock.querySelector(
+                                    `[data-field="${field}"]`
+                                ).value = e[field];
                             } else {
                                 previewDiv.querySelector(
                                     `#${field}`
