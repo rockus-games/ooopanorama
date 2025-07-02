@@ -1,7 +1,11 @@
 function isMobile() {
-    const regex =
-        /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-    return regex.test(navigator.userAgent);
+    var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+    // const regex =
+    //     /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    // return regex.test(navigator.userAgent);
+
+    return width <= 500;
 }
 
 function toggleSideMenu() {
