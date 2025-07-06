@@ -1,8 +1,8 @@
 .main_prices,
 .main_works {
     min-width: 300px;
-    min-height: 500px;
-    max-height: 1000px;
+    min-height: 400px;
+    max-height: 500px;
     background-color: #eee;
     flex-shrink: 0;
     transition: ease-in-out 0.3s;
@@ -95,14 +95,13 @@
 }
 
 .avatar {
-    width: 25%;
     transform: translateY(30px);
     z-index: 2;
 }
 
 .avatar > img {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
 }
 
 .box {

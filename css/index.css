@@ -61,6 +61,11 @@ button {
     border-radius: 10px;
 }
 
+.weHaveTrust {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
 #callMeasureMail {
     cursor: pointer;
 }
@@ -131,7 +136,7 @@ button {
     background-color: #4b7b9e;
     padding-top: 10px;
     padding-bottom: 10px;
-    top: 160px;
+    top: 140px;
     position: sticky;
     z-index: 3;
 }
@@ -160,10 +165,11 @@ button {
     color: inherit;
     margin: 0;
     /* height: 80px; */
-    font-size: 20px;
+    font-size: 16px;
     color: #ffffff;
     font-family: "Roboto";
     font-weight: 400;
+    white-space: nowrap;
 }
 
 .brands {
@@ -276,9 +282,13 @@ button {
 }
 
 .callMeasure {
-    background-color: #336281;
+    background-color: #ffffff;
     border-radius: 15px;
     padding: 5px;
+}
+
+.callMeasureText > p {
+    color: #336281;
 }
 
 .freeServices {
@@ -450,7 +460,6 @@ button {
     }
 
     .callMeasure {
-        background-color: #57a2bd;
         width: 80%;
         align-self: center;
     }
