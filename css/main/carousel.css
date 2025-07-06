@@ -230,6 +230,7 @@
     font-size: 40px;
     align-items: center;
     flex: 1;
+    height: 50%;
 }
 
 .imageWrapper > p {
