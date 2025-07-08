@@ -185,8 +185,8 @@ button {
     padding: 10px;
     justify-content: space-between;
     align-items: end;
-    padding-left: 15%;
-    padding-right: 15%;
+    /* padding-left: 15%;
+    padding-right: 15%; */
 }
 
 .brandsImg > img {
