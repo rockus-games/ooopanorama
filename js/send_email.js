@@ -27,6 +27,16 @@ function askSendButton() {
     }
 }
 
+function callSendButton() {
+    sendEmail(
+        document.querySelector("#askUserFieldName").value,
+        "",
+        document.querySelector("#askUserFieldPhone").value,
+        "Заявка на вызов замерщика"
+    );
+    toggleModal();
+}
+
 function orderCountSend() {
     sendEmail(
         "",

@@ -175,8 +175,22 @@ button {
 .brands {
     display: flex;
     flex-direction: column;
-    padding-left: 30%;
-    padding-right: 30%;
+    padding-left: 34%;
+    padding-right: 34%;
+}
+
+.brandsImg {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: end;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.brandsImg > img {
+    width: 22%;
 }
 
 .brands > .titleText,
@@ -390,18 +404,6 @@ button {
 
 #disclaimer {
     width: 80%;
-}
-
-.brandsImg {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: end;
-}
-
-.brandsImg > img {
-    width: 22%;
 }
 
 #mobileNavMenu {
