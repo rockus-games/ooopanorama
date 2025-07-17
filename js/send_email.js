@@ -28,12 +28,38 @@ function askSendButton() {
 }
 
 function callSendButton() {
-    sendEmail(
-        document.querySelector("#askUserFieldName").value,
-        "",
-        document.querySelector("#askUserFieldPhone").value,
-        "Заявка на вызов замерщика"
-    );
+    grecaptcha.ready(function () {
+        grecaptcha
+            .execute("6LflsYYrAAAAALTOxkCbPOIvVh6NZaxYpCMm6R3V", {
+                action: "submit",
+            })
+            .then(function (token) {
+                $.ajax({
+                    url: "/php/captcha.php",
+                    method: "POST",
+                    data: {
+                        token: token,
+                    },
+                    success: (data) => {
+                        if (
+                            data["success"] == "true" &&
+                            data["om_score"] > 0.5
+                        ) {
+                            sendEmail(
+                                document.querySelector("#askUserFieldName")
+                                    .value,
+                                "",
+                                document.querySelector("#askUserFieldPhone")
+                                    .value,
+                                "Заявка на вызов замерщика"
+                            );
+                        }
+                        location.reload();
+                    },
+                });
+            });
+    });
+
     toggleModal();
 }
 
