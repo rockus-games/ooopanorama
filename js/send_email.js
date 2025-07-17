@@ -55,7 +55,7 @@ function callSendButton() {
                                 "Заявка на вызов замерщика"
                             );
                         }
-                        location.reload();
+                        //location.reload();
                     },
                 });
             });
