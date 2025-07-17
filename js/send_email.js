@@ -42,7 +42,8 @@ function callSendButton() {
                     },
                     success: (data) => {
                         if (
-                            data["success"] == "true" &&
+                            (data["success"] == "true" ||
+                                data["success"] == true) &&
                             data["om_score"] > 0.5
                         ) {
                             sendEmail(
