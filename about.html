@@ -25,6 +25,9 @@
             rel="stylesheet"
             href="./css/about.css" />
         <link
+            rel="stylesheet"
+            href="./css/main/carousel.css" />
+        <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet" />
         <link
@@ -62,10 +65,12 @@
                 <a href="cottage.html">ПАНОРАМНОЕ ОСТЕКЛЕНИЕ</a>
             </div>
             <div class="menuItem">
+                <a href="index.html#carouselMainPrices">ЦЕНЫ</a>
+            </div>
+            <div class="menuItem">
                 <a href="#reviewBlock">ОТЗЫВЫ</a>
             </div>
             <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
-            <div class="menuItem"><a href="#">О НАС</a></div>
             <div class="callMeasure menuItem">
                 <a
                     id="callMeasureMail"
@@ -198,25 +203,13 @@
                     <a href="cottage.html">ПАНОРАМНОЕ ОСТЕКЛЕНИЕ</a>
                 </div>
                 <div class="vl"></div>
+                <div class="menuItem">
+                    <a href="index.html#carouselMainPrices">ЦЕНЫ</a>
+                </div>
+                <div class="vl"></div>
                 <div class="menuItem"><a href="#reviewBlock">ОТЗЫВЫ</a></div>
                 <div class="vl"></div>
                 <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
-                <div class="vl"></div>
-                <div class="menuItem"><a href="#">О НАС</a></div>
-                <div class="vl"></div>
-                <div class="callMeasure menuItem">
-                    <a
-                        id="callMeasureMail"
-                        class="callMeasureText"
-                        onclick="toggleModal()">
-                        <img
-                            src="./images/phone.png"
-                            alt=""
-                            width="24"
-                            height="24" />
-                        <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
-                    </a>
-                </div>
             </div>
         </div>
 
@@ -291,6 +284,86 @@
             </div>
             <div id="shortAboutUsSpacer"></div>
         </div>
+        <div
+            class="reviewBlock block"
+            id="reviewBlock"
+            data-animate="fade-up"
+            data-delay="300">
+            <h1 class="titleText">ОТЗЫВЫ</h1>
+            <div class="carousel-wrapper">
+                <div
+                    class="carousel-track-container"
+                    id="carouselAboutReviews"></div>
+                <div class="carousel-controls">
+                    <button
+                        class="carousel-btn carousel-btn--prev"
+                        aria-label="Предыдущий слайд">
+                        <img
+                            src="./images/next.svg"
+                            alt="Назад" />
+                    </button>
+                    <div class="carousel-dots"></div>
+                    <button
+                        class="carousel-btn carousel-btn--next"
+                        aria-label="Следующий слайд">
+                        <img
+                            src="./images/next.svg"
+                            alt="Вперёд" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="simpleSteps block"
+            data-animate="fade-up">
+            <h1 class="titleText">
+                4 ПРОСТЫХ ШАГА
+                <br />
+                ДО УСТАНОВКИ ОКНА
+            </h1>
+            <img
+                id="stepsImg"
+                src="./images/4steps.png"
+                alt="Шаги установки"
+                loading="lazy"
+                width="1000"
+                height="300" />
+            <img
+                id="stepsImgMob"
+                src="./images/4stepsMob.png"
+                alt="Шаги установки"
+                loading="lazy"
+                width="400"
+                height="800" />
+        </div>
+        <div
+            class="block"
+            data-animate="fade-up">
+            <h1 class="titleText">
+                Получите расчёт стоимости вашего окна за 5 минут
+            </h1>
+            <div class="orderCount">
+                <div class="orderSend">
+                    <input
+                        type="text"
+                        class="orderNumber"
+                        id="orderCountNumber"
+                        placeholder="Ваш телефон" />
+                    <button
+                        class="orderSendButton pulse-cta"
+                        onclick="orderCountSend()">
+                        Узнать стоимость
+                    </button>
+                </div>
+                <p class="order-hint">
+                    Нажимая на кнопку, вы даёте согласие на обработку
+                    персональных данных
+                </p>
+                <p class="order-bonus">
+                    🎁 Выезд замерщика по Москве и области — бесплатно
+                </p>
+            </div>
+        </div>
         <div class="block">
             <h1 class="titleText">НАША ГЕОЛОКАЦИЯ</h1>
             <div
@@ -312,10 +385,33 @@
                     alt="Панорама"
                     loading="lazy" />
                 <div class="endRight">
-                    <h2>+7-985-418-19-73</h2>
+                    <h2>+7 (985) 418-19-73</h2>
                     <h2>service@ooopanorama.ru</h2>
                     <h2>Варшавское шоссе, д.125 стр.1</h2>
                     <h2>Ежедневно с 9 до 20</h2>
+                    <div class="footer-messengers">
+                        <a
+                            href="https://wa.me/79854181973"
+                            aria-label="WhatsApp">
+                            <img
+                                src="./images/whts.svg"
+                                alt="WhatsApp"
+                                width="32"
+                                height="32" />
+                        </a>
+                        <a
+                            href="https://t.me/PanoramaVdom"
+                            aria-label="Telegram">
+                            <img
+                                src="./images/tg.svg"
+                                alt="Telegram"
+                                width="32"
+                                height="32" />
+                        </a>
+                    </div>
+                    <p class="footer-trust">
+                        20 лет опыта · Собственное производство в Москве
+                    </p>
                 </div>
             </div>
             <div id="disclaimer">
@@ -330,6 +426,13 @@
                 предварительного уведомления.
             </div>
         </div>
+        <script src="./js/carousel.js"></script>
+        <script src="./js/load_content.js"></script>
+        <script>
+            loadElements("#carouselAboutReviews", "main_reviews");
+        </script>
+        <script src="./js/send_email.js"></script>
+        <script src="./js/overlay.js"></script>
         <script src="./js/modal.js"></script>
         <script src="./js/animations.js"></script>
         <div

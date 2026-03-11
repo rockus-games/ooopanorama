@@ -31,6 +31,12 @@
 .cardVenge {
     background-image: url("/images/cottage/venge.jpg");
 }
+
+/* Active menu item */
+.menuItem--active a {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 3px;
+}
 .cardAntracit {
     background-image: url("/images/cottage/antracit.jpg");
 }

@@ -119,3 +119,17 @@
         border-radius: 100px 100px 0 0;
     }
 }
+
+/* Active menu item */
+.menuItem--active a {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 3px;
+}
+
+/* Hero bonus text */
+.hero-bonus {
+    font-size: 14px;
+    color: var(--color-gray-dark);
+    margin: 0;
+    font-style: italic;
+}

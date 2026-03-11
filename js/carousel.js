@@ -12,6 +12,7 @@ class Carousel {
         this.currentIndex = 0;
         this.items = [];
         this.itemsVisible = options.itemsVisible || { mobile: 1, desktop: 3 };
+        this.gap = options.gap || 20;
 
         this.startX = 0;
         this.currentTranslate = 0;
@@ -59,7 +60,9 @@ class Carousel {
         const containerWidth = this.trackContainer
             ? this.trackContainer.offsetWidth
             : this.container.offsetWidth;
-        return containerWidth / this.getVisibleCount() - 20;
+        const visibleCount = this.getVisibleCount();
+        const gap = this.gap;
+        return (containerWidth - gap * (visibleCount - 1)) / visibleCount;
     }
 
     getMaxIndex() {
@@ -146,8 +149,9 @@ class Carousel {
 
     applyTranslate(translate) {
         const itemWidth = this.getItemWidth();
+        const gap = this.gap;
         const maxTranslate = 0;
-        const minTranslate = -this.getMaxIndex() * itemWidth;
+        const minTranslate = -this.getMaxIndex() * (itemWidth + gap);
 
         this.currentTranslate = Math.max(
             minTranslate,
@@ -162,6 +166,7 @@ class Carousel {
         if (!this.track || this.items.length === 0) return;
 
         const visibleCount = this.getVisibleCount();
+        const gap = this.gap;
         const itemWidth = this.getItemWidth();
 
         this.items.forEach((item) => {
@@ -172,7 +177,7 @@ class Carousel {
         const maxIndex = this.getMaxIndex();
         this.currentIndex = Math.max(0, Math.min(this.currentIndex, maxIndex));
 
-        const translate = -this.currentIndex * (itemWidth + 20);
+        const translate = -this.currentIndex * (itemWidth + gap);
         this.track.style.transition = "transform 0.3s ease-out";
         this.applyTranslate(translate);
         this.prevTranslate = translate;

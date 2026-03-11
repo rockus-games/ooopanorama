@@ -63,11 +63,11 @@
             <div class="menuItem">
                 <a href="cottage.html">ПАНОРАМНОЕ ОСТЕКЛЕНИЕ</a>
             </div>
+            <div class="menuItem"><a href="#carouselMainPrices">ЦЕНЫ</a></div>
             <div class="menuItem">
                 <a href="#reviewBlock">ОТЗЫВЫ</a>
             </div>
             <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
-            <div class="menuItem"><a href="about.html">О НАС</a></div>
             <div class="callMeasure menuItem">
                 <a
                     id="callMeasureMail"
@@ -191,13 +191,30 @@
                 class="bannerImg"
                 id="banner">
                 <div class="bannerImgGrad">
-                    <h1 class="bannerText">
-                        ПРАКТИЧНЫЕ И НАДЁЖНЫЕ
-                        <br />
-                        ПЛАСТИКОВЫЕ
-                        <br />
-                        ОКНА
-                    </h1>
+                    <div class="hero-content">
+                        <h1 class="bannerText">
+                            ПЛАСТИКОВЫЕ ОКНА
+                            <br />
+                            ОТ ПРОИЗВОДИТЕЛЯ
+                            <br />
+                            В МОСКВЕ
+                        </h1>
+                        <ul class="hero-utp">
+                            <li>
+                                ☑️ Собственный завод. Честные цены без
+                                посредников.
+                            </li>
+                            <li>
+                                ☑️ 20 лет опыта. Гарантия 5 лет по договору.
+                            </li>
+                            <li>☑️ Монтаж по ГОСТу за 1 день.</li>
+                        </ul>
+                        <button
+                            class="hero-cta pulse-cta"
+                            onclick="toggleModal()">
+                            РАССЧИТАТЬ СТОИМОСТЬ ЗА 5 МИНУТ
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -211,25 +228,13 @@
                     <a href="cottage.html">ПАНОРАМНОЕ ОСТЕКЛЕНИЕ</a>
                 </div>
                 <div class="vl"></div>
+                <div class="menuItem">
+                    <a href="#carouselMainPrices">ЦЕНЫ</a>
+                </div>
+                <div class="vl"></div>
                 <div class="menuItem"><a href="#reviewBlock">ОТЗЫВЫ</a></div>
                 <div class="vl"></div>
                 <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
-                <div class="vl"></div>
-                <div class="menuItem"><a href="about.html">О НАС</a></div>
-                <div class="vl"></div>
-                <div class="callMeasure menuItem">
-                    <a
-                        id="callMeasureMail"
-                        class="callMeasureText"
-                        onclick="toggleModal()">
-                        <img
-                            src="./images/phone.png"
-                            alt=""
-                            width="24"
-                            height="24" />
-                        <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
-                    </a>
-                </div>
             </div>
         </div>
         <div
@@ -312,35 +317,23 @@
                 <div class="freeServicesBlock">
                     <img
                         src="./images/zamer 1.svg"
-                        alt=""
+                        alt="Замерщик"
                         loading="lazy" />
-                    <h1>
-                        ВЫЗОВ
-                        <br />
-                        ЗАМЕРЩИКА
-                    </h1>
+                    <h1>Бесплатный замер</h1>
                 </div>
                 <div class="freeServicesBlock">
                     <img
                         src="./images/usl1.png"
-                        alt=""
+                        alt="Монтаж"
                         loading="lazy" />
-                    <h1>
-                        ГАРАНТИЯ
-                        <br />
-                        НА МОНТАЖ
-                    </h1>
+                    <h1>Профессиональный монтаж</h1>
                 </div>
                 <div class="freeServicesBlock">
                     <img
                         src="./images/usl2.svg"
-                        alt=""
+                        alt="Обслуживание"
                         loading="lazy" />
-                    <h1>
-                        ГАРАНТИЙНОЕ
-                        <br />
-                        ОБСЛУЖИВАНИЕ
-                    </h1>
+                    <h1>Гарантийное обслуживание</h1>
                 </div>
             </div>
         </div>
@@ -431,13 +424,10 @@
         <div
             class="block"
             data-animate="fade-up">
-            <h1 class="titleText">ЗАКАЗАТЬ РАСЧЁТ</h1>
+            <h1 class="titleText">
+                Получите расчёт стоимости вашего окна за 5 минут
+            </h1>
             <div class="orderCount">
-                <textarea
-                    class="orderCountText"
-                    name="orderCountText"
-                    id="orderCountText"
-                    placeholder="Введите текст"></textarea>
                 <div class="orderSend">
                     <input
                         type="text"
@@ -447,9 +437,16 @@
                     <button
                         class="orderSendButton pulse-cta"
                         onclick="orderCountSend()">
-                        Отправить
+                        Узнать стоимость
                     </button>
                 </div>
+                <p class="order-hint">
+                    Нажимая на кнопку, вы даёте согласие на обработку
+                    персональных данных
+                </p>
+                <p class="order-bonus">
+                    🎁 При заказе расчёта сегодня — москитная сетка в подарок
+                </p>
             </div>
         </div>
         <div class="block">
@@ -475,10 +472,33 @@
                     width="200"
                     height="60" />
                 <div class="endRight">
-                    <h2>+7-985-418-19-73</h2>
+                    <h2>+7 (985) 418-19-73</h2>
                     <h2>service@ooopanorama.ru</h2>
                     <h2>Варшавское шоссе, д.125 стр.1</h2>
                     <h2>Ежедневно с 9 до 20</h2>
+                    <div class="footer-messengers">
+                        <a
+                            href="https://wa.me/79854181973"
+                            aria-label="WhatsApp">
+                            <img
+                                src="./images/whts.svg"
+                                alt="WhatsApp"
+                                width="32"
+                                height="32" />
+                        </a>
+                        <a
+                            href="https://t.me/PanoramaVdom"
+                            aria-label="Telegram">
+                            <img
+                                src="./images/tg.svg"
+                                alt="Telegram"
+                                width="32"
+                                height="32" />
+                        </a>
+                    </div>
+                    <p class="footer-trust">
+                        20 лет опыта · Собственное производство в Москве
+                    </p>
                 </div>
             </div>
             <div id="disclaimer">
