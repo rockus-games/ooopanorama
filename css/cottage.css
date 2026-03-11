@@ -10,6 +10,7 @@
 
 .bannerImg {
     background-image: url("../images/banners/cottage_banner_img.jpg");
+    height: 550px;
 }
 
 .woodColorsCard {
@@ -36,6 +37,12 @@
 .menuItem--active a {
     border-bottom: 2px solid #fff;
     padding-bottom: 3px;
+}
+
+@media (min-width: 768px) {
+    .bannerImg {
+        height: 700px;
+    }
 }
 .cardAntracit {
     background-image: url("/images/cottage/antracit.jpg");

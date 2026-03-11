@@ -31,6 +31,9 @@
     background-color: #4b7b9e;
 }
 .balconyImg {
+    display: flex;
+    justify-content: center;
+    align-items: start;
     text-align: center;
     width: 100%;
     margin-top: 40px;
@@ -85,10 +88,38 @@
 }
 
 .balconyDesignImg {
-    width: 100%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .doubleButton > * {
+        font-size: 16px;
+    }
+
+    .balconyDoubleButton {
+        padding: 12px 20px;
+        border-radius: 12px;
+    }
+
+    .doubleButton {
+        gap: 8px;
+        margin: 0 auto;
+        max-width: 360px;
+    }
+
+    .balconyWarmBtn,
+    .balconyColdBtn {
+        border-radius: 12px;
+    }
 }
 
 @media screen and (max-width: 500px) {
+    .balconyDesignImg {
+        width: 100%;
+    }
+
     .balconyImg {
         background-image: url("/images/balcony/balconyWarmMob.png");
         aspect-ratio: 0.616;
@@ -109,14 +140,6 @@
     .doubleButton {
         flex-direction: column;
         align-items: stretch;
-    }
-
-    .balconyColdBtn {
-        border-radius: 0 0 100px 100px;
-    }
-
-    .balconyWarmBtn {
-        border-radius: 100px 100px 0 0;
     }
 }
 

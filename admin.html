@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -15,13 +15,13 @@
             rel="stylesheet" />
         <link
             rel="stylesheet"
-            href="./css/admin.css" />
-        <link
-            rel="stylesheet"
             href="./css/style.css" />
         <link
             rel="stylesheet"
             href="./css/main/carousel.css" />
+        <link
+            rel="stylesheet"
+            href="./css/admin.css" />
     </head>
     <body>
         <div id="leftMenu">
@@ -63,14 +63,35 @@
                 <div id="previewBlock"></div>
             </div>
             <h1 id="mainAddText">Созданные</h1>
-            <div id="showBlock">Выберите пункт для отображения</div>
+            <div class="carousel-wrapper">
+                <div
+                    class="carousel-track-container"
+                    id="showBlock">
+                    Выберите пункт для отображения
+                </div>
+                <div class="carousel-controls">
+                    <button
+                        class="carousel-btn carousel-btn--prev"
+                        disabled>
+                        <img
+                            src="images/next.svg"
+                            alt="prev" />
+                    </button>
+                    <div class="carousel-dots"></div>
+                    <button class="carousel-btn carousel-btn--next">
+                        <img
+                            src="images/next.svg"
+                            alt="next" />
+                    </button>
+                </div>
+            </div>
         </div>
+        <script src="./js/carousel.js"></script>
         <script src="./js/admin/login.js"></script>
         <script src="./js/admin/add_new.js"></script>
         <script src="./js/admin/load_created.js"></script>
         <script src="./js/admin/load_image.js"></script>
         <script src="./js/admin/get_structure.js"></script>
         <script src="./js/admin/change_page.js"></script>
-        <script src="./js/overlay.js"></script>
     </body>
 </html>

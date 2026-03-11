@@ -52,6 +52,15 @@ async function loadElements(containerSelector, table) {
                 const value = item[field];
                 const type = dbStruct[field].type;
 
+                if (field === "video") {
+                    if (value) {
+                        element.style.display = "";
+                        const source = element.querySelector("source");
+                        if (source) source.src = value;
+                    }
+                    return;
+                }
+
                 if (type === "file" || type === "array_of_images") {
                     const src = Array.isArray(value) ? value[0] : value;
                     if (src && element.tagName === "IMG") {
@@ -77,6 +86,7 @@ async function loadElements(containerSelector, table) {
                     mobile: 1,
                     desktop: table === "main_reviews" ? 1 : 3,
                 },
+                ...(table === "main_reviews" ? { scrollOffset: 0 } : {}),
             });
         }
     } catch (error) {

@@ -1,242 +1,289 @@
-function loadElements(table) {
-    var showBlock = document.querySelector("#showBlock");
+function parseArrayField(value) {
+    if (Array.isArray(value)) {
+        return value;
+    }
+
+    if (typeof value !== "string" || value.trim() === "") {
+        return [];
+    }
+
+    try {
+        const parsed = JSON.parse(value);
+        return Array.isArray(parsed) ? parsed : [];
+    } catch {
+        return [];
+    }
+}
+
+function fillTemplateFields(root, item, dbStruct) {
+    Object.keys(item).forEach((field) => {
+        if (field === "id") {
+            root.setAttribute("data-id", item[field]);
+            return;
+        }
+
+        if (!dbStruct || !dbStruct[field]) {
+            return;
+        }
+
+        const value = item[field];
+        const type = dbStruct[field].type;
+        const fieldElement = root.querySelector(`[data-field="${field}"]`);
+
+        if (!fieldElement) {
+            return;
+        }
+
+        if (field === "video") {
+            const source = fieldElement.querySelector("source");
+            if (value) {
+                fieldElement.style.display = "";
+                if (source) {
+                    source.src = value;
+                }
+            } else {
+                fieldElement.style.display = "none";
+                if (source) {
+                    source.src = "";
+                }
+            }
+            return;
+        }
+
+        if (type === "file") {
+            if (fieldElement.tagName === "IMG") {
+                if (value) {
+                    fieldElement.src = value;
+                    fieldElement.style.display = "";
+                } else {
+                    if (field === "avatar") {
+                        fieldElement.src = "/images/icons/person.png";
+                        fieldElement.style.display = "";
+                    } else {
+                        fieldElement.style.display = "none";
+                    }
+                }
+            }
+            return;
+        }
+
+        if (type === "array_of_images") {
+            const images = parseArrayField(value);
+            const src = images[0] || "";
+
+            if (fieldElement.tagName === "IMG") {
+                if (src) {
+                    fieldElement.src = src;
+                    fieldElement.style.display = "";
+                } else {
+                    fieldElement.style.display = "none";
+                }
+            }
+            return;
+        }
+
+        fieldElement.textContent = value || "";
+    });
+}
+
+function fillPreviewForEdit(previewDiv, addBlock, item, dbStruct) {
+    Object.keys(item).forEach((field) => {
+        if (field === "id") {
+            addBlock.setAttribute("data-id", item[field]);
+            return;
+        }
+
+        if (!dbStruct || !dbStruct[field]) {
+            return;
+        }
+
+        const addInput = addBlock.querySelector(`[data-field="${field}"]`);
+        if (addInput) {
+            addInput.value = item[field] || "";
+        }
+
+        const value = item[field];
+        const type = dbStruct[field].type;
+        const fieldElement = previewDiv.querySelector(
+            `[data-field="${field}"]`,
+        );
+
+        if (!fieldElement) {
+            return;
+        }
+
+        if (field === "video") {
+            const source = fieldElement.querySelector("source");
+            if (value) {
+                fieldElement.style.display = "";
+                if (source) {
+                    source.src = value;
+                }
+            } else {
+                fieldElement.style.display = "none";
+                if (source) {
+                    source.src = "";
+                }
+            }
+            return;
+        }
+
+        if (type === "file") {
+            if (fieldElement.tagName === "IMG") {
+                if (value) {
+                    fieldElement.src = value;
+                    fieldElement.style.display = "";
+                } else if (field === "avatar") {
+                    fieldElement.src = "/images/icons/person.png";
+                    fieldElement.style.display = "";
+                } else {
+                    fieldElement.src = "";
+                    fieldElement.style.display = "none";
+                }
+            }
+            return;
+        }
+
+        if (type === "array_of_images") {
+            const images = parseArrayField(value);
+            const src = images[0] || "";
+
+            if (fieldElement.tagName === "IMG") {
+                if (src) {
+                    fieldElement.src = src;
+                    fieldElement.style.display = "";
+                } else {
+                    fieldElement.style.display = "none";
+                }
+            }
+            return;
+        }
+
+        fieldElement.textContent = value || "";
+    });
+}
+
+function initAdminCarousel(showBlock, table) {
+    const carouselWrapper = showBlock.closest(".carousel-wrapper");
+    if (!carouselWrapper || !window.Carousel) {
+        return;
+    }
+
+    new Carousel(carouselWrapper, {
+        itemsVisible: {
+            mobile: 1,
+            desktop: table === "main_reviews" ? 1 : 3,
+        },
+        ...(table === "main_reviews" ? { scrollOffset: 0 } : {}),
+    });
+}
+
+async function loadElements(table) {
+    const showBlock = document.querySelector("#showBlock");
+    if (!showBlock) {
+        return;
+    }
 
     $.ajax({
         url: "/php/get_data.php",
         method: "POST",
         data: { table: table },
         success: async (data) => {
-            data = JSON.parse(data);
+            const parsedData = JSON.parse(data);
 
-            if (data.length == 0) {
+            if (!parsedData || parsedData.length === 0) {
                 showBlock.innerHTML = "Элементов нет";
                 return;
             }
 
             showBlock.innerHTML = "";
 
-            var dbStruct = await getDBStructure(table);
+            const dbStruct = await getDBStructure(table);
+            const templateResponse = await fetch(`/elements/${table}.html`);
+            const templateHtml = await templateResponse.text();
 
-            data.forEach((e) => {
-                var element = document.createElement("div");
+            const track = document.createElement("div");
+            track.className = "carousel-track";
+
+            parsedData.forEach((item) => {
+                const element = document.createElement("div");
                 element.className = "createdElement";
 
-                $.get(`/elements/${table}.html`, (code) => {
-                    element.innerHTML = code;
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = templateHtml.trim();
+                const card = tempDiv.firstElementChild;
 
-                    Object.keys(e).forEach((field) => {
-                        if (field == "id") {
-                            element.setAttribute("data-id", e[field]);
-                            return;
-                        }
+                if (!card) {
+                    return;
+                }
 
-                        if (!Object.keys(dbStruct).includes(field)) {
-                            return;
-                        }
+                fillTemplateFields(card, item, dbStruct);
 
-                        if (dbStruct[field].type == "file") {
-                            if (e[field] == "") {
-                                return;
-                            }
-                            element
-                                .querySelector(`#${field}`)
-                                .setAttribute("src", e[field]);
+                if (card.dataset.id) {
+                    element.dataset.id = card.dataset.id;
+                }
 
-                            if (field == "video") {
-                                if (
-                                    element.querySelector("#videoButton") !=
-                                    null
-                                ) {
-                                    element.querySelector(
-                                        "#videoButton",
-                                    ).style.display = "initial";
-                                }
-                            }
-                        } else if (dbStruct[field].type == "array_of_images") {
-                            if (e[field] == "") {
-                                return;
-                            }
-                            var a = JSON.parse(e[field]);
-                            console.log(e[field]);
+                const hoverMenu = document.createElement("div");
+                hoverMenu.className = "hoverMenu";
 
-                            for (var i = 0; i < a.length; i++) {
-                                var img = document.createElement("img");
-                                img.src = a[i];
+                const editButton = document.createElement("button");
+                editButton.innerHTML = "Редактировать";
+                editButton.onclick = () => {
+                    const addBlock = document.querySelector("#addBlock");
+                    const previewDiv = document.querySelector("#previewDiv");
 
-                                if (i == 0) {
-                                    img.classList = "image viewing";
-                                } else {
-                                    img.classList = "image hidden";
-                                }
+                    if (!addBlock || !previewDiv) {
+                        return;
+                    }
 
-                                element
-                                    .querySelector(`#${field}`)
-                                    .appendChild(img);
-                            }
+                    fillPreviewForEdit(previewDiv, addBlock, item, dbStruct);
+                };
 
-                            if (element.querySelector("#imageButton") == null) {
-                                return;
-                            }
-
-                            element.querySelector(
-                                "#imageButton",
-                            ).style.display = "initial";
-                        } else {
-                            element.querySelector(`#${field}`).innerHTML =
-                                e[field];
-                        }
+                const deleteButton = document.createElement("button");
+                deleteButton.innerHTML = "Удалить";
+                deleteButton.onclick = () => {
+                    $.ajax({
+                        url: "/php/delete_data.php",
+                        method: "POST",
+                        data: {
+                            table: table,
+                            id: element.dataset.id,
+                            login: sessionStorage.getItem("login"),
+                            password: sessionStorage.getItem("password"),
+                        },
+                        success: () => {
+                            location.reload();
+                        },
                     });
+                };
 
-                    var hoverMenu = document.createElement("div");
-                    hoverMenu.className = "hoverMenu";
+                hoverMenu.appendChild(editButton);
+                hoverMenu.appendChild(deleteButton);
 
-                    var editButton = document.createElement("button");
-                    editButton.innerHTML = "Редактировать";
-                    editButton.onclick = () => {
-                        var addBlock = document.querySelector("#addBlock");
-                        var previewDiv = document.querySelector("#previewDiv");
-
-                        Object.keys(e).forEach((field) => {
-                            if (field == "id") {
-                                addBlock.setAttribute("data-id", e[field]);
-                                return;
-                            }
-
-                            if (dbStruct[field].type == "file") {
-                                if (e[field] == "") {
-                                    if (field == "video") {
-                                        if (
-                                            previewDiv.querySelector(
-                                                "#videoButton",
-                                            ) != null
-                                        ) {
-                                            previewDiv.querySelector(
-                                                "#videoButton",
-                                            ).style.display = "none";
-                                        }
-                                    }
-                                    if (field == "avatar") {
-                                        previewDiv
-                                            .querySelector(`#${field}`)
-                                            .setAttribute(
-                                                "src",
-                                                "/images/icons/person.png",
-                                            );
-                                    } else {
-                                        previewDiv
-                                            .querySelector(`#${field}`)
-                                            .setAttribute("src", "");
-                                    }
-                                    return;
-                                }
-                                previewDiv
-                                    .querySelector(`#${field}`)
-                                    .setAttribute("src", e[field]);
-                                addBlock.querySelector(
-                                    `[data-field="${field}"]`,
-                                ).value = e[field];
-
-                                if (field == "video") {
-                                    if (
-                                        previewDiv.querySelector(
-                                            "#videoButton",
-                                        ) != null
-                                    ) {
-                                        previewDiv.querySelector(
-                                            "#videoButton",
-                                        ).style.display = "initial";
-                                    }
-                                }
-                            } else if (
-                                dbStruct[field].type == "array_of_images"
-                            ) {
-                                var a = previewDiv.querySelector(`#${field}`);
-                                if (e[field] == "") {
-                                    if (
-                                        previewDiv.querySelector(
-                                            "#imageButton",
-                                        ) != null
-                                    ) {
-                                        previewDiv.querySelector(
-                                            "#imageButton",
-                                        ).style.display = "";
-                                    }
-                                    a.innerHTML = "";
-                                    return;
-                                }
-                                var b = JSON.parse(e[field]);
-
-                                for (var i = 0; i < b.length; i++) {
-                                    var img = document.createElement("img");
-                                    img.src = b[i];
-                                    if (i == 0) {
-                                        img.classList = "image viewing";
-                                    } else {
-                                        img.classList = "image hidden";
-                                    }
-
-                                    a.appendChild(img);
-                                }
-
-                                if (
-                                    previewDiv.querySelector("#imageButton") !=
-                                    null
-                                ) {
-                                    previewDiv.querySelector(
-                                        "#imageButton",
-                                    ).style.display = "initial";
-                                }
-
-                                addBlock.querySelector(
-                                    `[data-field="${field}"]`,
-                                ).value = e[field];
-                            } else {
-                                previewDiv.querySelector(
-                                    `#${field}`,
-                                ).innerHTML = e[field];
-                                addBlock.querySelector(
-                                    `[data-field="${field}"]`,
-                                ).value = e[field];
-                            }
-                        });
-                    };
-
-                    var deleteButton = document.createElement("button");
-                    deleteButton.innerHTML = "Удалить";
-                    deleteButton.onclick = () => {
-                        $.ajax({
-                            url: "/php/delete_data.php",
-                            method: "POST",
-                            data: {
-                                table: table,
-                                id: element.dataset.id,
-                                login: sessionStorage.getItem("login"),
-                                password: sessionStorage.getItem("password"),
-                            },
-                            success: (data) => {
-                                location.reload();
-                            },
-                        });
-                    };
-
-                    hoverMenu.appendChild(editButton);
-                    hoverMenu.appendChild(deleteButton);
-
-                    element.appendChild(hoverMenu);
-                });
+                element.appendChild(card);
+                element.appendChild(hoverMenu);
 
                 element.addEventListener("mouseenter", (event) => {
-                    var hover = event.target.querySelector(".hoverMenu");
-                    hover.style.display = "flex";
+                    const hover =
+                        event.currentTarget.querySelector(".hoverMenu");
+                    if (hover) {
+                        hover.style.display = "flex";
+                    }
                 });
 
                 element.addEventListener("mouseleave", (event) => {
-                    var hover = event.target.querySelector(".hoverMenu");
-                    hover.style.display = "none";
+                    const hover =
+                        event.currentTarget.querySelector(".hoverMenu");
+                    if (hover) {
+                        hover.style.display = "none";
+                    }
                 });
 
-                showBlock.appendChild(element);
+                track.appendChild(element);
             });
+
+            showBlock.appendChild(track);
+            initAdminCarousel(showBlock, table);
         },
     });
 }

@@ -70,7 +70,7 @@
             <div class="menuItem">
                 <a href="#reviewBlock">ОТЗЫВЫ</a>
             </div>
-            <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
+            <div class="menuItem"><a href="#endBlock">КОНТАКТЫ</a></div>
             <div class="callMeasure menuItem">
                 <a
                     id="callMeasureMail"
@@ -177,22 +177,6 @@
                     alt="Меню" />
             </button>
         </div>
-        <div class="banner">
-            <div
-                class="bannerImg"
-                id="banner"
-                alt="">
-                <div class="bannerImgGrad">
-                    <h1 class="bannerText">
-                        ЦЕНА ОТ ПРОИЗВОДИТЕЛЯ!
-                        <br />
-                        СОБСТВЕННОЕ ПРОИЗВОДСТВО
-                        <br />
-                        ОКОН В ПОДОЛЬСКЕ
-                    </h1>
-                </div>
-            </div>
-        </div>
         <div class="menu block">
             <div class="menuLine">
                 <div class="menuItem"><a href="index.html">ОКНА</a></div>
@@ -209,7 +193,23 @@
                 <div class="vl"></div>
                 <div class="menuItem"><a href="#reviewBlock">ОТЗЫВЫ</a></div>
                 <div class="vl"></div>
-                <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
+                <div class="menuItem"><a href="#endBlock">КОНТАКТЫ</a></div>
+            </div>
+        </div>
+        <div class="banner">
+            <div
+                class="bannerImg"
+                id="banner"
+                alt="">
+                <div class="bannerImgGrad">
+                    <h1 class="bannerText">
+                        ЦЕНА ОТ ПРОИЗВОДИТЕЛЯ!
+                        <br />
+                        СОБСТВЕННОЕ ПРОИЗВОДСТВО
+                        <br />
+                        ОКОН В ПОДОЛЬСКЕ
+                    </h1>
+                </div>
             </div>
         </div>
 
@@ -364,7 +364,7 @@
                 </p>
             </div>
         </div>
-        <div class="block">
+        <div class="block geoBlock">
             <h1 class="titleText">НАША ГЕОЛОКАЦИЯ</h1>
             <div
                 class="geo"
@@ -377,7 +377,9 @@
                     loading="lazy"></iframe>
             </div>
         </div>
-        <div class="block end">
+        <div
+            class="block end"
+            id="endBlock">
             <div class="endRow">
                 <img
                     class="headerLogo"
@@ -413,6 +415,11 @@
                         20 лет опыта · Собственное производство в Москве
                     </p>
                 </div>
+            </div>
+            <div class="footerMap">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e9ca1c19348ef2d224db3b99564eaf4f3e34ff4cb43f2e738a64539018c9a8c&source=constructor"
+                    loading="lazy"></iframe>
             </div>
             <div id="disclaimer">
                 Вся представленная на сайте информация, касающаяся оконных
@@ -459,11 +466,21 @@
                         type="text"
                         id="askUserFieldName"
                         placeholder="Ваше имя" />
+                    <span
+                        class="error-message"
+                        style="display: none">
+                        Пожалуйста, заполните это поле
+                    </span>
                     <input
                         class="askUserField"
                         type="text"
                         id="askUserFieldPhone"
                         placeholder="Ваш телефон" />
+                    <span
+                        class="error-message"
+                        style="display: none">
+                        Пожалуйста, заполните это поле
+                    </span>
                 </div>
                 <div class="askSend">
                     <button

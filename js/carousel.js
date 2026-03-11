@@ -13,6 +13,8 @@ class Carousel {
         this.items = [];
         this.itemsVisible = options.itemsVisible || { mobile: 1, desktop: 3 };
         this.gap = options.gap || 20;
+        this.scrollOffset = options.scrollOffset || 0;
+        this.totalItemWidth = 0;
 
         this.startX = 0;
         this.currentTranslate = 0;
@@ -131,8 +133,9 @@ class Carousel {
         this.isDragging = false;
 
         const movedBy = this.currentTranslate - this.prevTranslate;
-        const itemWidth = this.getItemWidth();
-        const threshold = itemWidth / 3;
+        const totalItemWidth =
+            this.totalItemWidth || this.getItemWidth() + this.gap;
+        const threshold = totalItemWidth / 3;
 
         if (movedBy < -threshold && this.currentIndex < this.getMaxIndex()) {
             this.currentIndex++;
@@ -148,10 +151,12 @@ class Carousel {
     }
 
     applyTranslate(translate) {
-        const itemWidth = this.getItemWidth();
-        const gap = this.gap;
+        const totalItemWidth =
+            this.totalItemWidth || this.getItemWidth() + this.gap;
         const maxTranslate = 0;
-        const minTranslate = -this.getMaxIndex() * (itemWidth + gap);
+        const minTranslate =
+            -this.getMaxIndex() * totalItemWidth +
+            this.getMaxIndex() * this.scrollOffset;
 
         this.currentTranslate = Math.max(
             minTranslate,
@@ -165,22 +170,36 @@ class Carousel {
     update() {
         if (!this.track || this.items.length === 0) return;
 
-        const visibleCount = this.getVisibleCount();
         const gap = this.gap;
         const itemWidth = this.getItemWidth();
 
         this.items.forEach((item) => {
-            item.style.width = `${itemWidth}px`;
+            const style = window.getComputedStyle(item);
+            const marginLeft = parseFloat(style.marginLeft) || 0;
+            const marginRight = parseFloat(style.marginRight) || 0;
+            item.style.width = `${itemWidth - marginLeft - marginRight}px`;
             item.style.flexShrink = "0";
         });
+
+        const firstItem = this.items[0];
+        const firstItemStyle = window.getComputedStyle(firstItem);
+        const marginLeft = parseFloat(firstItemStyle.marginLeft) || 0;
+        const marginRight = parseFloat(firstItemStyle.marginRight) || 0;
+        this.totalItemWidth =
+            firstItem.getBoundingClientRect().width +
+            marginLeft +
+            marginRight +
+            gap;
 
         const maxIndex = this.getMaxIndex();
         this.currentIndex = Math.max(0, Math.min(this.currentIndex, maxIndex));
 
-        const translate = -this.currentIndex * (itemWidth + gap);
+        const translate =
+            -this.currentIndex * this.totalItemWidth +
+            this.currentIndex * this.scrollOffset;
         this.track.style.transition = "transform 0.3s ease-out";
         this.applyTranslate(translate);
-        this.prevTranslate = translate;
+        this.prevTranslate = this.currentTranslate;
 
         this.updateButtons();
         this.updateDots();

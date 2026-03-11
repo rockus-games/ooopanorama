@@ -51,7 +51,7 @@ async function prepareAddNew(table) {
                     login: sessionStorage.getItem("login"),
                     password: sessionStorage.getItem("password"),
                 },
-                (a) => {
+                () => {
                     location.reload();
                 },
             );
@@ -67,7 +67,7 @@ async function prepareAddNew(table) {
                 login: sessionStorage.getItem("login"),
                 password: sessionStorage.getItem("password"),
             },
-            (a) => {
+            () => {
                 location.reload();
             },
         );
@@ -85,17 +85,27 @@ async function prepareAddNew(table) {
 
     $.get(`/elements/${table}.html`, (code) => {
         previewBlock.innerHTML = code;
-        previewBlock.children[0].id = "previewDiv";
+        if (previewBlock.children[0]) {
+            previewBlock.children[0].id = "previewDiv";
+        }
     });
 }
 
 function changeText() {
     var element = document.querySelector("#previewDiv");
+    if (!element) {
+        return;
+    }
+
+    var target = element.querySelector(`[data-field="${this.dataset.field}"]`);
+    if (!target) {
+        return;
+    }
 
     if (this.value != "") {
-        element.querySelector(`#${this.dataset.field}`).innerHTML = this.value;
+        target.textContent = this.value;
     } else {
-        element.querySelector(`#${this.dataset.field}`).innerHTML =
+        target.textContent =
             this.dataset.field == "text_3" ? "" : this.placeholder;
     }
 }
@@ -107,15 +117,33 @@ function pickFile(btn) {
     input.onchange = async () => {
         var a = await loadImage(input);
         var element = document.querySelector("#previewDiv");
+        if (!element) {
+            return;
+        }
 
-        btn.setAttribute("value", a.substring(1));
+        var value = a.substring(1);
+        btn.setAttribute("value", value);
 
-        element
-            .querySelector(`#${btn.dataset.field}`)
-            .setAttribute("src", a.substring(1));
+        if (btn.dataset.field === "video") {
+            var videoContainer = element.querySelector('[data-field="video"]');
+            if (!videoContainer) {
+                return;
+            }
 
-        if (element.querySelector("#videoButton") != null) {
-            element.querySelector("#videoButton").style.display = "initial";
+            var source = videoContainer.querySelector("source");
+            if (source) {
+                source.src = value;
+            }
+            videoContainer.style.display = "";
+            return;
+        }
+
+        var target = element.querySelector(
+            `[data-field="${btn.dataset.field}"]`,
+        );
+        if (target && target.tagName === "IMG") {
+            target.setAttribute("src", value);
+            target.style.display = "";
         }
     };
 
@@ -134,24 +162,35 @@ function pickManyFile(btn) {
         }
 
         var element = document.querySelector("#previewDiv");
+        if (!element) {
+            return;
+        }
 
         btn.setAttribute("value", JSON.stringify(a));
 
-        var parent = element.querySelector(`#${btn.dataset.field}`);
+        var firstImage = a[0] || "";
+        var target = element.querySelector(
+            `[data-field="${btn.dataset.field}"]`,
+        );
 
-        for (var i = 0; i < a.length; i++) {
-            var img = document.createElement("img");
-            img.src = a[i];
-            if (i == 0) {
-                img.classList = "image viewing";
+        if (target && target.tagName === "IMG") {
+            if (firstImage) {
+                target.setAttribute("src", firstImage);
+                target.style.display = "";
             } else {
-                img.classList = "image hidden";
+                target.style.display = "none";
             }
-            parent.appendChild(img);
+            return;
         }
 
-        if (element.querySelector("#imageButton") != null) {
-            element.querySelector("#imageButton").style.display = "initial";
+        var imageTarget = element.querySelector('[data-field="image"]');
+        if (imageTarget && imageTarget.tagName === "IMG") {
+            if (firstImage) {
+                imageTarget.setAttribute("src", firstImage);
+                imageTarget.style.display = "";
+            } else {
+                imageTarget.style.display = "none";
+            }
         }
     };
 

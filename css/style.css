@@ -67,6 +67,14 @@ button {
     transition: var(--transition-default);
 }
 
+.check-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 /* Layout */
 .block {
     padding-left: var(--container-padding);
@@ -76,10 +84,9 @@ button {
 /* Header */
 .headerMob {
     background-color: var(--color-primary);
-    position: sticky;
     top: 0;
     z-index: var(--z-header);
-    /* display: flex; */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px var(--container-padding);
@@ -175,10 +182,6 @@ button {
     align-items: center;
 }
 
-#stepsImg {
-    display: none;
-}
-
 /* Desktop Adaptation */
 @media (min-width: 768px) {
     :root {
@@ -191,6 +194,7 @@ button {
         align-items: center;
         height: 140px;
         padding: 0;
+        width: 100%;
     }
 
     .headerLogo {
@@ -232,14 +236,6 @@ button {
 
     #mobileNavButton {
         display: none;
-    }
-
-    #stepsImgMob {
-        display: none;
-    }
-
-    #stepsImg {
-        display: block;
     }
 }
 
@@ -343,8 +339,8 @@ button:active,
 #mobileNavMenu {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 280px;
+    right: 0;
+    width: 315px;
     height: 100%;
     background-color: var(--color-primary);
     z-index: var(--z-mobile-menu);
@@ -353,12 +349,12 @@ button:active,
     flex-direction: column;
     gap: 15px;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     overflow-y: auto;
 }
 
 .mobileNavMenuClosed {
-    transform: translateX(-100%);
+    transform: translateX(100%);
 }
 
 .mobileNavMenuOpened {
@@ -383,8 +379,8 @@ button:active,
     filter: brightness(0) invert(1);
 }
 
-.menuItem {
-    font-size: 18px;
+#mobileNavMenu .menuItem {
+    font-size: 15px;
     font-weight: 600;
     color: var(--color-white);
     padding: 10px 0;
@@ -396,7 +392,7 @@ button:active,
     width: 100%;
 }
 
-.callMeasure.menuItem {
+#mobileNavMenu .callMeasure.menuItem {
     border-bottom: none;
     background: rgba(255, 255, 255, 0.1);
     padding: 15px;
@@ -409,7 +405,27 @@ button:active,
     gap: 10px;
 }
 
-.emailOrTel {
+#mobileNavMenu .emailOrTel {
     margin: 0;
-    font-size: 16px;
+    font-size: 13px;
+}
+
+#mobileNavMenu .headerRightMob {
+    gap: 10px;
+}
+
+#mobileNavMenu .headerRightMob .number {
+    font-size: 26px;
+    line-height: 1.1;
+    margin: 0;
+    white-space: nowrap;
+}
+
+#mobileNavMenu #linkCall {
+    gap: 8px;
+}
+
+#mobileNavMenu #linkCall .callImg {
+    width: 32px;
+    height: 32px;
 }

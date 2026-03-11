@@ -62,7 +62,7 @@
                 </button>
             </div>
             <div class="menuItem"><a href="index.html">ОКНА</a></div>
-            <div class="menuItem"><a href="#">БАЛКОНЫ</a></div>
+            <div class="menuItem"><a href="javascript:void(0)">БАЛКОНЫ</a></div>
             <div class="menuItem">
                 <a href="cottage.html">ПАНОРАМНОЕ ОСТЕКЛЕНИЕ</a>
             </div>
@@ -72,7 +72,7 @@
             <div class="menuItem">
                 <a href="#reviewBlock">ОТЗЫВЫ</a>
             </div>
-            <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
+            <div class="menuItem"><a href="#endBlock">КОНТАКТЫ</a></div>
             <div class="callMeasure menuItem">
                 <a
                     id="callMeasureMail"
@@ -179,6 +179,27 @@
                     alt="Меню" />
             </button>
         </div>
+        <div class="menu block">
+            <div class="menuLine">
+                <div class="menuItem"><a href="index.html">ОКНА</a></div>
+                <div class="vl"></div>
+                <div class="menuItem menuItem--active">
+                    <a href="javascript:void(0)">БАЛКОНЫ</a>
+                </div>
+                <div class="vl"></div>
+                <div class="menuItem">
+                    <a href="cottage.html">ПАНОРАМНОЕ ОСТЕКЛЕНИЕ</a>
+                </div>
+                <div class="vl"></div>
+                <div class="menuItem">
+                    <a href="#carouselBalconyPrices">ЦЕНЫ</a>
+                </div>
+                <div class="vl"></div>
+                <div class="menuItem"><a href="#reviewBlock">ОТЗЫВЫ</a></div>
+                <div class="vl"></div>
+                <div class="menuItem"><a href="#endBlock">КОНТАКТЫ</a></div>
+            </div>
+        </div>
         <div class="banner">
             <div
                 class="bannerImg"
@@ -194,14 +215,25 @@
                         </h1>
                         <ul class="hero-utp">
                             <li>
-                                ☑️ Собственное производство. Цены ниже на 15%.
+                                <img
+                                    src="images/check.png"
+                                    alt="✓"
+                                    class="check-icon" />
+                                Собственное производство. Цены ниже на 15%.
                             </li>
                             <li>
-                                ☑️ Теплое и холодное остекление под любой
-                                бюджет.
+                                <img
+                                    src="images/check.png"
+                                    alt="✓"
+                                    class="check-icon" />
+                                Теплое и холодное остекление под любой бюджет.
                             </li>
                             <li>
-                                ☑️ Утепление и отделка за 3 дня. Гарантия 5 лет.
+                                <img
+                                    src="images/check.png"
+                                    alt="✓"
+                                    class="check-icon" />
+                                Утепление и отделка за 3 дня. Гарантия 5 лет.
                             </li>
                         </ul>
                         <button
@@ -214,41 +246,6 @@
                             подарок.
                         </p>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu block">
-            <div class="menuLine">
-                <div class="menuItem"><a href="index.html">ОКНА</a></div>
-                <div class="vl"></div>
-                <div class="menuItem menuItem--active">
-                    <a href="#">БАЛКОНЫ</a>
-                </div>
-                <div class="vl"></div>
-                <div class="menuItem">
-                    <a href="cottage.html">ПАНОРАМНОЕ ОСТЕКЛЕНИЕ</a>
-                </div>
-                <div class="vl"></div>
-                <div class="menuItem">
-                    <a href="#carouselBalconyPrices">ЦЕНЫ</a>
-                </div>
-                <div class="vl"></div>
-                <div class="menuItem"><a href="#reviewBlock">ОТЗЫВЫ</a></div>
-                <div class="vl"></div>
-                <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
-                <div class="vl"></div>
-                <div class="callMeasure menuItem">
-                    <a
-                        id="callMeasureMail"
-                        class="callMeasureText"
-                        onclick="toggleModal()">
-                        <img
-                            src="./images/phone.png"
-                            alt=""
-                            width="24"
-                            height="24" />
-                        <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
-                    </a>
                 </div>
             </div>
         </div>
@@ -327,28 +324,28 @@
         </div>
 
         <div class="block">
-            <h1 class="titleText">БЕСПЛАТНЫЕ УСЛУГИ</h1>
+            <h1 class="titleText">КАК МЫ РАБОТАЕМ</h1>
             <div class="freeServices">
                 <div class="freeServicesBlock">
                     <img
                         src="./images/zamer 1.svg"
                         alt="Замерщик"
                         loading="lazy" />
-                    <h1>Бесплатный замер</h1>
+                    <h1>1. Бесплатный замер</h1>
                 </div>
                 <div class="freeServicesBlock">
                     <img
                         src="./images/usl1.png"
                         alt="Монтаж"
                         loading="lazy" />
-                    <h1>Профессиональный монтаж</h1>
+                    <h1>2. Профессиональный монтаж</h1>
                 </div>
                 <div class="freeServicesBlock">
                     <img
                         src="./images/usl2.svg"
                         alt="Обслуживание"
                         loading="lazy" />
-                    <h1>Гарантийное обслуживание</h1>
+                    <h1>3. Гарантия и сервис</h1>
                 </div>
             </div>
         </div>
@@ -395,16 +392,141 @@
                 <br />
                 ДО УСТАНОВКИ ОКНА
             </h1>
-            <img
-                id="stepsImg"
-                src="./images/4steps.png"
-                alt="Шаги"
-                loading="lazy" />
-            <img
-                id="stepsImgMob"
-                src="./images/4stepsMob.png"
-                alt="Шаги"
-                loading="lazy" />
+            <div
+                class="stepsFlow"
+                aria-label="Четыре шага до установки окна">
+                <svg
+                    class="stepsConnectorsSvg"
+                    aria-hidden="true"
+                    preserveAspectRatio="none">
+                    <path
+                        class="stepsConnectorsSvg__path stepsConnectorsSvg__path--12"></path>
+                    <path
+                        class="stepsConnectorsSvg__path stepsConnectorsSvg__path--23"></path>
+                    <path
+                        class="stepsConnectorsSvg__path stepsConnectorsSvg__path--34"></path>
+                </svg>
+
+                <div class="stepCard stepCard--1">
+                    <p class="stepCard__text">
+                        Вы оставляете заявку на сайте либо звоните в офис продаж
+                        и получаете расчет стоимости
+                    </p>
+                    <div
+                        class="stepCard__icon stepCard__icon--orange"
+                        aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                            focusable="false">
+                            <path
+                                d="M6.54 5a1 1 0 0 0-1.06.75c-.35 1.35-.4 2.76-.12 4.12a16.98 16.98 0 0 0 8.77 11.76c1.2.61 2.53.99 3.89 1.1a1 1 0 0 0 1.03-.68l1.03-3.09a1 1 0 0 0-.5-1.2l-3.26-1.45a1 1 0 0 0-1.15.28l-1.08 1.33a13.3 13.3 0 0 1-5.98-8.01l1.58-.63a1 1 0 0 0 .59-1.04L9.95 5.8A1 1 0 0 0 9 5H6.54z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <button
+                        class="stepCard__cta"
+                        onclick="toggleModal()">
+                        Вызвать замерщика
+                    </button>
+                </div>
+
+                <div class="stepCard stepCard--2">
+                    <p class="stepCard__text">
+                        Технический специалист приезжает к Вам в удобное время.
+                        Снимает точные размеры, помогает с выбором профиля,
+                        стеклопакета и рассчитывается
+                        <strong>честная итоговая цена. Договор может</strong>
+                        быть заключён на месте.
+                    </p>
+                    <div
+                        class="stepCard__icon stepCard__icon--teal"
+                        aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                            focusable="false">
+                            <path
+                                d="M10 4a6 6 0 1 0 3.87 10.58l4.27 4.27a1 1 0 0 0 1.41-1.42l-4.27-4.27A6 6 0 0 0 10 4zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="stepCard stepCard--3">
+                    <p class="stepCard__text">
+                        Изготавливаем окна на нашем
+                        <strong>
+                            собственном высокотехнологичном производстве.
+                        </strong>
+                        Ваши окна будут готовы в срок
+                        <strong>от 7 дней</strong>
+                    </p>
+                    <div
+                        class="stepCard__icon stepCard__icon--teal"
+                        aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                            focusable="false">
+                            <path
+                                d="M3 20h18v-2h-1V9.5a1 1 0 0 0-.55-.9l-4-2A1 1 0 0 0 14 7.5V18h-2v-5.5a1 1 0 0 0-1.45-.9l-4 2A1 1 0 0 0 6 14.5V18H5v-7a1 1 0 0 0-2 0v7H3v2zm5-2v-2h2v2H8zm8 0v-7.88l2 1V18h-2z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="stepCard stepCard--4">
+                    <p class="stepCard__text">
+                        Мы организуем
+                        <strong>доставку, установку и монтаж</strong>
+                        в удобное для вас время
+                    </p>
+                    <div
+                        class="stepCard__icon stepCard__icon--teal"
+                        aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                            focusable="false">
+                            <path
+                                d="M3 7a1 1 0 0 1 1-1h10v8h5.38l-1.2-3.2A1 1 0 0 0 17.25 10H14V8h3.25a3 3 0 0 1 2.8 1.92l1.7 4.53V17h-1.1a3 3 0 0 1-5.8 0h-4.7a3 3 0 0 1-5.8 0H3V7zm3 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm12 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="stepsBenefits"
+                aria-label="Преимущества работы с нами">
+                <p class="stepsBenefits__item">
+                    <span
+                        class="stepsBenefits__check"
+                        aria-hidden="true">
+                        ✔
+                    </span>
+                    Вы получаете надёжного партнера с
+                    <strong>20-летним опытом</strong>
+                </p>
+                <p class="stepsBenefits__item">
+                    <span
+                        class="stepsBenefits__check"
+                        aria-hidden="true">
+                        ✔
+                    </span>
+                    Качественные и красивые окна с гарантией
+                    <strong>5 лет</strong>
+                </p>
+                <p class="stepsBenefits__item">
+                    <span
+                        class="stepsBenefits__check"
+                        aria-hidden="true">
+                        ✔
+                    </span>
+                    Тепло, тишину и уют в Вашем доме
+                </p>
+            </div>
         </div>
         <div
             class="reviewBlock block"
@@ -465,7 +587,7 @@
                 </p>
             </div>
         </div>
-        <div class="block">
+        <div class="block geoBlock">
             <h1 class="titleText">НАША ГЕОЛОКАЦИЯ</h1>
             <div
                 class="geo"
@@ -478,7 +600,9 @@
                     loading="lazy"></iframe>
             </div>
         </div>
-        <div class="block end">
+        <div
+            class="block end"
+            id="endBlock">
             <div class="endRow">
                 <img
                     class="headerLogo"
@@ -515,6 +639,11 @@
                     </p>
                 </div>
             </div>
+            <div class="footerMap">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e9ca1c19348ef2d224db3b99564eaf4f3e34ff4cb43f2e738a64539018c9a8c&source=constructor"
+                    loading="lazy"></iframe>
+            </div>
             <div id="disclaimer">
                 Вся представленная на сайте информация, касающаяся оконных
                 конструкций, монтажных и отделочных работ, носит информационный
@@ -541,6 +670,7 @@
         <script src="./js/send_email.js"></script>
         <script src="./js/overlay.js"></script>
         <script src="./js/modal.js"></script>
+        <script src="./js/steps_connectors.js"></script>
         <script src="./js/animations.js"></script>
         <div
             class="modal"
@@ -566,11 +696,21 @@
                         type="text"
                         id="askUserFieldName"
                         placeholder="Ваше имя" />
+                    <span
+                        class="error-message"
+                        style="display: none">
+                        Пожалуйста, заполните это поле
+                    </span>
                     <input
                         class="askUserField"
                         type="text"
                         id="askUserFieldPhone"
                         placeholder="Ваш телефон" />
+                    <span
+                        class="error-message"
+                        style="display: none">
+                        Пожалуйста, заполните это поле
+                    </span>
                 </div>
                 <div class="askSend">
                     <button

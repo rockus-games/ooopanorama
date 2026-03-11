@@ -259,6 +259,16 @@
     flex-grow: 1;
 }
 
+.review-card__video {
+    margin-top: 15px;
+}
+
+.review-card__video-player {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 300px;
+}
+
 /* ===== DESKTOP (min-width: 769px) ===== */
 
 @media (min-width: 769px) {

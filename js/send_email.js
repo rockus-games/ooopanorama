@@ -8,7 +8,7 @@ function sendEmail(name, email, phone, msg) {
             phone: phone,
             msg: msg,
         },
-        success: (data) => {
+        success: () => {
             location.reload();
         },
     });
@@ -25,7 +25,72 @@ function askSendButton() {
     }
 }
 
+function getDigitsCount(value) {
+    return (value || "").replace(/\D/g, "").length;
+}
+
+function showError(input, message) {
+    if (!input) return;
+    input.classList.add("input-error");
+
+    let errorEl = input.nextElementSibling;
+    if (!errorEl || !errorEl.classList.contains("error-message")) {
+        errorEl = document.createElement("span");
+        errorEl.className = "error-message";
+        errorEl.style.display = "none";
+        input.insertAdjacentElement("afterend", errorEl);
+    }
+
+    errorEl.textContent = message;
+    errorEl.style.display = "block";
+
+    requestAnimationFrame(() => {
+        errorEl.classList.add("visible");
+    });
+}
+
+function clearError(input) {
+    if (!input) return;
+    input.classList.remove("input-error");
+
+    const errorEl = input.nextElementSibling;
+    if (errorEl && errorEl.classList.contains("error-message")) {
+        errorEl.classList.remove("visible");
+        errorEl.style.display = "none";
+    }
+}
+
+function validateName(nameInput) {
+    const value = (nameInput?.value || "").trim();
+    if (value.length < 2) {
+        showError(nameInput, "Введите имя (минимум 2 символа)");
+        return false;
+    }
+    clearError(nameInput);
+    return true;
+}
+
+function validatePhone(phoneInput) {
+    const value = (phoneInput?.value || "").trim();
+    if (!value || getDigitsCount(value) < 10) {
+        showError(phoneInput, "Введите корректный телефон (минимум 10 цифр)");
+        return false;
+    }
+    clearError(phoneInput);
+    return true;
+}
+
 function callSendButton() {
+    const nameInput = document.querySelector("#askUserFieldName");
+    const phoneInput = document.querySelector("#askUserFieldPhone");
+
+    const isNameValid = validateName(nameInput);
+    const isPhoneValid = validatePhone(phoneInput);
+
+    if (!isNameValid || !isPhoneValid) {
+        return;
+    }
+
     grecaptcha.ready(function () {
         grecaptcha
             .execute("6LflsYYrAAAAALTOxkCbPOIvVh6NZaxYpCMm6R3V", {
@@ -45,30 +110,33 @@ function callSendButton() {
                             data["om_score"] > 0.5
                         ) {
                             sendEmail(
-                                document.querySelector("#askUserFieldName")
-                                    .value,
+                                nameInput.value.trim(),
                                 "",
-                                document.querySelector("#askUserFieldPhone")
-                                    .value,
+                                phoneInput.value.trim(),
                                 "Заявка на вызов замерщика",
                             );
+                            toggleModal();
                         }
-                        //location.reload();
                     },
                 });
             });
     });
-
-    toggleModal();
 }
 
 function orderCountSend() {
-    sendEmail(
-        "",
-        "",
-        document.querySelector("#orderCountNumber").value,
-        document.querySelector("#orderCountText").value,
-    );
+    const phoneInput = document.querySelector("#orderCountNumber");
+    const isPhoneValid = validatePhone(phoneInput);
+
+    if (!isPhoneValid) {
+        return;
+    }
+
+    const orderTextEl = document.querySelector("#orderCountText");
+    const message = orderTextEl
+        ? orderTextEl.value
+        : "Заявка на расчёт стоимости";
+
+    sendEmail("", "", phoneInput.value.trim(), message);
 }
 
 function orderCallSend() {
