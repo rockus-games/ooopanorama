@@ -31,7 +31,6 @@ function loadElements(table) {
                         }
 
                         if (!Object.keys(dbStruct).includes(field)) {
-                            console.log(e[field]);
                             return;
                         }
 
@@ -49,7 +48,7 @@ function loadElements(table) {
                                     null
                                 ) {
                                     element.querySelector(
-                                        "#videoButton"
+                                        "#videoButton",
                                     ).style.display = "initial";
                                 }
                             }
@@ -80,7 +79,7 @@ function loadElements(table) {
                             }
 
                             element.querySelector(
-                                "#imageButton"
+                                "#imageButton",
                             ).style.display = "initial";
                         } else {
                             element.querySelector(`#${field}`).innerHTML =
@@ -108,11 +107,11 @@ function loadElements(table) {
                                     if (field == "video") {
                                         if (
                                             previewDiv.querySelector(
-                                                "#videoButton"
+                                                "#videoButton",
                                             ) != null
                                         ) {
                                             previewDiv.querySelector(
-                                                "#videoButton"
+                                                "#videoButton",
                                             ).style.display = "none";
                                         }
                                     }
@@ -121,7 +120,7 @@ function loadElements(table) {
                                             .querySelector(`#${field}`)
                                             .setAttribute(
                                                 "src",
-                                                "/images/icons/person.png"
+                                                "/images/icons/person.png",
                                             );
                                     } else {
                                         previewDiv
@@ -134,17 +133,17 @@ function loadElements(table) {
                                     .querySelector(`#${field}`)
                                     .setAttribute("src", e[field]);
                                 addBlock.querySelector(
-                                    `[data-field="${field}"]`
+                                    `[data-field="${field}"]`,
                                 ).value = e[field];
 
                                 if (field == "video") {
                                     if (
                                         previewDiv.querySelector(
-                                            "#videoButton"
+                                            "#videoButton",
                                         ) != null
                                     ) {
                                         previewDiv.querySelector(
-                                            "#videoButton"
+                                            "#videoButton",
                                         ).style.display = "initial";
                                     }
                                 }
@@ -155,11 +154,11 @@ function loadElements(table) {
                                 if (e[field] == "") {
                                     if (
                                         previewDiv.querySelector(
-                                            "#imageButton"
+                                            "#imageButton",
                                         ) != null
                                     ) {
                                         previewDiv.querySelector(
-                                            "#imageButton"
+                                            "#imageButton",
                                         ).style.display = "";
                                     }
                                     a.innerHTML = "";
@@ -184,19 +183,19 @@ function loadElements(table) {
                                     null
                                 ) {
                                     previewDiv.querySelector(
-                                        "#imageButton"
+                                        "#imageButton",
                                     ).style.display = "initial";
                                 }
 
                                 addBlock.querySelector(
-                                    `[data-field="${field}"]`
+                                    `[data-field="${field}"]`,
                                 ).value = e[field];
                             } else {
                                 previewDiv.querySelector(
-                                    `#${field}`
+                                    `#${field}`,
                                 ).innerHTML = e[field];
                                 addBlock.querySelector(
-                                    `[data-field="${field}"]`
+                                    `[data-field="${field}"]`,
                                 ).value = e[field];
                             }
                         });

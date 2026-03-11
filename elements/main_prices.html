@@ -1,31 +1,32 @@
-<div class="main_prices">
-    <div class="imageWrapper">
-        <div
-            class="carouselButton previous"
-            onclick="prevImage(this.parentNode)">
-            <img src="images/next.svg" />
+<div class="price-card">
+    <img
+        class="price-card__image"
+        src="/images/placeholders/price.svg"
+        alt=""
+        data-field="image" />
+    <div class="price-card__content">
+        <h3
+            class="price-card__title"
+            data-field="name">
+            Название
+        </h3>
+        <ul class="price-card__params">
+            <li data-field="text_1">Параметр 1</li>
+            <li data-field="text_2">Параметр 2</li>
+            <li data-field="text_3">Параметр 3</li>
+        </ul>
+        <div class="price-card__pricing">
+            <span
+                class="price-card__old-price"
+                data-field="old_price"></span>
+            <span
+                class="price-card__new-price"
+                data-field="new_price"></span>
         </div>
-        <div
-            class="image imageContainer"
-            id="images"></div>
-        <div
-            class="carouselButton"
-            onclick="nextImage(this.parentNode)">
-            <img src="images/next.svg" />
-        </div>
-    </div>
-    <h1 id="name">Название</h1>
-    <h1 id="text_1">Цвет: белый</h1>
-    <h1 id="text_2">(24) 4 - 16 - 4</h1>
-    <h1 id="text_3">Доп.текст</h1>
-    <h1 id="oldPriceText">
-        Старая цена:
-        <span id="oldPriceSpan">
-            <text id="old_price">8 440 руб.</text>
-            <div></div>
-        </span>
-    </h1>
-    <div id="newPrice">
-        <h1 id="new_price">6 990 руб.</h1>
+        <button
+            class="price-card__cta"
+            data-action="order">
+            Заказать расчёт
+        </button>
     </div>
 </div>

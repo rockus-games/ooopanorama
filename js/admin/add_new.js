@@ -52,9 +52,8 @@ async function prepareAddNew(table) {
                     password: sessionStorage.getItem("password"),
                 },
                 (a) => {
-                    console.log(a);
                     location.reload();
-                }
+                },
             );
             return;
         }
@@ -69,9 +68,8 @@ async function prepareAddNew(table) {
                 password: sessionStorage.getItem("password"),
             },
             (a) => {
-                console.log(a);
                 location.reload();
-            }
+            },
         );
     };
 

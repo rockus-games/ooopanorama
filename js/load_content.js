@@ -1,157 +1,87 @@
-function loadElements(block, table) {
-    var showBlock = document.querySelector(block);
+async function getDBStructure(table) {
+    const response = await fetch("/json/db_structure.json");
+    const data = await response.json();
+    return data[table];
+}
 
-    $.ajax({
-        url: "/php/get_data.php",
-        method: "POST",
-        data: { table: table },
-        success: async (data) => {
-            data = JSON.parse(data);
+async function loadElements(containerSelector, table) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
 
-            if (data.length == 0) {
-                return;
-            }
+    try {
+        // 1. Загружаем данные, структуру и шаблон параллельно
+        const [dataResponse, dbStruct, templateResponse] = await Promise.all([
+            fetch("/php/get_data.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `table=${table}`,
+            }),
+            getDBStructure(table),
+            fetch(`/elements/${table}.html`),
+        ]);
 
-            showBlock.innerHTML = "";
+        const data = await dataResponse.json();
+        if (!data || data.length === 0) return;
 
-            var dbStruct = await getDBStructure(table);
+        const templateHtml = await templateResponse.text();
 
-            var id = -1;
+        // 2. Очищаем контейнер и создаём track
+        container.innerHTML = "";
+        const track = document.createElement("div");
+        track.className = "carousel-track";
 
-            data.forEach((e, index) => {
-                $.get(`/elements/${table}.html`, (code) => {
-                    showBlock.insertAdjacentHTML("beforeend", code);
+        // 3. Рендерим карточки
+        data.forEach((item) => {
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = templateHtml.trim();
+            const card = tempDiv.firstElementChild;
 
-                    Object.keys(e).forEach((field) => {
-                        if (field == "id") {
-                            id = e[field];
+            Object.keys(item).forEach((field) => {
+                if (field === "id") {
+                    card.dataset.id = item[field];
+                    return;
+                }
 
-                            if (
-                                showBlock.querySelector("#videoButton") != null
-                            ) {
-                                showBlock.querySelector(
-                                    "#videoButton"
-                                ).id = `${table}_${id}_videoButton`;
-                            }
-                            if (
-                                showBlock.querySelector("#imageButton") != null
-                            ) {
-                                showBlock.querySelector(
-                                    "#imageButton"
-                                ).id = `${table}_${id}_imageButton`;
-                            }
-                            return;
-                        }
+                if (!dbStruct || !dbStruct[field]) return;
 
-                        if (!Object.keys(dbStruct).includes(field)) {
-                            return;
-                        }
+                const element = card.querySelector(`[data-field="${field}"]`);
+                if (!element) return;
 
-                        var a = showBlock.querySelector(`#${field}`);
+                const value = item[field];
+                const type = dbStruct[field].type;
 
-                        if (dbStruct[field].type == "file") {
-                            var hor =
-                                showBlock.querySelectorAll(
-                                    ".horizontalActions"
-                                )[index];
-
-                            if (e[field] == "") {
-                                a.id = `${table}_${id}_${field}`;
-
-                                if (field == "video") {
-                                    if (a.parentNode.style.display == "") {
-                                        a.parentNode.style.display = "none";
-                                    }
-
-                                    if (a.style.display == "") {
-                                        a.style.display = "none";
-                                    }
-
-                                    if (
-                                        hor != null &&
-                                        hor.style.display == ""
-                                    ) {
-                                        hor.style.display = "none";
-                                    }
-                                }
-
-                                return;
-                            }
-                            if (a.parentNode.classList.contains("content")) {
-                                a.parentNode.style.display = "flex";
-                            }
-                            a.setAttribute("src", e[field]);
-
-                            if (hor != null) {
-                                hor.style.display = "flex";
-                            }
-
-                            // console.log(`${field} ${id} - ${a.src}`);
-                        } else if (dbStruct[field].type == "array_of_images") {
-                            var hor =
-                                showBlock.querySelectorAll(
-                                    ".horizontalActions"
-                                )[index];
-
-                            if (e[field] == "") {
-                                a.id = `${table}_${id}_${field}`;
-
-                                if (a.style.display == "") {
-                                    a.style.display = "none";
-                                }
-
-                                if (hor != null && hor.style.display == "") {
-                                    hor.style.display = "none";
-                                }
-
-                                return;
-                            }
-                            var b = JSON.parse(e[field]);
-
-                            a.style.display = "flex";
-                            if (hor != null) {
-                                hor.style.display = "flex";
-                            }
-
-                            for (var i = 0; i < b.length; i++) {
-                                var img = document.createElement("img");
-                                img.src = b[i];
-
-                                if (block.includes("Reviews")) {
-                                    img.classList = "image";
-                                } else {
-                                    if (i == 0) {
-                                        img.classList = "image viewing";
-                                    } else {
-                                        img.classList = "image hidden";
-                                    }
-                                }
-
-                                a.appendChild(img);
-                            }
-
-                            if (
-                                showBlock.querySelector(
-                                    `#${table}_${id}_imageButton`
-                                ) != null
-                            ) {
-                                showBlock.querySelector(
-                                    `#${table}_${id}_imageButton`
-                                ).style.display = "flex";
-                            }
-                        } else {
-                            a.innerHTML = e[field];
-                        }
-
-                        a.id = `${table}_${id}_${field}`;
-                    });
-                });
+                if (type === "file" || type === "array_of_images") {
+                    const src = Array.isArray(value) ? value[0] : value;
+                    if (src && element.tagName === "IMG") {
+                        element.src = src;
+                    } else if (element.tagName === "IMG") {
+                        element.style.display = "none";
+                    }
+                } else {
+                    element.textContent = value || "";
+                }
             });
 
-            setTimeout(() => {
-                setSize();
-                videoSetSize();
-            }, 1000);
-        },
-    });
+            track.appendChild(card);
+        });
+
+        container.appendChild(track);
+
+        // 4. Инициализируем карусель
+        const carouselWrapper = container.closest(".carousel-wrapper");
+        if (carouselWrapper && window.Carousel) {
+            new Carousel(carouselWrapper, {
+                itemsVisible: {
+                    mobile: 1,
+                    desktop: table === "main_reviews" ? 1 : 3,
+                },
+            });
+        }
+    } catch (error) {
+        console.error(`Ошибка загрузки ${table}:`, error);
+    }
 }
+
+window.loadElements = loadElements;

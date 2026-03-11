@@ -1,19 +1,17 @@
+const breakpoints = {
+    mobile: 576,
+    tablet: 768,
+    desktop: 992,
+};
+
 function isMobile() {
-    var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-
-    // const regex =
-    //     /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-    // return regex.test(navigator.userAgent);
-
-    return width <= 500;
+    return window.matchMedia(`(max-width: ${breakpoints.mobile}px)`).matches;
 }
 
 function toggleSideMenu() {
-    var menu = document.querySelector("#mobileNavMenu");
+    const menu = document.querySelector("#mobileNavMenu");
+    if (!menu) return;
 
-    if (menu.className == "mobileNavMenuClosed") {
-        menu.className = "mobileNavMenuOpened";
-    } else {
-        menu.className = "mobileNavMenuClosed";
-    }
+    menu.classList.toggle("mobileNavMenuOpened");
+    menu.classList.toggle("mobileNavMenuClosed");
 }

@@ -24,7 +24,7 @@
             "type": "text",
             "label": "Новая цена"
         },
-        "images": {
+        "image": {
             "type": "array_of_images",
             "label": "Изображение"
         }

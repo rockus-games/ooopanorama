@@ -1,77 +1,25 @@
-<div class="main_reviews reviews">
-    <div class="avatar">
+<div class="review-card">
+    <div class="review-card__header">
         <img
-            id="avatar"
+            class="review-card__avatar"
             src="/images/icons/person.png"
             alt=""
-            srcset="" />
-        <!-- <div class="buttons">
-            <div
-                id="imageButton"
-                class="imageButton"
-                onclick="showOverlayImages(this.parentNode.parentNode.parentNode)">
-                <img
-                    src="/images/icons/image.png"
-                    alt="" />
-            </div>
-            <div
-                id="videoButton"
-                class="videoButton"
-                onclick="showOverlayVideos(this.parentNode.parentNode.parentNode)">
-                <img
-                    src="/images/icons/video.png"
-                    alt="" />
-            </div>
-        </div> -->
-    </div>
-    <div class="box">
-        <h1 id="name">Имя</h1>
-        <h1 id="city">Город</h1>
-        <div
-            id="photos"
-            class="content">
-            <video
-                id="video"
-                src=""
-                height="400"
-                controls
-                class="video"></video>
-        </div>
-        <div class="horizontalActions">
-            <div
-                class="carouselButton previous"
-                onclick="prevImageSimple(this.parentNode.parentNode.children[2].children[0])">
-                <img src="images/next.svg" />
-            </div>
-            <div
-                class="carouselButton"
-                onclick="nextImageSimple(this.parentNode.parentNode.children[2].children[0])">
-                <img src="images/next.svg" />
-            </div>
-        </div>
-        <p id="review">
-            Мы как и все начали ремонт со смены окон. Остановили свой выбор на
-            компании ООО Панорама, т.к. они давно на рынке и имеют собственное
-            производство. Результат нас более,чем устраивает. Сделали всё очень
-            быстро и качественно! мы очень довольны!
-        </p>
-    </div>
-    <!-- <div
-        class="overlay overlayImages"
-        onclick="showOverlayImages(this.parentNode)">
-        <div id="closeButton">
-            <img
-                src="/images/icons/close.png"
-                alt="" />
+            data-field="avatar" />
+        <div class="review-card__info">
+            <h3
+                class="review-card__name"
+                data-field="name">
+                Имя
+            </h3>
+            <span
+                class="review-card__city"
+                data-field="city"></span>
+            <div class="review-card__rating">★★★★★</div>
         </div>
     </div>
-    <div
-        class="overlay overlayVideos"
-        onclick="showOverlayVideos(this.parentNode)">
-        <div id="closeButton">
-            <img
-                src="/images/icons/close.png"
-                alt="" />
-        </div>
-    </div> -->
+    <p
+        class="review-card__text"
+        data-field="review">
+        Текст отзыва
+    </p>
 </div>

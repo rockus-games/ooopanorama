@@ -1,8 +1,6 @@
 async function loadImage(element) {
     var file = element.files[0];
 
-    console.log(file);
-
     var data = new FormData();
     data.append("file", file);
     data.append("login", sessionStorage.getItem("login"));
@@ -33,8 +31,6 @@ async function loadManyImage(element) {
         data.append("file", file);
         data.append("login", sessionStorage.getItem("login"));
         data.append("password", sessionStorage.getItem("password"));
-
-        console.log(data);
 
         var img = await $.ajax({
             url: "/php/load_image.php",

@@ -9,20 +9,18 @@ function sendEmail(name, email, phone, msg) {
             msg: msg,
         },
         success: (data) => {
-            console.log(data);
             location.reload();
         },
     });
 }
 
 function askSendButton() {
-    console.log(document.querySelector(".askSendCheckBox").checked);
     if (document.querySelector(".askSendCheckBox").checked == true) {
         sendEmail(
             document.querySelector("#askUserFieldName").value,
             "",
             document.querySelector("#askUserFieldPhone").value,
-            "Перезвоните, у меня есть вопросы"
+            "Перезвоните, у меня есть вопросы",
         );
     }
 }
@@ -52,7 +50,7 @@ function callSendButton() {
                                 "",
                                 document.querySelector("#askUserFieldPhone")
                                     .value,
-                                "Заявка на вызов замерщика"
+                                "Заявка на вызов замерщика",
                             );
                         }
                         //location.reload();
@@ -69,7 +67,7 @@ function orderCountSend() {
         "",
         "",
         document.querySelector("#orderCountNumber").value,
-        document.querySelector("#orderCountText").value
+        document.querySelector("#orderCountText").value,
     );
 }
 
@@ -78,6 +76,6 @@ function orderCallSend() {
         document.querySelector("#orderCallName").value,
         "",
         document.querySelector("#orderCallPhone").value,
-        "Перезвоните, пожалуйста, у меня есть вопросы"
+        "Перезвоните, пожалуйста, у меня есть вопросы",
     );
 }
