@@ -32,15 +32,99 @@ async function loadElements(containerSelector, table) {
         const track = document.createElement("div");
         track.className = "carousel-track";
 
+        const parseMediaList = (rawValue) => {
+            if (Array.isArray(rawValue)) {
+                return rawValue
+                    .map((item) => String(item || "").trim())
+                    .filter(Boolean);
+            }
+
+            if (typeof rawValue === "string") {
+                const trimmed = rawValue.trim();
+                if (!trimmed) return [];
+
+                try {
+                    const parsed = JSON.parse(trimmed);
+                    if (Array.isArray(parsed)) {
+                        return parsed
+                            .map((item) => String(item || "").trim())
+                            .filter(Boolean);
+                    }
+                } catch {
+                    // ignore JSON parse error and treat as single path
+                }
+
+                return [trimmed];
+            }
+
+            if (rawValue) {
+                const normalized = String(rawValue).trim();
+                return normalized ? [normalized] : [];
+            }
+
+            return [];
+        };
+
         // 3. Рендерим карточки
         data.forEach((item) => {
             const tempDiv = document.createElement("div");
             tempDiv.innerHTML = templateHtml.trim();
             const card = tempDiv.firstElementChild;
+            let reviewVideoSrc = "";
 
             Object.keys(item).forEach((field) => {
                 if (field === "id") {
                     card.dataset.id = item[field];
+                    return;
+                }
+
+                const value = item[field];
+
+                if (
+                    table === "main_prices" &&
+                    (field === "images" || field === "image")
+                ) {
+                    const element = card.querySelector('[data-field="images"]');
+                    if (!element) return;
+
+                    const imageList = parseMediaList(value);
+
+                    if (imageList.length > 0) {
+                        element.innerHTML = "";
+                        imageList.forEach((src, index) => {
+                            const img = document.createElement("img");
+                            img.className = "price-card__image";
+                            img.src = src;
+                            img.alt = `${item.name || "Изображение"} ${index + 1}`;
+                            img.loading = "lazy";
+                            element.appendChild(img);
+                        });
+                    }
+                    return;
+                }
+
+                if (table === "main_reviews" && field === "photos") {
+                    const element = card.querySelector('[data-field="photos"]');
+                    if (!element) return;
+
+                    const photoList = parseMediaList(value);
+                    element.innerHTML = "";
+
+                    if (photoList.length > 0) {
+                        photoList.forEach((src, index) => {
+                            const img = document.createElement("img");
+                            img.className = "review-card__photo";
+                            img.src = src;
+                            img.alt = `${item.name || "Фото отзыва"} ${index + 1}`;
+                            img.loading = "lazy";
+                            element.appendChild(img);
+                        });
+                    }
+                    return;
+                }
+
+                if (table === "main_reviews" && field === "video") {
+                    reviewVideoSrc = parseMediaList(value)[0] || "";
                     return;
                 }
 
@@ -49,17 +133,7 @@ async function loadElements(containerSelector, table) {
                 const element = card.querySelector(`[data-field="${field}"]`);
                 if (!element) return;
 
-                const value = item[field];
                 const type = dbStruct[field].type;
-
-                if (field === "video") {
-                    if (value) {
-                        element.style.display = "";
-                        const source = element.querySelector("source");
-                        if (source) source.src = value;
-                    }
-                    return;
-                }
 
                 if (type === "file" || type === "array_of_images") {
                     const src = Array.isArray(value) ? value[0] : value;
@@ -72,6 +146,30 @@ async function loadElements(containerSelector, table) {
                     element.textContent = value || "";
                 }
             });
+
+            if (table === "main_reviews" && reviewVideoSrc) {
+                const photosContainer = card.querySelector(
+                    '[data-field="photos"]',
+                );
+                if (photosContainer) {
+                    const videoWrapper = document.createElement("div");
+                    videoWrapper.className = "review-card__video";
+
+                    const video = document.createElement("video");
+                    video.className = "review-card__video-player";
+                    video.controls = true;
+                    video.preload = "metadata";
+                    video.playsInline = true;
+
+                    const source = document.createElement("source");
+                    source.src = reviewVideoSrc;
+                    source.type = "video/mp4";
+
+                    video.appendChild(source);
+                    videoWrapper.appendChild(video);
+                    photosContainer.appendChild(videoWrapper);
+                }
+            }
 
             track.appendChild(card);
         });
