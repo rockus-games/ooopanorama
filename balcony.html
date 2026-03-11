@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
     <head>
-        <meta charset="UTF-+7" />
+        <meta charset="UTF-8" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0" />
@@ -54,28 +54,25 @@
             class="mobileNavMenuClosed">
             <div id="mobNavBtnSpacer">
                 <button
-                    id="mobileNavButton"
+                    id="mobileNavClose"
                     onclick="toggleSideMenu()">
                     <img
                         src="./images/menu.svg"
-                        alt="" />
+                        alt="Меню" />
                 </button>
             </div>
             <div class="menuItem"><a href="index.html">ОКНА</a></div>
-            <div class="menuItem"><a href="#">БАЛКОНЫ</a></div>
-            <div class="menuItem"><a href="cottage.html">КОТТЕДЖИ</a></div>
-            <!-- <div class="menuItem">
-                <a href="#">
-                    КОМПЛЕКТУЮЩИЕ ДЛЯ
-                    <br />
-                    ОКОН
-                </a>
-            </div> -->
+            <div class="menuItem"><a href="javascript:void(0)">БАЛКОНЫ</a></div>
+            <div class="menuItem">
+                <a href="cottage.html">ПАНОРАМНОЕ ОСТЕКЛЕНИЕ</a>
+            </div>
+            <div class="menuItem">
+                <a href="#carouselBalconyPrices">ЦЕНЫ</a>
+            </div>
             <div class="menuItem">
                 <a href="#reviewBlock">ОТЗЫВЫ</a>
             </div>
-            <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
-            <div class="menuItem"><a href="about.html">О НАС</a></div>
+            <div class="menuItem"><a href="#endBlock">КОНТАКТЫ</a></div>
             <div class="callMeasure menuItem">
                 <a
                     id="callMeasureMail"
@@ -83,7 +80,9 @@
                     onclick="toggleModal()">
                     <img
                         src="./images/phone.png"
-                        alt="" />
+                        alt=""
+                        width="24"
+                        height="24" />
                     <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
                 </a>
             </div>
@@ -98,7 +97,7 @@
                         <img
                             class="callImg"
                             src="./images/whts.svg"
-                            alt="" />
+                            alt="WhatsApp" />
                     </a>
                     <a
                         id="linkTg"
@@ -107,7 +106,7 @@
                         <img
                             class="callImg"
                             src="./images/tg.svg"
-                            alt="" />
+                            alt="Telegram" />
                     </a>
                 </div>
                 <a href="tel:+74951501973">
@@ -120,50 +119,6 @@
                 <a href="tel:+79854181973">
                     <h1 class="number">+7 (985) 418-19-73</h1>
                 </a>
-                <a href="https://yandex.ru/maps/-/CHcdMLmo">
-                    <div class="call">
-                        <p class="headerAddress">
-                            Москва, ул. Варшавское шоссе д.125 с. 1
-                        </p>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="32px"
-                            viewBox="0 -960 960 960"
-                            width="32px"
-                            fill="#e3e3e3">
-                            <path
-                                d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
-                        </svg>
-                    </div>
-                </a>
-                <a
-                    href="mailto:service@ooopanorama.ru"
-                    class="headerMail">
-                    <div class="call">
-                        <p class="headerAddress">service@ooopanorama.ru</p>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="32px"
-                            viewBox="0 -960 960 960"
-                            width="32px"
-                            fill="#e3e3e3">
-                            <path
-                                d="M146.67-160q-27 0-46.84-19.83Q80-199.67 80-226.67v-506.66q0-27 19.83-46.84Q119.67-800 146.67-800h666.66q27 0 46.84 19.83Q880-760.33 880-733.33v506.66q0 27-19.83 46.84Q840.33-160 813.33-160H146.67ZM480-454.67 146.67-670v443.33h666.66V-670L480-454.67Zm0-66.66 330.67-212H150l330 212ZM146.67-670v-63.33V-226.67-670Z" />
-                        </svg>
-                    </div>
-                </a>
-                <div class="call headerMail">
-                    <p class="headerAddress">Ежедневно: 9-20</p>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="32px"
-                        viewBox="0 -960 960 960"
-                        width="32px"
-                        fill="#e3e3e3">
-                        <path
-                            d="M582-298 440-440v-200h80v167l118 118-56 57ZM440-720v-80h80v80h-80Zm280 280v-80h80v80h-80ZM440-160v-80h80v80h-80ZM160-440v-80h80v80h-80ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
-                    </svg>
-                </div>
             </div>
         </div>
         <div class="headerMob">
@@ -171,7 +126,7 @@
                 <img
                     class="headerLogo"
                     src="./images/logo.png"
-                    alt="" />
+                    alt="Панорама" />
                 <div class="headerRight">
                     <div class="call">
                         <p class="headerAddress">Ежедневно: 9-20</p>
@@ -202,7 +157,7 @@
                             <img
                                 class="callImg"
                                 src="./images/whts.svg"
-                                alt="" />
+                                alt="WhatsApp" />
                         </a>
                         <a
                             id="linkTg"
@@ -211,44 +166,7 @@
                             <img
                                 class="callImg"
                                 src="./images/tg.svg"
-                                alt="" />
-                        </a>
-                    </div>
-                    <div style="display: flex">
-                        <a href="https://yandex.ru/maps/-/CHcdMLmo">
-                            <div class="call">
-                                <p class="headerAddress">
-                                    Москва, ул. Варшавское шоссе д.125 с. 1
-                                </p>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    height="32px"
-                                    viewBox="0 -960 960 960"
-                                    width="32px"
-                                    fill="#e3e3e3">
-                                    <path
-                                        d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z" />
-                                </svg>
-                            </div>
-                        </a>
-                        <div style="width: 30px"></div>
-                        <a
-                            href="mailto:service@ooopanorama.ru"
-                            id="headerMail">
-                            <div class="call">
-                                <p class="headerAddress">
-                                    service@ooopanorama.ru
-                                </p>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    height="32px"
-                                    viewBox="0 -960 960 960"
-                                    width="32px"
-                                    fill="#e3e3e3">
-                                    <path
-                                        d="M146.67-160q-27 0-46.84-19.83Q80-199.67 80-226.67v-506.66q0-27 19.83-46.84Q119.67-800 146.67-800h666.66q27 0 46.84 19.83Q880-760.33 880-733.33v506.66q0 27-19.83 46.84Q840.33-160 813.33-160H146.67ZM480-454.67 146.67-670v443.33h666.66V-670L480-454.67Zm0-66.66 330.67-212H150l330 212ZM146.67-670v-63.33V-226.67-670Z" />
-                                </svg>
-                            </div>
+                                alt="Telegram" />
                         </a>
                     </div>
                 </div>
@@ -258,105 +176,79 @@
                 onclick="toggleSideMenu()">
                 <img
                     src="./images/menu.svg"
-                    alt="" />
+                    alt="Меню" />
             </button>
-        </div>
-        <div class="banner">
-            <div
-                class="bannerImg"
-                id="banner"
-                alt="">
-                <div class="bannerImgGrad">
-                    <h1 class="bannerText">
-                        СОВРЕМЕННОЕ ОСТЕКЛЕНИЕ -
-                        <br />
-                        БОЛЬШЕ СВЕТА, МЕНЬШЕ
-                        <br />
-                        ШУМА
-                    </h1>
-                </div>
-            </div>
-            <div
-                class="bannerImg"
-                id="bannerMob"
-                alt="">
-                <div class="bannerImgGrad">
-                    <h1 class="bannerText">
-                        СОВРЕМЕННОЕ
-                        <br />
-                        ОСТЕКЛЕНИЕ -
-                        <br />
-                        БОЛЬШЕ
-                        <br />
-                        СВЕТА,
-                        <br />
-                        МЕНЬШЕ
-                        <br />
-                        ШУМА
-                    </h1>
-                </div>
-            </div>
         </div>
         <div class="menu block">
             <div class="menuLine">
                 <div class="menuItem"><a href="index.html">ОКНА</a></div>
                 <div class="vl"></div>
-                <div class="menuItem"><a href="#">БАЛКОНЫ</a></div>
+                <div class="menuItem menuItem--active">
+                    <a href="javascript:void(0)">БАЛКОНЫ</a>
+                </div>
                 <div class="vl"></div>
-                <div class="menuItem"><a href="cottage.html">КОТТЕДЖИ</a></div>
-                <!-- <div class="vl"></div>
                 <div class="menuItem">
-                    <a href="#">
-                        КОМПЛЕКТУЮЩИЕ ДЛЯ
-                        <br />
-                        ОКОН
-                    </a>
-                </div> -->
+                    <a href="cottage.html">ПАНОРАМНОЕ ОСТЕКЛЕНИЕ</a>
+                </div>
+                <div class="vl"></div>
+                <div class="menuItem">
+                    <a href="#carouselBalconyPrices">ЦЕНЫ</a>
+                </div>
                 <div class="vl"></div>
                 <div class="menuItem"><a href="#reviewBlock">ОТЗЫВЫ</a></div>
                 <div class="vl"></div>
-                <div class="menuItem"><a href="#geo">КОНТАКТЫ</a></div>
-                <div class="vl"></div>
-                <div class="menuItem"><a href="about.html">О НАС</a></div>
-                <div class="vl"></div>
-                <div class="callMeasure menuItem">
-                    <a
-                        id="callMeasureMail"
-                        class="callMeasureText"
-                        onclick="toggleModal()">
-                        <img
-                            src="./images/phone.png"
-                            alt="" />
-                        <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
-                    </a>
+                <div class="menuItem"><a href="#endBlock">КОНТАКТЫ</a></div>
+            </div>
+        </div>
+        <div class="banner">
+            <div
+                class="bannerImg"
+                id="banner">
+                <div class="bannerImgGrad">
+                    <div class="hero-content">
+                        <h1 class="bannerText">
+                            ОСТЕКЛЕНИЕ И ОТДЕЛКА
+                            <br />
+                            БАЛКОНОВ ПОД КЛЮЧ
+                            <br />
+                            В МОСКВЕ
+                        </h1>
+                        <ul class="hero-utp">
+                            <li>
+                                <img
+                                    src="images/check.png"
+                                    alt="✓"
+                                    class="check-icon" />
+                                Собственное производство. Цены ниже на 15%.
+                            </li>
+                            <li>
+                                <img
+                                    src="images/check.png"
+                                    alt="✓"
+                                    class="check-icon" />
+                                Теплое и холодное остекление под любой бюджет.
+                            </li>
+                            <li>
+                                <img
+                                    src="images/check.png"
+                                    alt="✓"
+                                    class="check-icon" />
+                                Утепление и отделка за 3 дня. Гарантия 5 лет.
+                            </li>
+                        </ul>
+                        <button
+                            class="hero-cta pulse-cta"
+                            onclick="toggleModal()">
+                            РАССЧИТАТЬ СТОИМОСТЬ ОСТЕКЛЕНИЯ
+                        </button>
+                        <p class="hero-bonus">
+                            При заказе сегодня — шкаф или сушилка для белья в
+                            подарок.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="menuLine"></div>
         </div>
-        <!-- <div class="callMeasure">
-            <a
-                id="callMeasureMail"
-                class="callMeasureText"
-                onclick="toggleModal()">
-                <img
-                    src="./images/phone.png"
-                    alt="" />
-                <p class="emailOrTel">ВЫЗОВ ЗАМЕРЩИКА</p>
-            </a>
-            <a
-                id="callMeasureTel"
-                class="callMeasureText"
-                href="tel:+79854181973">
-                <img
-                    src="./images/phone.png"
-                    alt="" />
-                <p class="emailOrTel">
-                    ВЫЗОВ ЗАМЕРЩИКА
-                    <br />
-                    +7-985-418-19-73
-                </p>
-            </a>
-        </div> -->
         <div class="balconyWarmCold block">
             <h1 class="titleText">ОСТЕКЛЕНИЕ БАЛКОНОВ И ЛОДЖИЙ</h1>
             <div class="doubleButton">
@@ -374,7 +266,7 @@
             <div class="balconyImg">
                 <img
                     src="/images/balcony/warm-glazing.png"
-                    alt="" />
+                    alt="Тёплое остекление" />
             </div>
             <span class="balconyWarmPrice">
                 От
@@ -393,80 +285,67 @@
                 руб.
             </span>
         </div>
-        <!-- <div class="orderCall block">
-            <h1 class="titleText">ЗАКАЗАТЬ ЗВОНОК</h1>
-            Введите ваши данные ниже, мы перезвоним в указанное время
-            <div style="height: 20px"></div>
-            <input
-                type="text"
-                placeholder="Введите имя"
-                class="orderCallInput"
-                id="orderCallName" />
-            <input
-                type="text"
-                placeholder="Введите номер"
-                class="orderCallInput"
-                id="orderCallPhone" />
-            <button
-                class="orderCallButton"
-                onclick="orderCallSend()">
-                Заказать
-            </button>
-            <p>
-                Отправляя заявку, вы соглашаетесь на обработку персональных
-                данных
-            </p>
-        </div> -->
         <div class="block">
             <h1 class="titleText">ОТДЕЛКА БАЛКОНОВ И ЛОДЖИЙ</h1>
             <img
                 class="balconyDesignImg"
                 src="/images/balcony/design.png"
-                alt="" />
+                alt="Отделка балконов"
+                loading="lazy" />
         </div>
-        <div class="priceExample block">
+        <div
+            class="priceExample block"
+            data-animate="fade-up">
             <h1 class="titleText">ПРИМЕРЫ ЦЕН</h1>
-            <div class="carousel">
+            <div class="carousel-wrapper">
                 <div
-                    class="carouselBody"
+                    class="carousel-track-container"
                     id="carouselBalconyPrices">
                     <div class="balcony_prices">Тут будут примеры цен</div>
+                </div>
+                <div class="carousel-controls">
+                    <button
+                        class="carousel-btn carousel-btn--prev"
+                        aria-label="Предыдущий слайд">
+                        <img
+                            src="./images/next.svg"
+                            alt="" />
+                    </button>
+                    <div class="carousel-dots"></div>
+                    <button
+                        class="carousel-btn carousel-btn--next"
+                        aria-label="Следующий слайд">
+                        <img
+                            src="./images/next.svg"
+                            alt="" />
+                    </button>
                 </div>
             </div>
         </div>
 
         <div class="block">
-            <h1 class="titleText">БЕСПЛАТНЫЕ УСЛУГИ</h1>
+            <h1 class="titleText">КАК МЫ РАБОТАЕМ</h1>
             <div class="freeServices">
                 <div class="freeServicesBlock">
                     <img
                         src="./images/zamer 1.svg"
-                        alt="" />
-                    <h1>
-                        ВЫЗОВ
-                        <br />
-                        ЗАМЕРЩИКА
-                    </h1>
+                        alt="Замерщик"
+                        loading="lazy" />
+                    <h1>1. Бесплатный замер</h1>
                 </div>
                 <div class="freeServicesBlock">
                     <img
                         src="./images/usl1.png"
-                        alt="" />
-                    <h1>
-                        ГАРАНТИЯ
-                        <br />
-                        НА МОНТАЖ
-                    </h1>
+                        alt="Монтаж"
+                        loading="lazy" />
+                    <h1>2. Профессиональный монтаж</h1>
                 </div>
                 <div class="freeServicesBlock">
                     <img
                         src="./images/usl2.svg"
-                        alt="" />
-                    <h1>
-                        ГАРАНТИЙНОЕ
-                        <br />
-                        ОБСЛУЖИВАНИЕ
-                    </h1>
+                        alt="Обслуживание"
+                        loading="lazy" />
+                    <h1>3. Гарантия и сервис</h1>
                 </div>
             </div>
         </div>
@@ -474,50 +353,36 @@
             <h1 class="titleText">СКИДКИ И АКЦИИ</h1>
             <img
                 src="./images/discounts.png"
-                alt="" />
+                alt="Скидки"
+                loading="lazy" />
         </div>
-        <!-- <div class="block">
-            <h1 class="titleText">ОСТАЛИСЬ ВОПРОСЫ</h1>
-            <div class="ask">
-                <h1 class="askText">
-                    Укажите свои контакные данные, и наш профессионал свяжется с
-                    вам в течении 5 минут в рабочие часы.
-                </h1>
-                <div class="askUserData">
-                    <input
-                        class="askUserField"
-                        type="text"
-                        id="askUserFieldName"
-                        placeholder="Ваше имя" />
-                    <input
-                        class="askUserField"
-                        type="text"
-                        id="askUserFieldPhone"
-                        placeholder="Ваш телефон" />
-                </div>
-                <div class="askSend">
-                    <button
-                        class="askSendButton"
-                        onclick="askSendButton()">
-                        Отправить
-                    </button>
-                    <div class="askSendTerms">
-                        <input
-                            type="checkbox"
-                            class="askSendCheckBox" />
-                        Оставляя заявку, вы соглашаетесь на обработку
-                        персональных данных
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <div class="priceExample block">
+        <div
+            class="priceExample block"
+            data-animate="fade-up"
+            data-delay="100">
             <h1 class="titleText">ПРИМЕРЫ РАБОТ</h1>
-            <div class="carousel">
+            <div class="carousel-wrapper">
                 <div
-                    class="carouselBody"
+                    class="carousel-track-container"
                     id="carouselBalconyWorks">
                     <div class="balcony_works">Тут будут примеры работ</div>
+                </div>
+                <div class="carousel-controls">
+                    <button
+                        class="carousel-btn carousel-btn--prev"
+                        aria-label="Предыдущий слайд">
+                        <img
+                            src="./images/next.svg"
+                            alt="" />
+                    </button>
+                    <div class="carousel-dots"></div>
+                    <button
+                        class="carousel-btn carousel-btn--next"
+                        aria-label="Следующий слайд">
+                        <img
+                            src="./images/next.svg"
+                            alt="" />
+                    </button>
                 </div>
             </div>
         </div>
@@ -527,36 +392,180 @@
                 <br />
                 ДО УСТАНОВКИ ОКНА
             </h1>
-            <img
-                id="stepsImg"
-                src="./images/4steps.png"
-                alt="" />
-            <img
-                id="stepsImgMob"
-                src="./images/4stepsMob.png"
-                alt="" />
+            <div
+                class="stepsFlow"
+                aria-label="Четыре шага до установки окна">
+                <svg
+                    class="stepsConnectorsSvg"
+                    aria-hidden="true"
+                    preserveAspectRatio="none">
+                    <path
+                        class="stepsConnectorsSvg__path stepsConnectorsSvg__path--12"></path>
+                    <path
+                        class="stepsConnectorsSvg__path stepsConnectorsSvg__path--23"></path>
+                    <path
+                        class="stepsConnectorsSvg__path stepsConnectorsSvg__path--34"></path>
+                </svg>
+
+                <div class="stepCard stepCard--1">
+                    <p class="stepCard__text">
+                        Вы оставляете заявку на сайте либо звоните в офис продаж
+                        и получаете расчет стоимости
+                    </p>
+                    <div
+                        class="stepCard__icon stepCard__icon--orange"
+                        aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                            focusable="false">
+                            <path
+                                d="M6.54 5a1 1 0 0 0-1.06.75c-.35 1.35-.4 2.76-.12 4.12a16.98 16.98 0 0 0 8.77 11.76c1.2.61 2.53.99 3.89 1.1a1 1 0 0 0 1.03-.68l1.03-3.09a1 1 0 0 0-.5-1.2l-3.26-1.45a1 1 0 0 0-1.15.28l-1.08 1.33a13.3 13.3 0 0 1-5.98-8.01l1.58-.63a1 1 0 0 0 .59-1.04L9.95 5.8A1 1 0 0 0 9 5H6.54z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <button
+                        class="stepCard__cta"
+                        onclick="toggleModal()">
+                        Вызвать замерщика
+                    </button>
+                </div>
+
+                <div class="stepCard stepCard--2">
+                    <p class="stepCard__text">
+                        Технический специалист приезжает к Вам в удобное время.
+                        Снимает точные размеры, помогает с выбором профиля,
+                        стеклопакета и рассчитывается
+                        <strong>честная итоговая цена. Договор может</strong>
+                        быть заключён на месте.
+                    </p>
+                    <div
+                        class="stepCard__icon stepCard__icon--teal"
+                        aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                            focusable="false">
+                            <path
+                                d="M10 4a6 6 0 1 0 3.87 10.58l4.27 4.27a1 1 0 0 0 1.41-1.42l-4.27-4.27A6 6 0 0 0 10 4zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="stepCard stepCard--3">
+                    <p class="stepCard__text">
+                        Изготавливаем окна на нашем
+                        <strong>
+                            собственном высокотехнологичном производстве.
+                        </strong>
+                        Ваши окна будут готовы в срок
+                        <strong>от 7 дней</strong>
+                    </p>
+                    <div
+                        class="stepCard__icon stepCard__icon--teal"
+                        aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                            focusable="false">
+                            <path
+                                d="M3 20h18v-2h-1V9.5a1 1 0 0 0-.55-.9l-4-2A1 1 0 0 0 14 7.5V18h-2v-5.5a1 1 0 0 0-1.45-.9l-4 2A1 1 0 0 0 6 14.5V18H5v-7a1 1 0 0 0-2 0v7H3v2zm5-2v-2h2v2H8zm8 0v-7.88l2 1V18h-2z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="stepCard stepCard--4">
+                    <p class="stepCard__text">
+                        Мы организуем
+                        <strong>доставку, установку и монтаж</strong>
+                        в удобное для вас время
+                    </p>
+                    <div
+                        class="stepCard__icon stepCard__icon--teal"
+                        aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            role="img"
+                            focusable="false">
+                            <path
+                                d="M3 7a1 1 0 0 1 1-1h10v8h5.38l-1.2-3.2A1 1 0 0 0 17.25 10H14V8h3.25a3 3 0 0 1 2.8 1.92l1.7 4.53V17h-1.1a3 3 0 0 1-5.8 0h-4.7a3 3 0 0 1-5.8 0H3V7zm3 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm12 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="stepsBenefits"
+                aria-label="Преимущества работы с нами">
+                <p class="stepsBenefits__item">
+                    <span
+                        class="stepsBenefits__check"
+                        aria-hidden="true">
+                        ✔
+                    </span>
+                    Вы получаете надёжного партнера с
+                    <strong>20-летним опытом</strong>
+                </p>
+                <p class="stepsBenefits__item">
+                    <span
+                        class="stepsBenefits__check"
+                        aria-hidden="true">
+                        ✔
+                    </span>
+                    Качественные и красивые окна с гарантией
+                    <strong>5 лет</strong>
+                </p>
+                <p class="stepsBenefits__item">
+                    <span
+                        class="stepsBenefits__check"
+                        aria-hidden="true">
+                        ✔
+                    </span>
+                    Тепло, тишину и уют в Вашем доме
+                </p>
+            </div>
         </div>
         <div
-            class="reviewBlock"
+            class="reviewBlock block"
             id="reviewBlock"
-            name="reviewBlock">
+            data-animate="fade-up"
+            data-delay="200">
             <h1 class="titleText">ОТЗЫВЫ</h1>
-            <div class="videoCarousel">
+            <div class="carousel-wrapper">
                 <div
-                    class="videoCarouselBody"
+                    class="carousel-track-container"
                     id="carouselBalconyReviews">
                     <div class="balcony_reviews">Тут будут отзывы</div>
                 </div>
+                <div class="carousel-controls">
+                    <button
+                        class="carousel-btn carousel-btn--prev"
+                        aria-label="Предыдущий слайд">
+                        <img
+                            src="./images/next.svg"
+                            alt="" />
+                    </button>
+                    <div class="carousel-dots"></div>
+                    <button
+                        class="carousel-btn carousel-btn--next"
+                        aria-label="Следующий слайд">
+                        <img
+                            src="./images/next.svg"
+                            alt="" />
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="block">
-            <h1 class="titleText">ЗАКАЗАТЬ РАСЧЁТ</h1>
+        <div
+            class="block"
+            data-animate="fade-up">
+            <h1 class="titleText">
+                Получите расчёт стоимости остекления за 5 минут
+            </h1>
             <div class="orderCount">
-                <textarea
-                    class="orderCountText"
-                    name="orderCountText"
-                    id="orderCountText"
-                    placeholder="Введите текст"></textarea>
                 <div class="orderSend">
                     <input
                         type="text"
@@ -564,38 +573,76 @@
                         id="orderCountNumber"
                         placeholder="Ваш телефон" />
                     <button
-                        class="orderSendButton"
+                        class="orderSendButton pulse-cta"
                         onclick="orderCountSend()">
-                        Отправить
+                        Узнать стоимость
                     </button>
                 </div>
+                <p class="order-hint">
+                    Нажимая на кнопку, вы даёте согласие на обработку
+                    персональных данных
+                </p>
+                <p class="order-bonus">
+                    🎁 Выезд замерщика по Москве и области — бесплатно
+                </p>
             </div>
         </div>
-        <div class="block">
+        <div class="block geoBlock">
             <h1 class="titleText">НАША ГЕОЛОКАЦИЯ</h1>
             <div
                 class="geo"
-                id="geo"
-                name="geo">
+                id="geo">
                 <iframe
-                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e9ca1c19348ef2d224db3b99564eaf4f3e34ff4cb43f2e738a64539018c9a8c&amp;source=constructor"
-                    width="1039"
-                    height="618"
-                    frameborder="0"></iframe>
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e9ca1c19348ef2d224db3b99564eaf4f3e34ff4cb43f2e738a64539018c9a8c&source=constructor"
+                    width="100%"
+                    height="400"
+                    frameborder="0"
+                    loading="lazy"></iframe>
             </div>
         </div>
-        <div class="block end">
+        <div
+            class="block end"
+            id="endBlock">
             <div class="endRow">
                 <img
                     class="headerLogo"
                     src="./images/logo.png"
-                    alt="" />
+                    alt="Панорама"
+                    loading="lazy" />
                 <div class="endRight">
-                    <h2>+7-985-418-19-73</h2>
+                    <h2>+7 (985) 418-19-73</h2>
                     <h2>service@ooopanorama.ru</h2>
                     <h2>Варшавское шоссе, д.125 стр.1</h2>
                     <h2>Ежедневно с 9 до 20</h2>
+                    <div class="footer-messengers">
+                        <a
+                            href="https://wa.me/79854181973"
+                            aria-label="WhatsApp">
+                            <img
+                                src="./images/whts.svg"
+                                alt="WhatsApp"
+                                width="32"
+                                height="32" />
+                        </a>
+                        <a
+                            href="https://t.me/PanoramaVdom"
+                            aria-label="Telegram">
+                            <img
+                                src="./images/tg.svg"
+                                alt="Telegram"
+                                width="32"
+                                height="32" />
+                        </a>
+                    </div>
+                    <p class="footer-trust">
+                        20 лет опыта · Собственное производство в Москве
+                    </p>
                 </div>
+            </div>
+            <div class="footerMap">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e9ca1c19348ef2d224db3b99564eaf4f3e34ff4cb43f2e738a64539018c9a8c&source=constructor"
+                    loading="lazy"></iframe>
             </div>
             <div id="disclaimer">
                 Вся представленная на сайте информация, касающаяся оконных
@@ -612,7 +659,6 @@
 
         <script src="./js/balcony.js"></script>
         <script src="./js/carousel.js"></script>
-        <script src="./js/video_carousel.js"></script>
         <script src="./js/admin/get_structure.js"></script>
         <script src="./js/load_content.js"></script>
         <script>
@@ -620,19 +666,27 @@
             loadElements("#carouselBalconyWorks", "main_works");
             loadElements("#carouselBalconyReviews", "main_reviews");
         </script>
-        <script>
-            addEventListener("resize", (event) => {
-                setSize();
-                videoSetSize();
-            });
-        </script>
         <script src="./js/videoPlay.js"></script>
         <script src="./js/send_email.js"></script>
         <script src="./js/overlay.js"></script>
         <script src="./js/modal.js"></script>
-        <div class="modal">
+        <script src="./js/steps_connectors.js"></script>
+        <script src="./js/animations.js"></script>
+        <div
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle">
             <div class="ask">
-                <h1 class="askText">
+                <button
+                    class="modalClose"
+                    onclick="toggleModal()"
+                    aria-label="Закрыть">
+                    &times;
+                </button>
+                <h1
+                    class="askText"
+                    id="modalTitle">
                     Укажите свои контакные данные, и наш профессионал свяжется с
                     вам в течении 5 минут в рабочие часы.
                 </h1>
@@ -642,11 +696,21 @@
                         type="text"
                         id="askUserFieldName"
                         placeholder="Ваше имя" />
+                    <span
+                        class="error-message"
+                        style="display: none">
+                        Пожалуйста, заполните это поле
+                    </span>
                     <input
                         class="askUserField"
                         type="text"
                         id="askUserFieldPhone"
                         placeholder="Ваш телефон" />
+                    <span
+                        class="error-message"
+                        style="display: none">
+                        Пожалуйста, заполните это поле
+                    </span>
                 </div>
                 <div class="askSend">
                     <button
@@ -675,17 +739,17 @@
                         return;
                     }
                 }
-                (k = e.createElement(t)),
+                ((k = e.createElement(t)),
                     (a = e.getElementsByTagName(t)[0]),
                     (k.async = 1),
                     (k.src = r),
-                    a.parentNode.insertBefore(k, a);
+                    a.parentNode.insertBefore(k, a));
             })(
                 window,
                 document,
                 "script",
                 "https://mc.yandex.ru/metrika/tag.js",
-                "ym"
+                "ym",
             );
 
             ym(103090615, "init", {

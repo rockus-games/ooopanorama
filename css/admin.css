@@ -1,8 +1,14 @@
+html,
+body {
+    height: auto;
+}
+
 body {
     display: flex;
     align-items: stretch;
     min-height: 100vh;
     margin: 0;
+    overflow: visible;
     font-family: "Montserrat";
 }
 
@@ -13,9 +19,11 @@ button {
     background-color: #2f3340;
     max-width: 500px;
     width: 30vw;
+    min-height: 100vh;
     gap: 30px;
     display: flex;
     flex-direction: column;
+    overflow: visible;
 }
 
 #leftLogo {
@@ -64,8 +72,10 @@ button:active {
 
 #main {
     padding: 20px 60px;
-    flex-grow: 0;
+    flex-grow: 1;
     width: 70vw;
+    min-height: 100vh;
+    overflow: visible;
     display: none;
 }
 
@@ -118,15 +128,24 @@ textarea {
 }
 
 #showBlock {
-    display: flex;
-    gap: 10px;
-    align-items: stretch;
-    overflow-x: scroll;
+    width: 100%;
 }
 
 .createdElement {
     position: relative;
     flex-shrink: 0;
+}
+
+.carousel-wrapper,
+.carousel-track-container {
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+.lightbox-overlay,
+.overlayImages,
+.overlayVideos {
+    display: none !important;
 }
 
 .hoverMenu {
