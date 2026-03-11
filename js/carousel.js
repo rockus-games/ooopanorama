@@ -110,6 +110,14 @@ class Carousel {
     }
 
     onDragStart(e) {
+        if (
+            e.target.closest(".price-images-scroll") ||
+            e.target.closest(".review-photos-scroll")
+        ) {
+            this.isDragging = false;
+            return;
+        }
+
         this.isDragging = true;
         this.startX = this.getPointerX(e);
         this.track.style.transition = "none";

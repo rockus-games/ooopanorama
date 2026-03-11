@@ -111,13 +111,35 @@
     box-sizing: border-box;
 }
 
-.price-card > .price-card__image {
+.price-images-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px 8px 0 0;
+}
+
+.price-images-scroll .price-card__image {
     width: 100%;
+    min-width: 100%;
     max-width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: contain;
     border-radius: 8px 8px 0 0;
     display: block;
+    scroll-snap-align: start;
+}
+
+.price-images-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.price-images-scroll::-webkit-scrollbar-thumb {
+    background: rgba(51, 98, 129, 0.45);
+    border-radius: 999px;
 }
 
 .price-card__content {
@@ -259,14 +281,54 @@
     flex-grow: 1;
 }
 
-.review-card__video {
+.review-photos-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
     margin-top: 15px;
+    border-radius: 8px;
 }
 
-.review-card__video-player {
+.review-photos-scroll .review-card__photo {
     width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
     border-radius: 8px;
-    max-height: 300px;
+    display: block;
+    scroll-snap-align: start;
+}
+
+.review-photos-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.review-photos-scroll::-webkit-scrollbar-thumb {
+    background: rgba(51, 98, 129, 0.45);
+    border-radius: 999px;
+}
+
+.review-photos-scroll .review-card__video {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+.review-photos-scroll .review-card__video-player {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 /* ===== DESKTOP (min-width: 769px) ===== */
