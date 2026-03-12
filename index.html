@@ -54,8 +54,8 @@
                     id="mobileNavClose"
                     onclick="toggleSideMenu()">
                     <img
-                        src="./images/menu.svg"
-                        alt="Меню" />
+                        src="./images/cross.png"
+                        alt="Закрыть меню" />
                 </button>
             </div>
             <div class="menuItem"><a href="javascript:void(0)">ОКНА</a></div>
@@ -67,7 +67,6 @@
             <div class="menuItem">
                 <a href="#reviewBlock">ОТЗЫВЫ</a>
             </div>
-            <div class="menuItem"><a href="#endBlock">КОНТАКТЫ</a></div>
             <div class="callMeasure menuItem">
                 <a
                     id="callMeasureMail"
@@ -120,6 +119,10 @@
                 </a>
             </div>
         </div>
+        <div
+            id="mobileNavOverlay"
+            class="mobileNavOverlayHidden"
+            onclick="toggleSideMenu()"></div>
         <div class="headerMob">
             <div class="header block">
                 <img
@@ -331,6 +334,10 @@
                         alt="Замерщик"
                         loading="lazy" />
                     <h1>1. Бесплатный замер</h1>
+                    <p class="stepCard__description">
+                        Приедем в удобное время. Точно измерим проемы и
+                        рассчитаем итоговую стоимость на месте.
+                    </p>
                 </div>
                 <div class="freeServicesBlock">
                     <img
@@ -338,6 +345,10 @@
                         alt="Монтаж"
                         loading="lazy" />
                     <h1>2. Профессиональный монтаж</h1>
+                    <p class="stepCard__description">
+                        Установка за 1 день по ГОСТу. Собственные бригады
+                        мастеров с опытом более 10 лет.
+                    </p>
                 </div>
                 <div class="freeServicesBlock">
                     <img
@@ -345,6 +356,10 @@
                         alt="Обслуживание"
                         loading="lazy" />
                     <h1>3. Гарантия и сервис</h1>
+                    <p class="stepCard__description">
+                        Даем заводскую гарантию 5 лет на все работы и профили.
+                        Официальный договор и поддержка.
+                    </p>
                 </div>
             </div>
         </div>
@@ -564,8 +579,15 @@
                     <input
                         type="text"
                         class="orderNumber"
+                        id="orderCountName"
+                        placeholder="Ваше имя"
+                        required />
+                    <input
+                        type="text"
+                        class="orderNumber"
                         id="orderCountNumber"
-                        placeholder="Ваш телефон" />
+                        placeholder="Ваш телефон"
+                        required />
                     <button
                         class="orderSendButton pulse-cta"
                         onclick="orderCountSend()">

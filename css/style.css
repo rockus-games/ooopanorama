@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
 :root {
     /* Colors */
     --color-primary: #336281;
@@ -17,9 +19,17 @@
     --container-padding: 15px;
 
     /* Typography */
-    --font-main: "Montserrat", sans-serif;
-    --font-accent: "M PLUS 1p", sans-serif;
-    --font-roboto: "Roboto", sans-serif;
+    --font-main: "Inter", "Montserrat", sans-serif;
+    --font-accent: "M PLUS 1p", "Inter", sans-serif;
+    --font-roboto: "Roboto", "Inter", sans-serif;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
+
+    --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --shadow-medium: 0 12px 30px rgba(15, 23, 42, 0.14);
 
     /* Z-index system */
     --z-header: 100;
@@ -46,7 +56,42 @@ body {
     overflow-x: hidden;
     font-family: var(--font-main);
     color: var(--color-black);
-    line-height: 1.5;
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: #f4f7fb;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.65em;
+    color: #1e293b;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+p,
+li,
+label {
+    line-height: 1.65;
+}
+
+h1 {
+    font-size: clamp(1.9rem, 3.9vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 2.2vw, 1.7rem);
 }
 
 a {
@@ -64,7 +109,20 @@ img {
 button {
     cursor: pointer;
     font-family: inherit;
+    border: none;
+    border-radius: var(--radius-md);
     transition: var(--transition-default);
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+*:focus-visible {
+    outline: 3px solid rgba(59, 130, 246, 0.32);
+    outline-offset: 2px;
 }
 
 .check-icon {
@@ -79,6 +137,30 @@ button {
 .block {
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
+}
+
+/* Visual separation between content sections */
+body > .block:not(.menu):not(.endBlock) {
+    position: relative;
+    padding-top: clamp(28px, 4vw, 52px);
+    padding-bottom: clamp(28px, 4vw, 52px);
+    background-color: #ffffff;
+}
+
+body > .block:not(.menu):not(.endBlock):nth-child(even of .block) {
+    background-color: #f8f9fa;
+}
+
+body
+    > .block:not(.menu):not(.endBlock)
+    + .block:not(.menu):not(.endBlock)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: var(--container-padding);
+    right: var(--container-padding);
+    height: 1px;
+    background: rgba(51, 51, 51, 0.12);
 }
 
 /* Header */
@@ -305,14 +387,16 @@ a {
 
 /* Hover effects for carousel cards */
 .carousel-item {
+    border-radius: var(--radius-md);
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.32s ease,
+        box-shadow 0.32s ease,
+        border-color 0.32s ease;
 }
 
 .carousel-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Button hover effects */
@@ -320,14 +404,15 @@ button,
 .btn {
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background-color 0.3s ease;
+        box-shadow 0.25s ease,
+        background-color 0.3s ease,
+        filter 0.2s ease;
 }
 
 button:hover,
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-soft);
 }
 
 button:active,
@@ -336,6 +421,28 @@ button:active,
 }
 
 /* Mobile Navigation Menu */
+#mobileNavOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: calc(var(--z-mobile-menu) - 1);
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.mobileNavOverlayHidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.mobileNavOverlayShown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
 #mobileNavMenu {
     position: fixed;
     top: 0;
@@ -344,10 +451,10 @@ button:active,
     height: 100%;
     background-color: var(--color-primary);
     z-index: var(--z-mobile-menu);
-    padding: 20px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     overflow-y: auto;
@@ -364,18 +471,18 @@ button:active,
 #mobNavBtnSpacer {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 #mobileNavClose {
     background: transparent;
     border: none;
-    padding: 5px;
+    padding: 3px;
 }
 
 #mobileNavClose img {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     filter: brightness(0) invert(1);
 }
 
@@ -383,7 +490,7 @@ button:active,
     font-size: 15px;
     font-weight: 600;
     color: var(--color-white);
-    padding: 10px 0;
+    padding: 7px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -395,7 +502,7 @@ button:active,
 #mobileNavMenu .callMeasure.menuItem {
     border-bottom: none;
     background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
+    padding: 10px;
     border-radius: 8px;
 }
 
@@ -428,6 +535,10 @@ button:active,
 #mobileNavMenu #linkCall .callImg {
     width: 32px;
     height: 32px;
+}
+
+.grecaptcha-badge {
+    visibility: hidden !important;
 }
 
 /* Large desktop typography optimization */

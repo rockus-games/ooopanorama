@@ -3,6 +3,13 @@
     background-position: 100% 25%;
 }
 
+@media (max-width: 768px) {
+    .bannerImg {
+        --hero-mobile-image-height: clamp(180px, 46vw, 270px);
+        background-position: center top;
+    }
+}
+
 /* Large desktop typography optimization */
 @media (min-width: 1440px) {
     .bannerText {

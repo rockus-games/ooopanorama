@@ -4,7 +4,7 @@
 
 .woodColors {
     display: flex;
-    gap: 10px;
+    gap: 16px;
     align-items: stretch;
 }
 
@@ -17,16 +17,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    border: #eee 5px solid;
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 20px;
-    color: #eee;
-    text-shadow: 1px 1px 1px black;
+    color: #f8fafc;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+    min-height: 170px;
+    overflow: hidden;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.16);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.woodColorsCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.22);
 }
 
 .veerImg {
     width: 200%;
     height: 100%;
+    border-radius: 16px;
 }
 
 .cardVenge {
@@ -44,6 +57,12 @@
         height: 700px;
     }
 }
+@media (max-width: 768px) {
+    .bannerImg {
+        --hero-mobile-image-height: clamp(190px, 50vw, 300px);
+    }
+}
+
 .cardAntracit {
     background-image: url("/images/cottage/antracit.jpg");
 }

@@ -12,10 +12,16 @@
 }
 
 .balconyDoubleButton {
-    border: none;
-    background-color: #eee;
-    padding: 20px 150px;
-    transition: ease-in-out 0.3s;
+    border: 1px solid rgba(51, 98, 129, 0.2);
+    background: linear-gradient(180deg, #ffffff 0%, #f3f7fb 100%);
+    padding: 18px 120px;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    font-weight: 600;
 }
 
 .balconyColdBtn {
@@ -28,7 +34,17 @@
 
 .balconyDoubleButton:hover,
 .selectedBalconyBtn {
-    background-color: #4b7b9e;
+    background: linear-gradient(135deg, #4b7b9e 0%, #3f6885 100%);
+    color: #fff;
+    box-shadow: 0 12px 22px rgba(51, 98, 129, 0.25);
+}
+
+.balconyDoubleButton:hover {
+    transform: translateY(-2px);
+}
+
+.selectedBalconyBtn {
+    color: #fff;
 }
 .balconyImg {
     display: flex;
@@ -40,6 +56,9 @@
     background-image: url("/images/balcony/balconyWarm.png");
     background-size: 100% 100%;
     aspect-ratio: 3;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.14);
 }
 .balconyImg > img {
     width: 60%;
@@ -63,24 +82,41 @@
 
 .orderCallInput {
     width: 40%;
-    border: #4b7c9e7b 1px solid;
-    height: 40px;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    border: 1px solid rgba(75, 124, 158, 0.48);
+    height: 48px;
+    border-radius: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
     font-size: 20px;
-    font-family: "Montserrat";
+    font-family: var(--font-main);
+    background-color: #ffffff;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.orderCallInput:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
 }
 
 .orderCallButton {
     border: none;
-    background-color: #336281;
+    background: linear-gradient(135deg, #2f6fa0 0%, #336281 100%);
     color: white;
     font-size: 28px;
-    border-radius: 15px;
+    border-radius: 16px;
     padding: 10px;
     width: 42%;
     height: 80px;
+    font-weight: 700;
+    box-shadow: 0 12px 26px rgba(51, 98, 129, 0.34);
+}
+
+.orderCallButton:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 15px 30px rgba(51, 98, 129, 0.44);
 }
 
 .orderCall > p {
@@ -155,6 +191,12 @@
     color: var(--color-gray-dark);
     margin: 0;
     font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .bannerImg {
+        --hero-mobile-image-height: clamp(180px, 48vw, 280px);
+    }
 }
 
 /* Large desktop typography optimization */

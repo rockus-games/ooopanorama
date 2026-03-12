@@ -9,7 +9,7 @@ function sendEmail(name, email, phone, msg) {
             msg: msg,
         },
         success: () => {
-            location.reload();
+            window.location.href = "thanks.html";
         },
     });
 }
@@ -29,8 +29,31 @@ function getDigitsCount(value) {
     return (value || "").replace(/\D/g, "").length;
 }
 
+function ensureErrorContainer(input) {
+    if (!input) return null;
+
+    if (input.parentElement?.classList.contains("field-with-error")) {
+        return input.parentElement;
+    }
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "field-with-error";
+
+    input.parentNode.insertBefore(wrapper, input);
+    wrapper.appendChild(input);
+
+    const nextEl = wrapper.nextElementSibling;
+    if (nextEl && nextEl.classList.contains("error-message")) {
+        wrapper.appendChild(nextEl);
+    }
+
+    return wrapper;
+}
+
 function showError(input, message) {
     if (!input) return;
+
+    const wrapper = ensureErrorContainer(input);
     input.classList.add("input-error");
 
     let errorEl = input.nextElementSibling;
@@ -38,7 +61,7 @@ function showError(input, message) {
         errorEl = document.createElement("span");
         errorEl.className = "error-message";
         errorEl.style.display = "none";
-        input.insertAdjacentElement("afterend", errorEl);
+        wrapper.appendChild(errorEl);
     }
 
     errorEl.textContent = message;
@@ -124,10 +147,13 @@ function callSendButton() {
 }
 
 function orderCountSend() {
+    const nameInput = document.querySelector("#orderCountName");
     const phoneInput = document.querySelector("#orderCountNumber");
+
+    const isNameValid = validateName(nameInput);
     const isPhoneValid = validatePhone(phoneInput);
 
-    if (!isPhoneValid) {
+    if (!isNameValid || !isPhoneValid) {
         return;
     }
 
@@ -136,7 +162,7 @@ function orderCountSend() {
         ? orderTextEl.value
         : "Заявка на расчёт стоимости";
 
-    sendEmail("", "", phoneInput.value.trim(), message);
+    sendEmail(nameInput.value.trim(), "", phoneInput.value.trim(), message);
 }
 
 function orderCallSend() {

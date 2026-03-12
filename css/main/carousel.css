@@ -109,6 +109,11 @@
 .price-card {
     padding: 10px;
     box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-4px);
 }
 
 .price-images-scroll {
@@ -144,11 +149,20 @@
 
 .price-card__content {
     background: #fff;
-    border-radius: 0 0 12px 12px;
-    padding: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 0 0 14px 14px;
+    padding: 16px;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(51, 98, 129, 0.12);
     display: flex;
     flex-direction: column;
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.price-card:hover .price-card__content {
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
+    border-color: rgba(51, 98, 129, 0.24);
 }
 
 .price-card__title {
@@ -189,19 +203,27 @@
 }
 
 .price-card__cta {
-    background: #336281;
+    background: linear-gradient(135deg, #2f6fa0 0%, #336281 100%);
     color: #fff;
     border: none;
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition:
+        background 0.3s,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
     width: 100%;
+    box-shadow: 0 8px 20px rgba(51, 98, 129, 0.28);
 }
 
 .price-card__cta:hover {
-    background: #264d66;
+    background: linear-gradient(135deg, #2a6694 0%, #2d5672 100%);
+    box-shadow: 0 12px 24px rgba(51, 98, 129, 0.36);
+    transform: translateY(-1px);
 }
 
 /* ===== WORK CARD ===== */
@@ -228,11 +250,22 @@
     display: flex;
     flex-direction: column;
     background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(51, 98, 129, 0.12);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
     margin: 10px;
     padding: 20px;
     box-sizing: border-box;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.16);
+    border-color: rgba(51, 98, 129, 0.24);
 }
 
 .review-card__header {
