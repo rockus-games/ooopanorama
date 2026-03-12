@@ -373,3 +373,82 @@
         font-size: 1.2rem;
     }
 }
+
+/* Large desktop typography optimization */
+@media (min-width: 1440px) {
+    .price-card__title,
+    .review-card__name {
+        font-size: clamp(1.35rem, 1vw, 1.7rem);
+    }
+
+    .price-card__params,
+    .review-card__text {
+        font-size: clamp(1.05rem, 0.8vw, 1.25rem);
+    }
+
+    .price-card__old-price,
+    .review-card__city,
+    .review-card__rating {
+        font-size: clamp(1rem, 0.72vw, 1.15rem);
+    }
+
+    .price-card__new-price {
+        font-size: clamp(1.6rem, 1.15vw, 2rem);
+    }
+
+    .price-card__cta {
+        font-size: clamp(1.1rem, 0.85vw, 1.3rem);
+    }
+}
+
+@media (min-width: 1920px) {
+    .price-card__title,
+    .review-card__name {
+        font-size: 1.75rem;
+    }
+
+    .price-card__params,
+    .review-card__text {
+        font-size: 1.25rem;
+    }
+
+    .price-card__old-price,
+    .review-card__city,
+    .review-card__rating {
+        font-size: 1.1rem;
+    }
+
+    .price-card__new-price {
+        font-size: 2.1rem;
+    }
+
+    .price-card__cta {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 2560px) {
+    .price-card__title,
+    .review-card__name {
+        font-size: 2rem;
+    }
+
+    .price-card__params,
+    .review-card__text {
+        font-size: 1.45rem;
+    }
+
+    .price-card__old-price,
+    .review-card__city,
+    .review-card__rating {
+        font-size: 1.25rem;
+    }
+
+    .price-card__new-price {
+        font-size: 2.5rem;
+    }
+
+    .price-card__cta {
+        font-size: 1.4rem;
+    }
+}

@@ -429,3 +429,112 @@ button:active,
     width: 32px;
     height: 32px;
 }
+
+/* Large desktop typography optimization */
+@media (min-width: 1440px) {
+    h1 {
+        font-size: clamp(2.2rem, 1.6vw, 2.8rem);
+    }
+
+    h2 {
+        font-size: clamp(1.9rem, 1.3vw, 2.3rem);
+    }
+
+    h3 {
+        font-size: clamp(1.55rem, 1.1vw, 1.9rem);
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-size: clamp(1.2rem, 0.95vw, 1.5rem);
+    }
+
+    p,
+    li,
+    a,
+    button,
+    input,
+    textarea,
+    label {
+        font-size: clamp(1rem, 0.65vw, 1.15rem);
+    }
+
+    .panorama {
+        font-size: clamp(24px, 1.5vw, 30px);
+    }
+
+    .headerAddress {
+        font-size: 16px;
+    }
+
+    .number {
+        font-size: 28px;
+    }
+
+    .menuItem a,
+    #mobileNavMenu .menuItem,
+    .nav-link {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1920px) {
+    p,
+    li,
+    a,
+    button,
+    input,
+    textarea,
+    label {
+        font-size: 1.125rem;
+    }
+
+    .panorama {
+        font-size: clamp(28px, 1.4vw, 34px);
+    }
+
+    .headerAddress {
+        font-size: 18px;
+    }
+
+    .number {
+        font-size: 32px;
+    }
+
+    .menuItem a,
+    #mobileNavMenu .menuItem,
+    .nav-link {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 2560px) {
+    p,
+    li,
+    a,
+    button,
+    input,
+    textarea,
+    label {
+        font-size: 1.25rem;
+    }
+
+    .panorama {
+        font-size: clamp(32px, 1.2vw, 40px);
+    }
+
+    .headerAddress {
+        font-size: 20px;
+    }
+
+    .number {
+        font-size: 36px;
+    }
+
+    .menuItem a,
+    #mobileNavMenu .menuItem,
+    .nav-link {
+        font-size: 20px;
+    }
+}
