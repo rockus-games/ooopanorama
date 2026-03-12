@@ -73,7 +73,7 @@
 
     .titleText,
     .bannerText {
-        font-size: clamp(42px, 2.3vw, 58px);
+        font-size: clamp(43px, 2.6vw, 57px);
     }
 
     .menuItem a {
@@ -88,7 +88,7 @@
 
     .titleText,
     .bannerText {
-        font-size: clamp(52px, 2vw, 72px);
+        font-size: clamp(52px, 2.3vw, 70px);
     }
 
     .menuItem a {
@@ -103,7 +103,7 @@
 
     .titleText,
     .bannerText {
-        font-size: clamp(64px, 1.8vw, 92px);
+        font-size: clamp(62px, 2vw, 87px);
     }
 
     .menuItem a {

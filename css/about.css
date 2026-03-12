@@ -6,14 +6,17 @@
 /* Large desktop typography optimization */
 @media (min-width: 1440px) {
     .bannerText {
-        font-size: clamp(54px, 3vw, 70px);
+        font-size: clamp(43px, 2.6vw, 57px);
     }
 
     .titleText {
-        font-size: clamp(36px, 2.2vw, 48px);
+        font-size: clamp(28px, 1.9vw, 38px);
     }
 
-    .endRight h2,
+    .endRight h2 {
+        font-size: clamp(15px, 0.8vw, 18px);
+    }
+
     #disclaimer {
         font-size: clamp(18px, 0.95vw, 22px);
     }
@@ -21,15 +24,15 @@
 
 @media (min-width: 1920px) {
     .bannerText {
-        font-size: clamp(66px, 2.7vw, 86px);
+        font-size: clamp(52px, 2.3vw, 70px);
     }
 
     .titleText {
-        font-size: clamp(42px, 2vw, 58px);
+        font-size: clamp(33px, 1.8vw, 47px);
     }
 
     .endRight h2 {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     #disclaimer {
@@ -39,15 +42,15 @@
 
 @media (min-width: 2560px) {
     .bannerText {
-        font-size: clamp(78px, 2.3vw, 108px);
+        font-size: clamp(62px, 2vw, 87px);
     }
 
     .titleText {
-        font-size: clamp(50px, 1.8vw, 72px);
+        font-size: clamp(40px, 1.6vw, 58px);
     }
 
     .endRight h2 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     #disclaimer {
