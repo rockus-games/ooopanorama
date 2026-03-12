@@ -433,21 +433,21 @@ button:active,
 /* Large desktop typography optimization */
 @media (min-width: 1440px) {
     h1 {
-        font-size: clamp(2.2rem, 1.6vw, 2.8rem);
+        font-size: clamp(1.8rem, 1.3vw, 2.3rem);
     }
 
     h2 {
-        font-size: clamp(1.9rem, 1.3vw, 2.3rem);
+        font-size: clamp(1.6rem, 1.1vw, 1.9rem);
     }
 
     h3 {
-        font-size: clamp(1.55rem, 1.1vw, 1.9rem);
+        font-size: clamp(1.3rem, 0.9vw, 1.6rem);
     }
 
     h4,
     h5,
     h6 {
-        font-size: clamp(1.2rem, 0.95vw, 1.5rem);
+        font-size: clamp(1rem, 0.8vw, 1.3rem);
     }
 
     p,
