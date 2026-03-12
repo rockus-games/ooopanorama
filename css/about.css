@@ -2,3 +2,55 @@
     background-image: url("../images/banners/about_banner_img.jpg");
     background-position: 100% 25%;
 }
+
+/* Large desktop typography optimization */
+@media (min-width: 1440px) {
+    .bannerText {
+        font-size: clamp(54px, 3vw, 70px);
+    }
+
+    .titleText {
+        font-size: clamp(36px, 2.2vw, 48px);
+    }
+
+    .endRight h2,
+    #disclaimer {
+        font-size: clamp(18px, 0.95vw, 22px);
+    }
+}
+
+@media (min-width: 1920px) {
+    .bannerText {
+        font-size: clamp(66px, 2.7vw, 86px);
+    }
+
+    .titleText {
+        font-size: clamp(42px, 2vw, 58px);
+    }
+
+    .endRight h2 {
+        font-size: 20px;
+    }
+
+    #disclaimer {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .bannerText {
+        font-size: clamp(78px, 2.3vw, 108px);
+    }
+
+    .titleText {
+        font-size: clamp(50px, 1.8vw, 72px);
+    }
+
+    .endRight h2 {
+        font-size: 22px;
+    }
+
+    #disclaimer {
+        font-size: 18px;
+    }
+}

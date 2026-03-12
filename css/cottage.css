@@ -64,3 +64,49 @@
         width: 100%;
     }
 }
+
+/* Large desktop typography optimization */
+@media (min-width: 1440px) {
+    .woodColorsCard {
+        font-size: clamp(20px, 1vw, 24px);
+    }
+
+    .titleText,
+    .bannerText {
+        font-size: clamp(42px, 2.3vw, 58px);
+    }
+
+    .menuItem a {
+        font-size: clamp(16px, 0.9vw, 20px);
+    }
+}
+
+@media (min-width: 1920px) {
+    .woodColorsCard {
+        font-size: 24px;
+    }
+
+    .titleText,
+    .bannerText {
+        font-size: clamp(52px, 2vw, 72px);
+    }
+
+    .menuItem a {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .woodColorsCard {
+        font-size: 28px;
+    }
+
+    .titleText,
+    .bannerText {
+        font-size: clamp(64px, 1.8vw, 92px);
+    }
+
+    .menuItem a {
+        font-size: 20px;
+    }
+}

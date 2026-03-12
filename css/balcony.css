@@ -156,3 +156,70 @@
     margin: 0;
     font-style: italic;
 }
+
+/* Large desktop typography optimization */
+@media (min-width: 1440px) {
+    .doubleButton > *,
+    .balconyWarmCold {
+        font-size: clamp(28px, 1.4vw, 34px);
+    }
+
+    .orderCallInput {
+        font-size: clamp(20px, 1vw, 24px);
+        height: 50px;
+    }
+
+    .orderCallButton {
+        font-size: clamp(30px, 1.3vw, 38px);
+        height: 92px;
+    }
+
+    .orderCall > p,
+    .hero-bonus {
+        font-size: clamp(16px, 0.85vw, 20px);
+    }
+}
+
+@media (min-width: 1920px) {
+    .doubleButton > *,
+    .balconyWarmCold {
+        font-size: 34px;
+    }
+
+    .orderCallInput {
+        font-size: 24px;
+        height: 56px;
+    }
+
+    .orderCallButton {
+        font-size: 38px;
+        height: 100px;
+    }
+
+    .orderCall > p,
+    .hero-bonus {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .doubleButton > *,
+    .balconyWarmCold {
+        font-size: 40px;
+    }
+
+    .orderCallInput {
+        font-size: 28px;
+        height: 64px;
+    }
+
+    .orderCallButton {
+        font-size: 44px;
+        height: 112px;
+    }
+
+    .orderCall > p,
+    .hero-bonus {
+        font-size: 22px;
+    }
+}
