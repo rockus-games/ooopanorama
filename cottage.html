@@ -57,8 +57,8 @@
                     id="mobileNavClose"
                     onclick="toggleSideMenu()">
                     <img
-                        src="./images/menu.svg"
-                        alt="Меню" />
+                        src="./images/cross.png"
+                        alt="Закрыть меню" />
                 </button>
             </div>
             <div class="menuItem"><a href="index.html">ОКНА</a></div>
@@ -72,7 +72,6 @@
             <div class="menuItem">
                 <a href="#reviewBlock">ОТЗЫВЫ</a>
             </div>
-            <div class="menuItem"><a href="#endBlock">КОНТАКТЫ</a></div>
             <div class="callMeasure menuItem">
                 <a
                     id="callMeasureMail"
@@ -121,12 +120,18 @@
                 </a>
             </div>
         </div>
+        <div
+            id="mobileNavOverlay"
+            class="mobileNavOverlayHidden"
+            onclick="toggleSideMenu()"></div>
         <div class="headerMob">
             <div class="header block">
-                <img
-                    class="headerLogo"
-                    src="./images/logo.png"
-                    alt="Панорама" />
+                <a href="index.html">
+                    <img
+                        class="headerLogo"
+                        src="./images/logo.png"
+                        alt="Панорама" />
+                </a>
                 <div class="headerRight">
                     <div class="call">
                         <p class="headerAddress">Ежедневно: 9-20</p>
@@ -205,7 +210,8 @@
                 <div class="bannerImgGrad">
                     <div class="hero-content">
                         <h1 class="bannerText">
-                            ОСТЕКЛЕНИЕ КОТТЕДЖЕЙ: ОТ НЕСТАНДАРТНЫХ ФОРМ ДО ПАНОРАМНЫХ РЕШЕНИЙ
+                            ОСТЕКЛЕНИЕ КОТТЕДЖЕЙ: ОТ НЕСТАНДАРТНЫХ ФОРМ ДО
+                            ПАНОРАМНЫХ РЕШЕНИЙ
                         </h1>
                         <ul class="hero-utp">
                             <li>
@@ -327,6 +333,10 @@
                         alt="Замерщик"
                         loading="lazy" />
                     <h1>1. Бесплатный замер</h1>
+                    <p class="stepCard__description">
+                        Приедем в удобное время. Точно измерим проемы и
+                        рассчитаем итоговую стоимость на месте.
+                    </p>
                 </div>
                 <div class="freeServicesBlock">
                     <img
@@ -334,6 +344,10 @@
                         alt="Монтаж"
                         loading="lazy" />
                     <h1>2. Профессиональный монтаж</h1>
+                    <p class="stepCard__description">
+                        Установка за 1 день по ГОСТу. Собственные бригады
+                        мастеров с опытом более 10 лет.
+                    </p>
                 </div>
                 <div class="freeServicesBlock">
                     <img
@@ -341,15 +355,54 @@
                         alt="Обслуживание"
                         loading="lazy" />
                     <h1>3. Гарантия и сервис</h1>
+                    <p class="stepCard__description">
+                        Даем заводскую гарантию 5 лет на все работы и профили.
+                        Официальный договор и поддержка.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="discounts block">
+        <div
+            class="discounts block"
+            data-animate="scale-up">
             <h1 class="titleText">СКИДКИ И АКЦИИ</h1>
-            <img
-                src="./images/discounts.png"
-                alt="Скидки"
-                loading="lazy" />
+            <div class="discountsCards">
+                <article class="discountCard discountCard--pensioners">
+                    <img
+                        src="./images/discounts1.png"
+                        alt="Скидки пенсионерам"
+                        loading="lazy"
+                        width="640"
+                        height="360" />
+                    <div class="discountCardBody">
+                        <h2 class="discountCardTitle">Скидки пенсионерам</h2>
+                        <p class="discountCardText">
+                            Мы ценим старшее поколение и предлагаем специальные
+                            условия для пенсионеров. Скидка 10% на все виды
+                            остекления при предъявлении пенсионного
+                            удостоверения.
+                        </p>
+                    </div>
+                </article>
+                <article class="discountCard discountCard--gift">
+                    <img
+                        src="./images/discounts2.png"
+                        alt="Москитная сетка в подарок"
+                        loading="lazy"
+                        width="640"
+                        height="360" />
+                    <div class="discountCardBody">
+                        <h2 class="discountCardTitle">
+                            Москитная сетка в подарок
+                        </h2>
+                        <p class="discountCardText">
+                            При заказе любого окна или балконного остекления вы
+                            получаете москитную сетку в подарок. Защитите свой
+                            дом от насекомых без дополнительных затрат!
+                        </p>
+                    </div>
+                </article>
+            </div>
         </div>
         <div
             class="priceExample block"
@@ -565,8 +618,15 @@
                     <input
                         type="text"
                         class="orderNumber"
+                        id="orderCountName"
+                        placeholder="Ваше имя"
+                        required />
+                    <input
+                        type="text"
+                        class="orderNumber"
                         id="orderCountNumber"
-                        placeholder="Ваш телефон" />
+                        placeholder="Ваш телефон"
+                        required />
                     <button
                         class="orderSendButton pulse-cta"
                         onclick="orderCountSend()">

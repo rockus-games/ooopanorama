@@ -55,8 +55,8 @@
                     id="mobileNavClose"
                     onclick="toggleSideMenu()">
                     <img
-                        src="./images/menu.svg"
-                        alt="Меню" />
+                        src="./images/cross.png"
+                        alt="Закрыть меню" />
                 </button>
             </div>
             <div class="menuItem"><a href="index.html">ОКНА</a></div>
@@ -70,7 +70,6 @@
             <div class="menuItem">
                 <a href="#reviewBlock">ОТЗЫВЫ</a>
             </div>
-            <div class="menuItem"><a href="#endBlock">КОНТАКТЫ</a></div>
             <div class="callMeasure menuItem">
                 <a
                     id="callMeasureMail"
@@ -119,12 +118,18 @@
                 </a>
             </div>
         </div>
+        <div
+            id="mobileNavOverlay"
+            class="mobileNavOverlayHidden"
+            onclick="toggleSideMenu()"></div>
         <div class="headerMob">
             <div class="header block">
-                <img
-                    class="headerLogo"
-                    src="./images/logo.png"
-                    alt="Панорама" />
+                <a href="index.html">
+                    <img
+                        class="headerLogo"
+                        src="./images/logo.png"
+                        alt="Панорама" />
+                </a>
                 <div class="headerRight">
                     <div class="call">
                         <p class="headerAddress">Ежедневно: 9-20</p>
@@ -203,7 +208,8 @@
                 alt="">
                 <div class="bannerImgGrad">
                     <h1 class="bannerText">
-                        ЦЕНА ОТ ПРОИЗВОДИТЕЛЯ! СОБСТВЕННОЕ ПРОИЗВОДСТВО ОКОН В ПОДОЛЬСКЕ
+                        ЦЕНА ОТ ПРОИЗВОДИТЕЛЯ! СОБСТВЕННОЕ ПРОИЗВОДСТВО ОКОН В
+                        ПОДОЛЬСКЕ
                     </h1>
                 </div>
             </div>

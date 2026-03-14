@@ -10,8 +10,16 @@ function isMobile() {
 
 function toggleSideMenu() {
     const menu = document.querySelector("#mobileNavMenu");
+    const overlay = document.querySelector("#mobileNavOverlay");
     if (!menu) return;
 
-    menu.classList.toggle("mobileNavMenuOpened");
-    menu.classList.toggle("mobileNavMenuClosed");
+    const isOpening = menu.classList.contains("mobileNavMenuClosed");
+
+    menu.classList.toggle("mobileNavMenuOpened", isOpening);
+    menu.classList.toggle("mobileNavMenuClosed", !isOpening);
+
+    if (overlay) {
+        overlay.classList.toggle("mobileNavOverlayShown", isOpening);
+        overlay.classList.toggle("mobileNavOverlayHidden", !isOpening);
+    }
 }

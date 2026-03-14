@@ -1,18 +1,112 @@
 function parseArrayField(value) {
     if (Array.isArray(value)) {
-        return value;
+        return value.map((item) => String(item || "").trim()).filter(Boolean);
     }
 
-    if (typeof value !== "string" || value.trim() === "") {
-        return [];
+    if (typeof value === "string") {
+        const trimmed = value.trim();
+        if (!trimmed) {
+            return [];
+        }
+
+        try {
+            const parsed = JSON.parse(trimmed);
+            if (Array.isArray(parsed)) {
+                return parsed
+                    .map((item) => String(item || "").trim())
+                    .filter(Boolean);
+            }
+        } catch {
+            // ignore JSON parse error and treat as single path
+        }
+
+        return [trimmed];
     }
 
-    try {
-        const parsed = JSON.parse(value);
-        return Array.isArray(parsed) ? parsed : [];
-    } catch {
-        return [];
+    if (value) {
+        const normalized = String(value).trim();
+        return normalized ? [normalized] : [];
     }
+
+    return [];
+}
+
+function resolveFieldElement(root, field, type) {
+    let fieldElement = root.querySelector(`[data-field="${field}"]`);
+    if (fieldElement || type !== "array_of_images") {
+        return fieldElement;
+    }
+
+    if (field === "image") {
+        fieldElement = root.querySelector('[data-field="images"]');
+    } else if (field === "images") {
+        fieldElement = root.querySelector('[data-field="image"]');
+    } else if (field === "photo") {
+        fieldElement = root.querySelector('[data-field="photos"]');
+    } else if (field === "photos") {
+        fieldElement = root.querySelector('[data-field="photo"]');
+    }
+
+    return fieldElement;
+}
+
+function renderArrayImages(fieldElement, images, field, item) {
+    const src = images[0] || "";
+
+    if (fieldElement.tagName === "IMG") {
+        if (src) {
+            fieldElement.src = src;
+            fieldElement.style.display = "";
+        } else {
+            fieldElement.src = "";
+            fieldElement.style.display = "none";
+        }
+        return;
+    }
+
+    fieldElement.innerHTML = "";
+    if (images.length === 0) {
+        return;
+    }
+
+    const imageClass =
+        field === "photos" ? "review-card__photo" : "price-card__image";
+    images.forEach((imageSrc, index) => {
+        const img = document.createElement("img");
+        img.className = imageClass;
+        img.src = imageSrc;
+        img.alt = `${item?.name || "Изображение"} ${index + 1}`;
+        img.loading = "lazy";
+        fieldElement.appendChild(img);
+    });
+}
+
+function resolveSchemaField(dbStruct, field) {
+    if (!dbStruct) {
+        return null;
+    }
+
+    if (dbStruct[field]) {
+        return field;
+    }
+
+    if (field === "image" && dbStruct.images) {
+        return "images";
+    }
+
+    if (field === "images" && dbStruct.image) {
+        return "image";
+    }
+
+    if (field === "photo" && dbStruct.photos) {
+        return "photos";
+    }
+
+    if (field === "photos" && dbStruct.photo) {
+        return "photo";
+    }
+
+    return null;
 }
 
 function fillTemplateFields(root, item, dbStruct) {
@@ -22,13 +116,14 @@ function fillTemplateFields(root, item, dbStruct) {
             return;
         }
 
-        if (!dbStruct || !dbStruct[field]) {
+        const schemaField = resolveSchemaField(dbStruct, field);
+        if (!schemaField) {
             return;
         }
 
         const value = item[field];
-        const type = dbStruct[field].type;
-        const fieldElement = root.querySelector(`[data-field="${field}"]`);
+        const type = dbStruct[schemaField].type;
+        const fieldElement = resolveFieldElement(root, field, type);
 
         if (!fieldElement) {
             return;
@@ -69,16 +164,7 @@ function fillTemplateFields(root, item, dbStruct) {
 
         if (type === "array_of_images") {
             const images = parseArrayField(value);
-            const src = images[0] || "";
-
-            if (fieldElement.tagName === "IMG") {
-                if (src) {
-                    fieldElement.src = src;
-                    fieldElement.style.display = "";
-                } else {
-                    fieldElement.style.display = "none";
-                }
-            }
+            renderArrayImages(fieldElement, images, field, item);
             return;
         }
 
@@ -93,20 +179,22 @@ function fillPreviewForEdit(previewDiv, addBlock, item, dbStruct) {
             return;
         }
 
-        if (!dbStruct || !dbStruct[field]) {
+        const schemaField = resolveSchemaField(dbStruct, field);
+        if (!schemaField) {
             return;
         }
 
-        const addInput = addBlock.querySelector(`[data-field="${field}"]`);
+        let addInput = addBlock.querySelector(`[data-field="${field}"]`);
+        if (!addInput && schemaField !== field) {
+            addInput = addBlock.querySelector(`[data-field="${schemaField}"]`);
+        }
         if (addInput) {
             addInput.value = item[field] || "";
         }
 
         const value = item[field];
-        const type = dbStruct[field].type;
-        const fieldElement = previewDiv.querySelector(
-            `[data-field="${field}"]`,
-        );
+        const type = dbStruct[schemaField].type;
+        const fieldElement = resolveFieldElement(previewDiv, field, type);
 
         if (!fieldElement) {
             return;
@@ -146,16 +234,7 @@ function fillPreviewForEdit(previewDiv, addBlock, item, dbStruct) {
 
         if (type === "array_of_images") {
             const images = parseArrayField(value);
-            const src = images[0] || "";
-
-            if (fieldElement.tagName === "IMG") {
-                if (src) {
-                    fieldElement.src = src;
-                    fieldElement.style.display = "";
-                } else {
-                    fieldElement.style.display = "none";
-                }
-            }
+            renderArrayImages(fieldElement, images, field, item);
             return;
         }
 

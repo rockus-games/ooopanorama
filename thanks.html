@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>Спасибо за заявку</title>
+        <link
+            rel="icon"
+            href="favicon.ico"
+            type="image/x-icon" />
+        <link
+            rel="stylesheet"
+            href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="css/index.css" />
+        <style>
+            .thanks-page {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 24px;
+                background: #ffffff;
+            }
+
+            .thanks-card {
+                width: 100%;
+                max-width: 640px;
+                text-align: center;
+                background: #ffffff;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-radius: 16px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+                padding: 40px 28px;
+            }
+
+            .thanks-logo {
+                width: 180px;
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 24px;
+            }
+
+            .thanks-title {
+                margin: 0 0 12px;
+                color: var(--main-color);
+                font-size: clamp(28px, 4vw, 38px);
+                line-height: 1.2;
+                font-weight: 700;
+            }
+
+            .thanks-text {
+                margin: 0 0 28px;
+                color: #2f2f2f;
+                font-size: 18px;
+                line-height: 1.5;
+            }
+
+            .thanks-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 48px;
+                padding: 12px 24px;
+                border-radius: 10px;
+                background: var(--main-color);
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: 600;
+                transition: opacity 0.2s ease;
+            }
+
+            .thanks-link:hover {
+                opacity: 0.9;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="thanks-page">
+            <section
+                class="thanks-card"
+                aria-labelledby="thanks-title">
+                <img
+                    class="thanks-logo"
+                    src="images/logo.png"
+                    alt="Логотип компании" />
+                <h1
+                    class="thanks-title"
+                    id="thanks-title">
+                    Спасибо за заявку!
+                </h1>
+                <p class="thanks-text">Мы свяжемся с вами в ближайшее время</p>
+                <a
+                    class="thanks-link"
+                    href="index.html">
+                    Вернуться на главную
+                </a>
+            </section>
+        </main>
+    </body>
+</html>

@@ -5,10 +5,10 @@
     require 'phpmailer/src/PHPMailer.php';
     require 'phpmailer/src/SMTP.php';
 
-    $email = $_POST["email"];
-    $name = $_POST["name"];
-    $phone = $_POST["phone"];
-    $msg = $_POST["msg"];
+    $email = isset($_POST["email"]) ? trim($_POST["email"]) : "";
+    $name = isset($_POST["name"]) ? trim($_POST["name"]) : "";
+    $phone = isset($_POST["phone"]) ? trim($_POST["phone"]) : "";
+    $msg = isset($_POST["msg"]) ? trim($_POST["msg"]) : "";
     
     
     $mail = new PHPMailer;
@@ -28,7 +28,11 @@
     $mail->Subject = 'Запрос на сайте ООО Панорама';
     
 
-    $body = "<p>Поступила новая заявка на сайте ООО Панорама</p><p>От: $name $phone $email</p><p>$msg</p>";
+    $body = "<p>Поступила новая заявка на сайте ООО Панорама</p>"
+        . "<p><strong>Имя:</strong> $name</p>"
+        . "<p><strong>Телефон:</strong> $phone</p>"
+        . "<p><strong>Email:</strong> $email</p>"
+        . "<p><strong>Сообщение:</strong> $msg</p>";
     $mail->msgHTML($body);
     
     
