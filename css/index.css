@@ -56,21 +56,41 @@
 
 .brandsImg {
     display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 0;
 }
 
-.brandsImg::-webkit-scrollbar {
-    display: none;
+.brandCard {
+    width: 176px;
+    min-width: 176px;
+    min-height: 136px;
+    padding: 16px 14px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
 }
 
-.brandsImg img {
-    flex: 0 0 120px;
+.brandCard img {
+    width: 124px;
+    max-width: 124px;
+    max-height: 58px;
     height: auto;
     object-fit: contain;
+}
+
+.brandCardText {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #7a8594;
 }
 
 /* Sections General */
@@ -135,10 +155,11 @@
 
 .stepCard__description {
     margin: 0 0 12px;
-    font-size: clamp(13px, 2.6vw, 15px);
+    font-size: clamp(15px, 2.7vw, 16px);
     line-height: 1.5;
     color: #5b6470;
-    max-width: 460px;
+    width: 100%;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -238,7 +259,24 @@
     margin-right: 8px;
 }
 
+@media (max-width: 767px) {
+    .stepsFlow {
+        gap: 28px;
+    }
+}
+
 @media (min-width: 768px) {
+    .stepCard {
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    .stepCard:hover {
+        box-shadow: none;
+    }
+
     .stepsFlow {
         grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr);
         grid-template-rows: auto auto;
@@ -274,8 +312,10 @@
     }
 
     .stepCard__description {
-        max-width: 420px;
-        font-size: 14px;
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+        text-align: center;
     }
 
     .stepsBenefits {
@@ -285,9 +325,66 @@
 }
 
 /* Discounts */
-.discounts img {
+.discountsCards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.discountCard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.2);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    background: linear-gradient(140deg, #f8fbff 0%, #eaf3ff 100%);
+}
+
+.discountCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.24);
+}
+
+.discountCard--pensioners {
+    background: linear-gradient(140deg, #fff3e8 0%, #ffe3c8 52%, #ffd1a3 100%);
+}
+
+.discountCard--gift {
+    background: linear-gradient(140deg, #e6f4ff 0%, #cae7ff 52%, #a7d5ff 100%);
+}
+
+.discountCard img {
+    display: block;
     width: 100%;
-    border-radius: 15px;
+    height: clamp(180px, 30vw, 250px);
+    object-fit: cover;
+}
+
+.discountCardBody {
+    padding: clamp(16px, 2vw, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.discountCardTitle {
+    margin: 0;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.1;
+    color: #183153;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.discountCardText {
+    margin: 0;
+    font-size: clamp(14px, 1.7vw, 17px);
+    line-height: 1.5;
+    color: #1f2937;
 }
 
 .freeServices {
@@ -488,10 +585,13 @@
         height: 600px;
     }
 
-    .discounts img {
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
+    .discountsCards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .discountCard {
+        min-height: 100%;
     }
 
     .freeServices {
@@ -508,13 +608,6 @@
     .askUserData {
         flex-direction: row;
         align-items: flex-start;
-    }
-
-    .orderNumber,
-    .askUserField,
-    .orderSend > .field-with-error,
-    .askUserData > .field-with-error {
-        flex: 1;
     }
 
     .orderSend > .field-with-error,
@@ -554,7 +647,7 @@
 @media (min-width: 769px) {
     .menu {
         display: block;
-        background: var(--color-accent);
+        background: #3498db;
         padding: 15px 0;
         top: 0;
         z-index: 100;
@@ -574,12 +667,11 @@
     }
 
     .brandsImg {
-        justify-content: space-between;
-        overflow: visible;
+        justify-content: center;
     }
 
-    .brandsImg img {
-        flex: 0 1 20%;
+    .brandCard {
+        width: 190px;
     }
 }
 
@@ -1035,6 +1127,10 @@
 @media (min-width: 768px) {
     .field-with-error > .error-message {
         margin-top: 6px;
+    }
+
+    .error-message.visible {
+        display: block;
     }
 }
 

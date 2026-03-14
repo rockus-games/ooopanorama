@@ -60,12 +60,10 @@ function showError(input, message) {
     if (!errorEl || !errorEl.classList.contains("error-message")) {
         errorEl = document.createElement("span");
         errorEl.className = "error-message";
-        errorEl.style.display = "none";
         wrapper.appendChild(errorEl);
     }
 
     errorEl.textContent = message;
-    errorEl.style.display = "block";
 
     requestAnimationFrame(() => {
         errorEl.classList.add("visible");
@@ -79,7 +77,6 @@ function clearError(input) {
     const errorEl = input.nextElementSibling;
     if (errorEl && errorEl.classList.contains("error-message")) {
         errorEl.classList.remove("visible");
-        errorEl.style.display = "none";
     }
 }
 

@@ -150,6 +150,63 @@ function pickFile(btn) {
     input.click();
 }
 
+function resolvePreviewArrayTarget(element, field) {
+    var target = element.querySelector(`[data-field="${field}"]`);
+    if (target) {
+        return target;
+    }
+
+    if (field === "images") {
+        return element.querySelector('[data-field="image"]');
+    }
+
+    if (field === "image") {
+        return element.querySelector('[data-field="images"]');
+    }
+
+    if (field === "photos") {
+        return element.querySelector('[data-field="photo"]');
+    }
+
+    if (field === "photo") {
+        return element.querySelector('[data-field="photos"]');
+    }
+
+    return null;
+}
+
+function renderPreviewArrayImages(target, files) {
+    var firstImage = files[0] || "";
+
+    if (target.tagName === "IMG") {
+        if (firstImage) {
+            target.setAttribute("src", firstImage);
+            target.style.display = "";
+        } else {
+            target.style.display = "none";
+        }
+        return;
+    }
+
+    target.innerHTML = "";
+    if (!firstImage) {
+        return;
+    }
+
+    var imageClass =
+        target.dataset.field === "photos" || target.dataset.field === "photo"
+            ? "review-card__photo"
+            : "price-card__image";
+
+    files.forEach((src) => {
+        var img = document.createElement("img");
+        img.className = imageClass;
+        img.src = src;
+        img.alt = "";
+        target.appendChild(img);
+    });
+}
+
 function pickManyFile(btn) {
     var input = document.createElement("input");
     input.type = "file";
@@ -168,29 +225,9 @@ function pickManyFile(btn) {
 
         btn.setAttribute("value", JSON.stringify(a));
 
-        var firstImage = a[0] || "";
-        var target = element.querySelector(
-            `[data-field="${btn.dataset.field}"]`,
-        );
-
-        if (target && target.tagName === "IMG") {
-            if (firstImage) {
-                target.setAttribute("src", firstImage);
-                target.style.display = "";
-            } else {
-                target.style.display = "none";
-            }
-            return;
-        }
-
-        var imageTarget = element.querySelector('[data-field="image"]');
-        if (imageTarget && imageTarget.tagName === "IMG") {
-            if (firstImage) {
-                imageTarget.setAttribute("src", firstImage);
-                imageTarget.style.display = "";
-            } else {
-                imageTarget.style.display = "none";
-            }
+        var target = resolvePreviewArrayTarget(element, btn.dataset.field);
+        if (target) {
+            renderPreviewArrayImages(target, a);
         }
     };
 

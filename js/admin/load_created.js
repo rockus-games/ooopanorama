@@ -81,6 +81,34 @@ function renderArrayImages(fieldElement, images, field, item) {
     });
 }
 
+function resolveSchemaField(dbStruct, field) {
+    if (!dbStruct) {
+        return null;
+    }
+
+    if (dbStruct[field]) {
+        return field;
+    }
+
+    if (field === "image" && dbStruct.images) {
+        return "images";
+    }
+
+    if (field === "images" && dbStruct.image) {
+        return "image";
+    }
+
+    if (field === "photo" && dbStruct.photos) {
+        return "photos";
+    }
+
+    if (field === "photos" && dbStruct.photo) {
+        return "photo";
+    }
+
+    return null;
+}
+
 function fillTemplateFields(root, item, dbStruct) {
     Object.keys(item).forEach((field) => {
         if (field === "id") {
@@ -88,12 +116,13 @@ function fillTemplateFields(root, item, dbStruct) {
             return;
         }
 
-        if (!dbStruct || !dbStruct[field]) {
+        const schemaField = resolveSchemaField(dbStruct, field);
+        if (!schemaField) {
             return;
         }
 
         const value = item[field];
-        const type = dbStruct[field].type;
+        const type = dbStruct[schemaField].type;
         const fieldElement = resolveFieldElement(root, field, type);
 
         if (!fieldElement) {
@@ -150,17 +179,21 @@ function fillPreviewForEdit(previewDiv, addBlock, item, dbStruct) {
             return;
         }
 
-        if (!dbStruct || !dbStruct[field]) {
+        const schemaField = resolveSchemaField(dbStruct, field);
+        if (!schemaField) {
             return;
         }
 
-        const addInput = addBlock.querySelector(`[data-field="${field}"]`);
+        let addInput = addBlock.querySelector(`[data-field="${field}"]`);
+        if (!addInput && schemaField !== field) {
+            addInput = addBlock.querySelector(`[data-field="${schemaField}"]`);
+        }
         if (addInput) {
             addInput.value = item[field] || "";
         }
 
         const value = item[field];
-        const type = dbStruct[field].type;
+        const type = dbStruct[schemaField].type;
         const fieldElement = resolveFieldElement(previewDiv, field, type);
 
         if (!fieldElement) {
