@@ -45,6 +45,34 @@
             src="//code.jivo.ru/widget/8O1Rdvxv0x"
             async></script>
         <script src="https://www.google.com/recaptcha/api.js?render=6LflsYYrAAAAALTOxkCbPOIvVh6NZaxYpCMm6R3V"></script>
+        <!-- Marquiz script start -->
+        <script>
+            (function (w, d, s, o) {
+                var j = d.createElement(s);
+                j.async = true;
+                j.src = "//script.marquiz.ru/v2.js";
+                j.onload = function () {
+                    if (document.readyState !== "loading") Marquiz.init(o);
+                    else
+                        document.addEventListener(
+                            "DOMContentLoaded",
+                            function () {
+                                Marquiz.init(o);
+                            },
+                        );
+                };
+                d.head.insertBefore(j, d.head.firstElementChild);
+            })(window, document, "script", {
+                host: "//quiz.marquiz.ru",
+                region: "ru",
+                id: "69b4064bcc6ba50019859d2b",
+                autoOpen: false,
+                autoOpenFreq: "once",
+                openOnExit: false,
+                disableOnMobile: false,
+            });
+        </script>
+        <!-- Marquiz script end -->
     </head>
     <body>
         <div
@@ -109,7 +137,7 @@
                 <a href="tel:+74951501973">
                     <h1
                         class="number"
-                        style="font-size: 35px">
+                        style="font-size: 25px">
                         +7 (495) 150-19-73
                     </h1>
                 </a>
@@ -539,5 +567,23 @@
                     alt="" />
             </div>
         </noscript>
+        <script>
+            (function (t, p) {
+                window.Marquiz
+                    ? Marquiz.add([t, p])
+                    : document.addEventListener("marquizLoaded", function () {
+                          Marquiz.add([t, p]);
+                      });
+            })("Widget", {
+                id: "69b4064bcc6ba50019859d2b",
+                position: "left",
+                delay: 20,
+                disableOnMobile: false,
+                disableIfClosed: false,
+                hiddenArrowOnMobile: false,
+                autoOpen: 30,
+                openOncePerSession: true,
+            });
+        </script>
     </body>
 </html>
