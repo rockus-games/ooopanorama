@@ -186,6 +186,18 @@ body
     max-width: 250px;
 }
 
+.headerMob > .header > a {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 250px;
+}
+
+.headerMob > .header > a > .headerLogo {
+    width: 100%;
+    max-width: none;
+}
+
 .panorama {
     white-space: nowrap;
     font-size: clamp(18px, 4vw, 24px);
@@ -280,6 +292,10 @@ body
     }
 
     .headerLogo {
+        width: 30%;
+    }
+
+    .headerMob > .header > a {
         width: 30%;
     }
 
