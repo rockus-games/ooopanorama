@@ -73,21 +73,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: flex-start;
     text-align: center;
 }
 
 .brandCard img {
     width: 124px;
     max-width: 124px;
+    height: 58px;
     max-height: 58px;
-    height: auto;
     object-fit: contain;
+    object-position: center;
 }
 
 .brandCardText {
-    margin: 0;
+    margin: auto 0 0;
     font-size: 14px;
     line-height: 1.35;
     color: #7a8594;
