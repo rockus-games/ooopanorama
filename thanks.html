@@ -46,7 +46,7 @@
 
             .thanks-title {
                 margin: 0 0 12px;
-                color: var(--main-color);
+                color: #336281;
                 font-size: clamp(28px, 4vw, 38px);
                 line-height: 1.2;
                 font-weight: 700;
@@ -59,21 +59,26 @@
                 line-height: 1.5;
             }
 
-            .thanks-link {
+            .thanks-button {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
                 min-height: 48px;
                 padding: 12px 24px;
                 border-radius: 10px;
-                background: var(--main-color);
+                border: 1px solid #336281;
+                background: #336281;
                 color: #ffffff;
-                text-decoration: none;
                 font-weight: 600;
-                transition: opacity 0.2s ease;
+                font-size: 16px;
+                line-height: 1;
+                cursor: pointer;
+                transition:
+                    background-color 0.2s ease,
+                    opacity 0.2s ease;
             }
 
-            .thanks-link:hover {
+            .thanks-button:hover {
                 opacity: 0.9;
             }
         </style>
@@ -93,11 +98,12 @@
                     Спасибо за заявку!
                 </h1>
                 <p class="thanks-text">Мы свяжемся с вами в ближайшее время</p>
-                <a
-                    class="thanks-link"
-                    href="index.html">
+                <button
+                    class="thanks-button"
+                    type="button"
+                    onclick="window.location.href = 'index.html'">
                     Вернуться на главную
-                </a>
+                </button>
             </section>
         </main>
     </body>

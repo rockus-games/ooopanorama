@@ -1,5 +1,6 @@
 <?php
     use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
     
     require 'phpmailer/src/Exception.php';
     require 'phpmailer/src/PHPMailer.php';
@@ -11,15 +12,15 @@
     $msg = isset($_POST["msg"]) ? trim($_POST["msg"]) : "";
     
     
-    $mail = new PHPMailer;
+    $mail = new PHPMailer(true);
     $mail->isSMTP();
-    $mail->Host = "ssl://smtp.timeweb.ru";
+    $mail->Host = "smtp.timeweb.ru";
     $mail->Port = 465;
     $mail->SMTPAuth = true;
     $mail->SMTPDebug = 0;
     $mail->Username = 'info@ooopanorama.ru';
     $mail->Password = '9BWv5j430';
-    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->CharSet = "utf-8";
 
     $mail->setFrom('info@ooopanorama.ru', 'ООО Панорама');
@@ -36,5 +37,12 @@
     $mail->msgHTML($body);
     
     
-    $mail->send();
+    header('Content-Type: application/json');
+    try {
+        $mail->send();
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+        http_response_code(500);
+        echo json_encode(['success' => false, 'error' => $mail->ErrorInfo]);
+    }
 ?>

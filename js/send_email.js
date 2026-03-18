@@ -170,3 +170,14 @@ function orderCallSend() {
         "Перезвоните, пожалуйста, у меня есть вопросы",
     );
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    [
+        "#askUserFieldName",
+        "#askUserFieldPhone",
+        "#orderCountName",
+        "#orderCountNumber",
+    ].forEach((selector) => {
+        ensureErrorContainer(document.querySelector(selector));
+    });
+});
