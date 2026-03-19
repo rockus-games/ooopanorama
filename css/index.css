@@ -478,7 +478,7 @@
     border-radius: 12px;
     border: 1px solid rgba(51, 98, 129, 0.18);
     padding: 0 15px;
-    font-size: 16px;
+    font-size: 24px;
     background-color: #ffffff;
     transition:
         border-color 0.25s ease,
@@ -927,7 +927,7 @@
     border: 1px solid #d1d5db;
     border-radius: 12px;
     padding: 0 16px;
-    font-size: 16px;
+    font-size: 24px;
     transition:
         border-color 0.25s ease,
         box-shadow 0.25s ease,
@@ -1256,7 +1256,7 @@
     .orderCountText,
     .orderNumber,
     .askUserField {
-        font-size: clamp(18px, 0.9vw, 21px);
+        font-size: clamp(27px, 1.35vw, 31.5px);
     }
 
     #disclaimer,
@@ -1302,7 +1302,7 @@
     .orderCountText,
     .orderNumber,
     .askUserField {
-        font-size: 19px;
+        font-size: 28.5px;
     }
 
     #disclaimer,
@@ -1348,7 +1348,7 @@
     .orderCountText,
     .orderNumber,
     .askUserField {
-        font-size: 22px;
+        font-size: 33px;
     }
 
     #disclaimer,
