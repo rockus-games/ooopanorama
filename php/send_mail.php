@@ -18,14 +18,14 @@
     $mail->Port = 465;
     $mail->SMTPAuth = true;
     $mail->SMTPDebug = 0;
-    $mail->Username = 'info@ooopanorama.ru';
-    $mail->Password = '9BWv5j430';
+    $mail->Username = 'service@ooopanorama.ru';
+    $mail->Password = 'Panor838473!';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->CharSet = "utf-8";
 
-    $mail->setFrom('info@ooopanorama.ru', 'ООО Панорама');
+    $mail->setFrom('service@ooopanorama.ru', 'ООО Панорама');
     $mail->addAddress('okno7373@mail.ru', 'Копии заявок');
-    $mail->addAddress('service@ooopanorama.ru', 'Новая заявка');
+    $mail->addAddress('info@ooopanorama.ru', 'Новая заявка');
     $mail->Subject = 'Запрос на сайте ООО Панорама';
     
 
