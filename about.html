@@ -547,21 +547,25 @@
                 window,
                 document,
                 "script",
-                "https://mc.yandex.ru/metrika/tag.js",
+                "https://mc.yandex.ru/metrika/tag.js?id=108199013",
                 "ym",
             );
 
-            ym(103090615, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
+            ym(108199013, "init", {
+                ssr: true,
                 webvisor: true,
+                clickmap: true,
+                ecommerce: "dataLayer",
+                referrer: document.referrer,
+                url: location.href,
+                accurateTrackBounce: true,
+                trackLinks: true,
             });
         </script>
         <noscript>
             <div>
                 <img
-                    src="https://mc.yandex.ru/watch/103090615"
+                    src="https://mc.yandex.ru/watch/108199013"
                     style="position: absolute; left: -9999px"
                     alt="" />
             </div>
